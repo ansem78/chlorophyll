@@ -1,0 +1,47 @@
+{
+  "name": "chlorophyll",
+  "version": "1.0.0",
+  "description": "Lightweight CSS framework focused on structure.",
+  "scripts": {
+    "css": "npm-run-all css-compile css-minify debug-minify",
+    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css scss/:dist/",
+    "css-minify": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/chlorophyll.min.css dist/chlorophyll.css",
+    "debug-minify": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/debug.min.css dist/debug.css",
+    "setup": "yarn install || exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexandro Morato",
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "style": "dist/chlorophyll.css",
+  "sass": "scss/chlorophyll.scss",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ansem78/chlorophyll.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ansem78/chlorophyll/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.0"
+  },
+  "files": [
+    "dist/*.{css,map}",
+    "scss/**/*.scss"
+  ],
+  "devDependencies": {
+    "clean-css-cli": "4.3.0",
+    "npm-run-all": "4.1.5",
+    "postcss": "8.1.10",
+    "sass": "1.29.0"
+  }
+}
