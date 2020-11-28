@@ -25,7 +25,7 @@
   "sass": "scss/chlorophyll.scss",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ansem78/chlorophyll.git"
+    "url": "git+https://github.com/ansem78/chlorophyll.git"
   },
   "bugs": {
     "url": "https://github.com/ansem78/chlorophyll/issues"

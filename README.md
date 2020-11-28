@@ -2,16 +2,16 @@
 Lightweight CSS framework focused on structure.
 
 ## Table of contents
--[Quick start](#quick-start)
--[What's included](#whats-included)
--[Bugs and feature requests](#bugs-and-feature-requests)
+- [Quick start](#quick-start)
+- [What's included](#whats-included)
+- [Bugs and feature requests](#bugs-and-feature-requests)
 
 ## Quick start
 Several quick start options are available:
--Clone the repository: `git clone git://github.com/ansem78/chlorophyll.git`
--Install with [NPM](https://www.npmjs.com/): `npm install chlorophyll`
--Install with [Yarn](https://yarnpkg.com/): `yarn add chlorophyll`
--Install with [Composer](https://getcomposer.org/): `composer require ansem78/chlorophyll`
+- Clone the repository: `git clone https://github.com/ansem78/chlorophyll.git`
+- Install with [NPM](https://www.npmjs.com/): `npm install chlorophyll`
+- Install with [Yarn](https://yarnpkg.com/): `yarn add chlorophyll`
+- Install with [Composer](https://getcomposer.org/): `composer require ansem78/chlorophyll`
 
 ## What's included
 Within the download, you'll find the following directories and files, logically grouping common assets and features and providing both compiled and minified variations. You'll see something like this:
