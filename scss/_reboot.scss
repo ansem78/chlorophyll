@@ -13,7 +13,7 @@
 }
 
 :root {
-  font-size: variables.$font-size-root;
+  font-size: #{variables.$root-font-size};
 
   @if variables.$enable-smooth-scroll {
     @media (prefers-reduced-motion: no-preference) {
@@ -31,13 +31,13 @@ html {
 }
 
 body {
-  font-size: variables.$font-size-base;
+  font-size: #{variables.$body-font-size};
   font-family: inspect(variables.$font-family-sans-serif);
-  font-weight: variables.$font-weight-base;
-  line-height: variables.$line-height-base;
-  color: variables.$font-color-base;
-  text-align: variables.$text-align-base;
-  background: variables.$background-color-base;
+  font-weight: #{variables.$body-font-weight};
+  line-height: #{variables.$body-line-height};
+  color: #{variables.$body-font-color};
+  text-align: #{variables.$body-text-align};
+  background: #{variables.$body-bg-color};
   padding: 0;
   margin: 0;
 }
@@ -58,12 +58,12 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: .5rem;
+  margin-bottom: #{variables.$headings-margin-bottom};
 }
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: #{variables.$paragraph-margin-bottom};
 }
 
 abbr[title], abbr[data-original-title] {
@@ -77,14 +77,14 @@ abbr[title], abbr[data-original-title] {
 }
 
 address {
-  margin-bottom: 1rem;
+  margin-bottom: #{variables.$paragraph-margin-bottom};
   font-style: normal;
   line-height: inherit;
 }
 
 ol, ul, dl {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: #{variables.$paragraph-margin-bottom};
 }
 
 ol ol, ul ul, ol ul, ul ol {
@@ -96,12 +96,12 @@ dt {
 }
 
 dd {
-  margin-bottom: .5rem;
+  margin-bottom: #{variables.$headings-margin-bottom};
   margin-left: 0;
 }
 
 blockquote {
-  margin: 0 0 1rem 0;
+  margin: 0 0 #{variables.$paragraph-margin-bottom} 0;
 }
 
 b, strong {
@@ -149,19 +149,19 @@ a:not([href]):not([class]):hover {
 }
 
 pre, code, kbd, samp {
-  font-family: inspect(variables.$font-family-monospace);
   font-size: 1em;
+  font-family: inspect(variables.$font-family-monospace);
 }
 
 pre {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: #{variables.$paragraph-margin-bottom};
   overflow: auto;
   -ms-overflow-style: scrollbar;
 }
 
 figure {
-  margin: 0 0 1rem 0;
+  margin: 0 0 #{variables.$paragraph-margin-bottom} 0;
 }
 
 img {
@@ -192,7 +192,7 @@ th {
 
 label {
   display: inline-block;
-  margin-bottom: .5rem;
+  margin-bottom: #{variables.$headings-margin-bottom};
 }
 
 button {
@@ -205,10 +205,10 @@ button:focus {
 }
 
 input, button, select, optgroup, textarea {
-  margin: 0;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  margin: 0;
 }
 
 button, input {
@@ -265,7 +265,7 @@ legend {
   width: 100%;
   max-width: 100%;
   padding: 0;
-  margin-bottom: .5rem;
+  margin-bottom: #{variables.$headings-margin-bottom};
   display: block;
 }
 

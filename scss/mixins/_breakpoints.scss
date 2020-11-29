@@ -1,85 +1,113 @@
+// Breakpoint viewport sizes and media queries.
+//
+// Breakpoints are defined as a map of (name: min-width), order from small to large.
+// The map defined in the `variables.$breakpoints` is used as the `$breakpoints` argument by default.
+
 @use '../variables';
 
-// Create the breakpoints stack. Set min-width and max-width for each breakpoint.
-// If the breakpoint is the first in the stack, min-width is 0.
-// If the breakpoint is the last in the stack, max-width is 0.
-$breakpoints: ();
-$keys: map-keys(variables.$breakpoints);
-$length: length(variables.$breakpoints);
-@each $bp, $min in variables.$breakpoints {
-  $index: index($keys, $bp);
-  $max: 0;
-  @if $index<$length {
-    $next: nth($keys, $index + 1);
-    $max: map-get(variables.$breakpoints, $next) - 0.02;
+// Name of the next breakpoint, or null for the last breakpoint.
+@function breakpoint-next($name, $breakpoints: variables.$breakpoints) {
+  $breakpoint-names: map-keys($breakpoints);
+  $n: index($breakpoint-names, $name);
+  @if not $n {
+    @error 'Breakpoint `#{$name}` not found in `#{$breakpoint-names}`.';
   }
-  $breakpoints: map-merge($breakpoints, ($bp: ($min, $max)));
+  @return if($n<length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
 }
 
-// Return the map (min-width, max-width) for the given breakpoint.
-@function get-breakpoint($breakpoint) {
-  @return map-get($breakpoints, $breakpoint);
+// Minimum breakpoint width.
+@function breakpoint-min($name, $breakpoints: variables.$breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min!=0, $min, null);
 }
 
-// Media query matching a breakpoint and above.
-@mixin media-breakpoint-up($breakpoint) {
-  $bp: get-breakpoint($breakpoint);
-  $min: nth($bp, 1);
-  @if $min!=0 {
-    @media (min-width: #{$min}px) {
-      @content;
-    }
-  }
+// Maximum breakpoint width.
+// The maximum value is reduced by 0.02px to work around the limitations of
+// `min-` and `max-` prefixes and viewports with fractional widths.
+// See https://www.w3.org/TR/mediaqueries-4/#mq-min-max
+// Uses 0.02px rather than 0.01px to work around a current rounding bug in Safari.
+// See https://bugs.webkit.org/show_bug.cgi?id=178261
+@function breakpoint-max($name, $breakpoints: variables.$breakpoints) {
+  $max: map-get($breakpoints, $name);
+  @return if($max and $max>0, $max - .02, null);
 }
 
-// Media query matching a breakpoint and below.
-@mixin media-breakpoint-down($breakpoint) {
-  $bp: get-breakpoint($breakpoint);
-  $max: nth($bp, 2);
-  @if $max!=0 {
-    @media (max-width: #{$max}px) {
-      @content;
-    }
-  }
+// Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front.
+// Useful for making responsive utilities.
+@function breakpoint-infix($name, $breakpoints: variables.$breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints)==null, '', '-#{$name}');
 }
 
-// Media query matching exactly a single breakpoint range.
-@mixin media-breakpoint-only($breakpoint) {
-  $bp: get-breakpoint($breakpoint);
-  $min: nth($bp, 1);
-  $max: nth($bp, 2);
-  @if $min==0 {
-    @media (max-width: #{$max}px) {
-      @content;
-    }
-  }
-  @else if $max==0 {
+// Media query of at least the minimum breakpoint width. No media query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints: variables.$breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+
+  @if $min {
     @media (min-width: #{$min}px) {
       @content;
     }
   }
   @else {
-    @media (min-width: #{$min}px) and (max-width: #{$max}px) {
+    @content;
+  }
+
+}
+
+// Media query of at most the maximum breakpoint width. No media query for the largest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+@mixin media-breakpoint-down($name, $breakpoints: variables.$breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+
+  @if $max {
+    @media (max-width: #{$max}px) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+
+}
+
+// Media query between the breakpoint's minimum and maximum widths.
+// No minimum for the smallest breakpoint and no maximum for the largest one.
+// Makes the @content apply only to the given breakpoint only, not viewports any wider or narrower.
+@mixin media-breakpoint-only($name, $breakpoints: variables.$breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  $next: breakpoint-next($name, $breakpoints);
+  $max: breakpoint-max($next);
+
+  @if $min==null {
+    @include media-breakpoint-down($next, $breakpoints) {
+      @content;
+    }
+  }
+  @else if $max==null {
+    @include media-breakpoint-up($name, $breakpoints) {
+      @content;
+    }
+  }
+  @else {
+    @media (min-width: $min) and (max-width: $max) {
       @content;
     }
   }
 }
 
-// Media query matching a range between two breakpoints.
-@mixin media-breakpoint-between($from, $to) {
-  $bp1: get-breakpoint($from);
-  $min: nth($bp1, 1);
-  $keys: map-keys(variables.$breakpoints);
-  $index: index($keys, $to) - 1;
-  $bp2: get-breakpoint(nth($keys, $index));
-  $max: nth($bp2, 2);
-  @if $min==0 {
-    @media (max-width: #{$max}px) {
+// Media query that spans multiple breakpoint widths.
+// Makes the @content apply between the lower and upper breakpoints.
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: variables.$breakpoints) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min==null {
+    @include media-breakpoint-down($upper, $breakpoints) {
       @content;
     }
   }
-  @else if $max==0 {
-    @media (min-width: #{$min}px) {
+  @else if $max==null {
+    @include media-breakpoint-up($lower, $breakpoints) {
       @content;
     }
   }

@@ -1,0 +1,156 @@
+/*
+
+  PADDING, MARGIN
+
+  Base:
+    p = padding
+    m = margin
+
+  Modifiers:
+    (none) = all
+    t = top
+    r = right
+    b = bottom
+    l = left
+    x = horizontal (right and left)
+    y = vertical (top and bottom)
+
+*/
+
+@use './variables';
+@use './utilities';
+@use './mixins';
+
+$spacer: variables.$spacer;
+$spacers: variables.$spacers;
+$negative-spacers: if(variables.$enable-negative-margins, utilities.negativify-map($spacers), null);
+$breakpoints: map-keys(variables.$breakpoints);
+
+@each $name in $breakpoints {
+
+  @include mixins.media-breakpoint-up($name) {
+
+    $infix: mixins.breakpoint-infix($name);
+
+    // Paddings.
+    @each $n, $size in $spacers {
+
+      .p#{$infix}-#{$n} {
+        padding: #{$size};
+      }
+
+      .pt#{$infix}-#{$n} {
+        padding-top: #{$size};
+      }
+
+      .pr#{$infix}-#{$n} {
+        padding-right: #{$size};
+      }
+
+      .pb#{$infix}-#{$n} {
+        padding-bottom: #{$size};
+      }
+
+      .pl#{$infix}-#{$n} {
+        padding-left: #{$size};
+      }
+
+      .px#{$infix}-#{$n} {
+        padding-right: #{$size};
+        padding-left: #{$size};
+      }
+
+      .py#{$infix}-#{$n} {
+        padding-top: #{$size};
+        padding-bottom: #{$size};
+      }
+
+      // Margins.
+      .m#{$infix}-#{$n} {
+        margin: #{$size};
+      }
+
+      .mt#{$infix}-#{$n} {
+        margin-top: #{$size};
+      }
+
+      .mr#{$infix}-#{$n} {
+        margin-right: #{$size};
+      }
+
+      .mb#{$infix}-#{$n} {
+        margin-bottom: #{$size};
+      }
+
+      .ml#{$infix}-#{$n} {
+        margin-left: #{$size};
+      }
+
+      .mx#{$infix}-#{$n} {
+        margin-right: #{$size};
+        margin-left: #{$size};
+      }
+
+      .my#{$infix}-#{$n} {
+        margin-top: #{$size};
+        margin-bottom: #{$size};
+      }
+
+    }
+
+    // Negative margins.
+    @if $negative-spacers {
+
+      @each $n, $size in $negative-spacers {
+
+        .m#{$infix}-#{$n} {
+          margin: #{$size};
+        }
+
+        .mt#{$infix}-#{$n} {
+          margin-top: #{$size};
+        }
+
+        .mr#{$infix}-#{$n} {
+          margin-right: #{$size};
+        }
+
+        .mb#{$infix}-#{$n} {
+          margin-bottom: #{$size};
+        }
+
+        .ml#{$infix}-#{$n} {
+          margin-left: #{$size};
+        }
+
+        .mx#{$infix}-#{$n} {
+          margin-right: #{$size};
+          margin-left: #{$size};
+        }
+
+        .my#{$infix}-#{$n} {
+          margin-top: #{$size};
+          margin-bottom: #{$size};
+        }
+
+      }
+
+    }
+
+    // `auto` horizontal margins.
+    .mr#{$infix}-auto {
+      margin-right: auto;
+    }
+
+    .ml#{$infix}-auto {
+      margin-left: auto;
+    }
+
+    .mx#{$infix}-auto {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+  }
+
+}
