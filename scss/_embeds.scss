@@ -1,0 +1,69 @@
+/*
+ * This is for fluid media that is embedded from third party sites like Youtube, Vimeo, etc.
+ * Wrap the outer element in `embed` and extend it with the desired ratio.
+ * Style for the embedded object is automatically applied to any `<iframe>`, `<embed>`, `<video>` and `<object>` element.
+ * If the embedded element is other than those above, you can apply `embed-item` class on it.
+ * Make sure there are no height and width attributes on the embedded media.
+ * Adapted from: https://github.com/suitcss/components-flex-embed.
+ *
+ * Examples:
+ *
+ * <div class="embed embed-16x9">
+ *   <iframe src="..."></iframe>
+ * </div>
+ *
+ * <div class="embed embed-16x9">
+ *   <img src="..." class="embed-item" />
+ * </div>
+ *
+ */
+
+ @use './variables';
+ @use './utilities';
+ @use './mixins';
+
+ $aspect-ratios: variables.$aspect-ratios;
+ $reverse-aspect-ratios: if(variables.$enable-revert-aspect-ratios, utilities.reverse-lists($aspect-ratios), null);
+
+ .embed {
+   width: 100%;
+   height: 0;
+   position: relative;
+
+   & > iframe, & > embed, & > video, & > object, & > .embed-item {
+     width: 100%;
+     height: 100%;
+     border: none;
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     z-index: 100;
+   }
+
+ }
+
+@each $ratio in $aspect-ratios {
+
+  $infix: mixins.aspect-ratio-infix($ratio);
+
+  .embed#{$infix} {
+    @include mixins.embed-aspect-ratio($ratio);
+  }
+
+}
+
+@if $reverse-aspect-ratios {
+
+  @each $ratio in $reverse-aspect-ratios {
+
+    $infix: mixins.aspect-ratio-infix($ratio);
+
+    .embed#{$infix} {
+      @include mixins.embed-aspect-ratio($ratio);
+    }
+
+  }
+
+}

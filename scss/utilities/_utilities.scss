@@ -7,3 +7,15 @@
   }
   @return $negative-map;
 }
+
+@function reverse-lists($list) {
+  $reversed-lists: ();
+  @each $value in $list {
+    $width: nth($value, 1);
+    $height: nth($value, 2);
+    @if $width!=$height {
+      $reversed-lists: append($reversed-lists, ($height, $width));
+    }
+  }
+  @return $reversed-lists;
+}

@@ -44,7 +44,7 @@
   $min: breakpoint-min($name, $breakpoints);
 
   @if $min {
-    @media (min-width: #{$min}px) {
+    @media (min-width: #{$min}) {
       @content;
     }
   }
@@ -60,7 +60,7 @@
   $max: breakpoint-max($name, $breakpoints);
 
   @if $max {
-    @media (max-width: #{$max}px) {
+    @media (max-width: #{$max}) {
       @content;
     }
   }
@@ -89,7 +89,7 @@
     }
   }
   @else {
-    @media (min-width: $min) and (max-width: $max) {
+    @media (min-width: #{$min}) and (max-width: #{$max}) {
       @content;
     }
   }
@@ -112,7 +112,7 @@
     }
   }
   @else {
-    @media (min-width: #{$min}px) and (max-width: #{$max}px) {
+    @media (min-width: #{$min}) and (max-width: #{$max}) {
       @content;
     }
   }

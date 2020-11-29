@@ -1,4 +1,6 @@
 // General.
+//
+// General settings.
 
 // Enable (true) or disable (false) smooth scrolling.
 $enable-smooth-scroll: true !default;
@@ -14,7 +16,7 @@ $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mon
 
 // Body.
 //
-// Styles for the `<body>` element.
+// Settings for the `<body>` element.
 
 $body-font-size: 1rem !default; // Assumes the browser default. Typically `16px`.
 
@@ -30,13 +32,13 @@ $body-bg-color: #fff !default;
 
 // Headings.
 //
-// Style for `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>` elements.
+// Style `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>` elements.
 
 $headings-margin-bottom: .5rem !default;
 
 // Paragraphs.
 //
-// Style for the `<p>` element.
+// Style `<p>` element.
 
 $paragraph-margin-bottom: 1rem !default;
 
@@ -58,16 +60,39 @@ $spacers: (
 
 $enable-negative-margins: true !default;
 
-// Breakpoints min-width in px.
+// Breakpoints.
+//
+// Breakpoints min-widths for responsive media queries.
 $breakpoints: (
-  xs: 0, // Extra small.
-  sm: 576, // Small.
-  md: 768, // Medium.
-  lg: 992, // Large.
-  xl: 1200 // Extra large.
+  xs: 0, // Extra small (default).
+  sm: 576px, // Small.
+  md: 768px, // Medium.
+  lg: 992px, // Large.
+  xl: 1200px // Extra large.
 ) !default;
 
-// Map a different color for each HTML element. Only used in `debug.scss` file.
+// QUI: ordinare i breakpoint dal più piccolo al più grande.
+// QUI: assicurarsi che il breakpoint minimo abbia larghezza 0!
+
+// Embedding.
+//
+// Aspect ratios for fluid media embedding.
+
+$aspect-ratios: (
+  (1, 1),
+  (4, 3),
+  (6, 4),
+  (7, 5),
+  (8, 5),
+  (16, 9),
+  (21, 9)
+) !default;
+
+$enable-revert-aspect-ratios: true !default;
+
+// Debug.
+//
+// Map a different color for each HTML element.
 $debug-html-colors: (
   body: #2980b9,
   article: #3498db,

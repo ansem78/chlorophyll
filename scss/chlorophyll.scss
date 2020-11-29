@@ -1,10 +1,12 @@
-/* Reset */
+// Reset.
 @use './reboot';
 
-/* Debugging */
+// Debugging.
 @use './debug-children';
 @use './debug-grid';
 
-/* Components */
+// Components.
+@use './accessibility';
+@use './embeds';
 @use './spacing';
 @use './visibility';

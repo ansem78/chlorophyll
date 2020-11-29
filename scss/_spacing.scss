@@ -32,112 +32,74 @@ $breakpoints: map-keys(variables.$breakpoints);
 
     $infix: mixins.breakpoint-infix($name);
 
-    // Paddings.
     @each $n, $size in $spacers {
 
-      .p#{$infix}-#{$n} {
-        padding: #{$size};
-      }
+      // Paddings.
 
-      .pt#{$infix}-#{$n} {
+      .p#{$infix}-#{$n}, .py#{$infix}-#{$n}, .pt#{$infix}-#{$n} {
         padding-top: #{$size};
       }
 
-      .pr#{$infix}-#{$n} {
+      .p#{$infix}-#{$n}, .px#{$infix}-#{$n}, .pr#{$infix}-#{$n} {
         padding-right: #{$size};
       }
 
-      .pb#{$infix}-#{$n} {
+      .p#{$infix}-#{$n}, .py#{$infix}-#{$n}, .pb#{$infix}-#{$n} {
         padding-bottom: #{$size};
       }
 
-      .pl#{$infix}-#{$n} {
+      .p#{$infix}-#{$n}, .px#{$infix}-#{$n}, .pl#{$infix}-#{$n} {
         padding-left: #{$size};
-      }
-
-      .px#{$infix}-#{$n} {
-        padding-right: #{$size};
-        padding-left: #{$size};
-      }
-
-      .py#{$infix}-#{$n} {
-        padding-top: #{$size};
-        padding-bottom: #{$size};
       }
 
       // Margins.
-      .m#{$infix}-#{$n} {
-        margin: #{$size};
-      }
 
-      .mt#{$infix}-#{$n} {
+      .m#{$infix}-#{$n}, .my#{$infix}-#{$n}, .mt#{$infix}-#{$n} {
         margin-top: #{$size};
       }
 
-      .mr#{$infix}-#{$n} {
+      .m#{$infix}-#{$n}, .mx#{$infix}-#{$n}, .mr#{$infix}-#{$n} {
         margin-right: #{$size};
       }
 
-      .mb#{$infix}-#{$n} {
+      .m#{$infix}-#{$n}, .my#{$infix}-#{$n}, .mb#{$infix}-#{$n} {
         margin-bottom: #{$size};
       }
 
-      .ml#{$infix}-#{$n} {
+      .m#{$infix}-#{$n}, .mx#{$infix}-#{$n}, .ml#{$infix}-#{$n} {
         margin-left: #{$size};
-      }
-
-      .mx#{$infix}-#{$n} {
-        margin-right: #{$size};
-        margin-left: #{$size};
-      }
-
-      .my#{$infix}-#{$n} {
-        margin-top: #{$size};
-        margin-bottom: #{$size};
       }
 
     }
 
     // Negative margins.
+
     @if $negative-spacers {
 
       @each $n, $size in $negative-spacers {
 
-        .m#{$infix}-#{$n} {
-          margin: #{$size};
-        }
-
-        .mt#{$infix}-#{$n} {
+        .m#{$infix}-#{$n}, .my#{$infix}-#{$n}, .mt#{$infix}-#{$n} {
           margin-top: #{$size};
         }
 
-        .mr#{$infix}-#{$n} {
+        .m#{$infix}-#{$n}, .mx#{$infix}-#{$n}, .mr#{$infix}-#{$n} {
           margin-right: #{$size};
         }
 
-        .mb#{$infix}-#{$n} {
+        .m#{$infix}-#{$n}, .my#{$infix}-#{$n}, .mb#{$infix}-#{$n} {
           margin-bottom: #{$size};
         }
 
-        .ml#{$infix}-#{$n} {
+        .m#{$infix}-#{$n}, .mx#{$infix}-#{$n}, .ml#{$infix}-#{$n} {
           margin-left: #{$size};
-        }
-
-        .mx#{$infix}-#{$n} {
-          margin-right: #{$size};
-          margin-left: #{$size};
-        }
-
-        .my#{$infix}-#{$n} {
-          margin-top: #{$size};
-          margin-bottom: #{$size};
         }
 
       }
 
     }
 
-    // `auto` horizontal margins.
+    // Horizontal margin `auto`.
+
     .mr#{$infix}-auto {
       margin-right: auto;
     }

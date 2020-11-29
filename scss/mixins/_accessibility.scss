@@ -1,0 +1,26 @@
+// Hide content visually while keeping it accessible to assistive technologies
+//
+// See: https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/
+// See: https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
+
+@mixin visually-hidden() {
+  white-space: nowrap !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: none !important;
+  margin: -1px !important;
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
+
+// Use to only display content when it's focused.
+//
+// Useful for "Skip to main content" links; see https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+
+@mixin visually-hidden-focusable() {
+  &:not(:focus) {
+    @include visually-hidden();
+  }
+}

@@ -1,0 +1,12 @@
+// Returns a string representing the aspect ratio with a dash in front.
+@function aspect-ratio-infix($ratio) {
+  $width: nth($ratio, 1);
+  $height: nth($ratio, 2);
+  @return '-#{$width}x#{$height}';
+}
+
+@mixin embed-aspect-ratio($ratio) {
+  $width: nth($ratio, 1);
+  $height: nth($ratio, 2);
+  padding-bottom: unquote('#{$height / $width * 100}%');
+}

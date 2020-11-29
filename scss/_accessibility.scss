@@ -1,0 +1,9 @@
+@use './mixins';
+
+.sr-only {
+  @include mixins.visually-hidden;
+}
+
+.sr-only-focusable {
+  @include mixins.visually-hidden-focusable;
+}
