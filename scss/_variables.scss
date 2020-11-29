@@ -28,7 +28,24 @@ $text-align-base: left !default;
 // $background-color-base effects the default color of the body background.
 $background-color-base: #fff !default;
 
+// $spacer effect padding and margin.
+$spacer: .25rem !default;
 
+// Map of allowed padding multipliers.
+$paddings: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10) !default;
+
+// Map of allowed margin multipliers.
+$margins: (-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10) !default;
+
+// Breakpoints min-width in px.
+$breakpoints: (
+  xs: 0, // Extra small.
+  sm: 576, // Small.
+  md: 768, // Medium.
+  lg: 992, // Large.
+  xl: 1200, // Extra large.
+  xxl: 1400 // Extra extra large.
+) !default;
 
 // Map a different color for each HTML element. Only used in `debug.css` file.
 $debug-html-colors: (

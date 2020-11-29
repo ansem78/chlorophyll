@@ -1,0 +1,91 @@
+@use '../variables';
+
+// Create the breakpoints stack. Set min-width and max-width for each breakpoint.
+// If the breakpoint is the first in the stack, min-width is 0.
+// If the breakpoint is the last in the stack, max-width is 0.
+$breakpoints: ();
+$keys: map-keys(variables.$breakpoints);
+$length: length(variables.$breakpoints);
+@each $bp, $min in variables.$breakpoints {
+  $index: index($keys, $bp);
+  $max: 0;
+  @if $index<$length {
+    $next: nth($keys, $index + 1);
+    $max: map-get(variables.$breakpoints, $next) - 0.02;
+  }
+  $breakpoints: map-merge($breakpoints, ($bp: ($min, $max)));
+}
+
+// Return the map (min-width, max-width) for the given breakpoint.
+@function get-breakpoint($breakpoint) {
+  @return map-get($breakpoints, $breakpoint);
+}
+
+// Media query matching a breakpoint and above.
+@mixin media-breakpoint-up($breakpoint) {
+  $bp: get-breakpoint($breakpoint);
+  $min: nth($bp, 1);
+  @if $min!=0 {
+    @media (min-width: #{$min}px) {
+      @content;
+    }
+  }
+}
+
+// Media query matching a breakpoint and below.
+@mixin media-breakpoint-down($breakpoint) {
+  $bp: get-breakpoint($breakpoint);
+  $max: nth($bp, 2);
+  @if $max!=0 {
+    @media (max-width: #{$max}px) {
+      @content;
+    }
+  }
+}
+
+// Media query matching exactly a single breakpoint range.
+@mixin media-breakpoint-only($breakpoint) {
+  $bp: get-breakpoint($breakpoint);
+  $min: nth($bp, 1);
+  $max: nth($bp, 2);
+  @if $min==0 {
+    @media (max-width: #{$max}px) {
+      @content;
+    }
+  }
+  @else if $max==0 {
+    @media (min-width: #{$min}px) {
+      @content;
+    }
+  }
+  @else {
+    @media (min-width: #{$min}px) and (max-width: #{$max}px) {
+      @content;
+    }
+  }
+}
+
+// Media query matching a range between two breakpoints.
+@mixin media-breakpoint-between($from, $to) {
+  $bp1: get-breakpoint($from);
+  $min: nth($bp1, 1);
+  $keys: map-keys(variables.$breakpoints);
+  $index: index($keys, $to) - 1;
+  $bp2: get-breakpoint(nth($keys, $index));
+  $max: nth($bp2, 2);
+  @if $min==0 {
+    @media (max-width: #{$max}px) {
+      @content;
+    }
+  }
+  @else if $max==0 {
+    @media (min-width: #{$min}px) {
+      @content;
+    }
+  }
+  @else {
+    @media (min-width: #{$min}px) and (max-width: #{$max}px) {
+      @content;
+    }
+  }
+}
