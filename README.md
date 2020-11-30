@@ -38,3 +38,4 @@ chlorophyll/
 We provide compiled CSS (`chlorophyll.*`), as well as compiled and minified CSS (`chlorophyll.min.*`). [Source maps](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps) (`chlorophyll.*.map`) are available for use with certain browsers' developer tools.
 
 ## Bugs and feature requests
+Have a bug or a feature request? Please first read the issue guidelines and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/ansem78/chlorophyll/issues/new).

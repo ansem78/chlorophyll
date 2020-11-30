@@ -11,10 +11,10 @@
 @function reverse-lists($list) {
   $reversed-lists: ();
   @each $value in $list {
-    $width: nth($value, 1);
-    $height: nth($value, 2);
-    @if $width!=$height {
-      $reversed-lists: append($reversed-lists, ($height, $width));
+    $value1: nth($value, 1);
+    $value2: nth($value, 2);
+    @if $value1!=$value2 {
+      $reversed-lists: append($reversed-lists, ($value2, $value1));
     }
   }
   @return $reversed-lists;

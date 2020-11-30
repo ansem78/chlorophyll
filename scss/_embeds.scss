@@ -33,7 +33,9 @@
    & > iframe, & > embed, & > video, & > object, & > .embed-item {
      width: 100%;
      height: 100%;
+     padding: 0;
      border: none;
+     margin: 0;
      position: absolute;
      top: 0;
      right: 0;
