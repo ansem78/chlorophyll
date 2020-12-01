@@ -16,7 +16,7 @@ $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mon
 
 // Body.
 //
-// Settings for the `<body>` element.
+// Settings for the `body` element.
 
 $body-font-size: 1rem !default; // Assumes the browser default. Typically `16px`.
 
@@ -32,13 +32,13 @@ $body-bg-color: #fff !default;
 
 // Headings.
 //
-// Style `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>` elements.
+// Style `h1`, `h2`, `h3`, `h4`, `h5, `h6` elements.
 
 $headings-margin-bottom: .5rem !default;
 
 // Paragraphs.
 //
-// Style `<p>` element.
+// Style `p` element.
 
 $paragraph-margin-bottom: 1rem !default;
 
@@ -62,7 +62,8 @@ $enable-negative-margins: true !default;
 
 // Breakpoints.
 //
-// Breakpoints min-widths for responsive media queries.
+// Breakpoints minimum widths for responsive media queries.
+
 $breakpoints: (
   xs: 0, // Extra small (default).
   sm: 576px, // Small.
@@ -88,7 +89,22 @@ $aspect-ratios: (
   (21, 9)
 ) !default;
 
-$enable-revert-aspect-ratios: true !default;
+$enable-reversed-aspect-ratios: true !default;
+
+// Border radius.
+//
+// Controls available border-radiuses and border-radius for rounded boxes.
+
+$border-radiuses: (
+  0: 0,
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
+) !default;
+
+$border-radius-rounded: 5px !default;
 
 // Debug.
 //

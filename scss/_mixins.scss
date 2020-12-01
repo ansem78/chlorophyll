@@ -1,4 +1,5 @@
 @forward './mixins/accessibility';
+@forward './mixins/background';
 @forward './mixins/breakpoints';
-@forward './mixins/embeds';
-@forward './mixins/images';
+@forward './mixins/embed';
+@forward './mixins/image';

@@ -23,7 +23,7 @@
  @use './mixins';
 
  $aspect-ratios: variables.$aspect-ratios;
- $reverse-aspect-ratios: if(variables.$enable-revert-aspect-ratios, utilities.reverse-lists($aspect-ratios), null);
+ $reversed-aspect-ratios: if(variables.$enable-reversed-aspect-ratios, utilities.reverse-lists($aspect-ratios), null);
 
  .embed {
    width: 100%;
@@ -56,9 +56,9 @@
 
 }
 
-@if $reverse-aspect-ratios {
+@if $reversed-aspect-ratios {
 
-  @each $ratio in $reverse-aspect-ratios {
+  @each $ratio in $reversed-aspect-ratios {
 
     $infix: mixins.aspect-ratio-infix($ratio);
 

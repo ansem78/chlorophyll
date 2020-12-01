@@ -1,0 +1,48 @@
+/*
+
+  BORDER RADIUS
+
+  Base:
+    br = border-radius
+
+  Modifiers:
+    t = top
+    r = right
+    b = bottom
+    l = left
+
+*/
+
+@use './variables';
+
+@each $n, $radius in variables.$border-radiuses {
+
+  .br-#{$n}, .br-t-#{$n}, .br-r-#{$n}, .br-tr-#{$n}, .br-rt-#{$n} {
+    border-top-right-radius: #{$radius};
+  }
+
+  .br-#{$n}, .br-t-#{$n}, .br-l-#{$n}, .br-tl-#{$n}, .br-lt-#{$n} {
+    border-top-left-radius: #{$radius};
+  }
+
+  .br-#{$n}, .br-b-#{$n}, .br-r-#{$n}, .br-br-#{$n}, .br-rb-#{$n} {
+    border-bottom-right-radius: #{$radius};
+  }
+
+  .br-#{$n}, .br-b-#{$n}, .br-l-#{$n}, .br-bl-#{$n}, .br-lb-#{$n} {
+    border-bottom-left-radius: #{$radius};
+  }
+
+}
+
+.rounded {
+  border-radius: #{variables.$border-radius-rounded};
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.pill {
+  border-radius: 9999px;
+}
