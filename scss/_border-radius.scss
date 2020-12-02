@@ -6,6 +6,7 @@
     br = border-radius
 
   Modifiers:
+    (none) = all
     t = top
     r = right
     b = bottom
@@ -35,14 +36,17 @@
 
 }
 
+// Box with predefined rounded corners.
 .rounded {
   border-radius: #{variables.$border-radius-rounded};
 }
 
+// Circular box.
 .circle {
   border-radius: 50%;
 }
 
+// Make a box like a pill.
 .pill {
   border-radius: 9999px;
 }

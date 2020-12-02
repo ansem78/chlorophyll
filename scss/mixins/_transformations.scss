@@ -1,0 +1,18 @@
+@use '../utilities';
+
+// Returns a string representing the rotation angle with a dash in front.
+@function rotation-angle-suffix($angle) {
+  @return '-#{utilities.strip-unit($angle)}';
+}
+
+// Set transformation origin to center.
+@mixin center-origin() {
+  transform-origin: 50% 50%;
+}
+
+// Rotate the element clockwise (if `$angle` is positive) or counter-clockwise (if `$angle` is negative).
+@mixin rotate($angle) {
+  @include center-origin();
+  transform: rotate(#{$angle});
+  -webkit-transform: rotate(#{$angle});
+}

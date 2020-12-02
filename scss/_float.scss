@@ -1,0 +1,32 @@
+/*
+
+  FLOAT
+
+  Base:
+    fl: float
+
+  Modifiers:
+    n = none
+    l = left
+    r = right
+
+*/
+
+@use './mixins';
+
+.fl-none {
+  @include mixins.float-none();
+}
+
+.fl-l {
+  @include mixins.float-left();
+}
+
+.fl-r {
+  @include mixins.float-right();
+}
+
+.clear {
+  @include mixins.clearfix();
+}
+

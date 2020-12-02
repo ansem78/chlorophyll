@@ -1,13 +1,23 @@
+// Remove the unit of a length.
+@function strip-unit($number) {
+  @if type-of($number)=='number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+// Turn any value in the given map to negative.
 @function negativify-map($map) {
   $negative-map: ();
   @each $key, $value in $map {
-    @if $key!=0 and $value!=0 {
-      $negative-map: map-merge($negative-map, ($key * -1: $value * -1));
+    @if $value!=0 {
+      $negative-map: map-merge($negative-map, ($key: $value * -1));
     }
   }
   @return $negative-map;
 }
 
+// Reverse values in any 2-values list in the given map.
 @function reverse-lists($list) {
   $reversed-lists: ();
   @each $value in $list {

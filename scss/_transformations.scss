@@ -1,0 +1,60 @@
+@use './variables';
+@use './mixins';
+
+// Undo all transformations.
+.transform-none {
+  transform: none;
+  -webkit-transform: none;
+}
+
+// Clockwise rotations.
+
+$angle: 0;
+@while $angle<=360 {
+
+  $suffix: mixins.rotation-angle-suffix($angle);
+
+  .turn#{$suffix} {
+    @include mixins.rotate($angle);
+  }
+
+  $angle: $angle + variables.$rotation-angle;
+}
+
+// Counter-clockwise rotations.
+
+@if variables.$enable-ccw-rotation {
+
+  $angle: variables.$rotation-angle;
+  @while $angle<=360 {
+
+    $suffix: mixins.rotation-angle-suffix($angle * -1);
+
+    .turn#{$suffix} {
+      @include mixins.rotate($angle * -1);
+    }
+
+    $angle: $angle + variables.$rotation-angle;
+  }
+
+}
+
+// Flip.
+
+.flip-x {
+  @include mixins.center-origin();
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+}
+
+.flip-y {
+  @include mixins.center-origin();
+  transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+}
+
+.flip {
+  @include mixins.center-origin();
+  transform: scaleX(-1) scaleY(-1);
+  -webkit-transform: scaleX(-1) scaleY(-1);
+}

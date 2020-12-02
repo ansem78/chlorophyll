@@ -106,6 +106,14 @@ $border-radiuses: (
 
 $border-radius-rounded: 5px !default;
 
+// Transformations.
+//
+// Controls rotation transformations.
+
+$rotation-angle: 45deg !default; // MUST be in degrees due to other units limitations.
+
+$enable-ccw-rotation: false !default;
+
 // Debug.
 //
 // Map a different color for each HTML element.

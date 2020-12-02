@@ -78,19 +78,19 @@ $breakpoints: map-keys(variables.$breakpoints);
 
       @each $n, $size in $negative-spacers {
 
-        .m#{$infix}-#{$n}, .my#{$infix}-#{$n}, .mt#{$infix}-#{$n} {
+        .m#{$infix}--#{$n}, .my#{$infix}--#{$n}, .mt#{$infix}--#{$n} {
           margin-top: #{$size};
         }
 
-        .m#{$infix}-#{$n}, .mx#{$infix}-#{$n}, .mr#{$infix}-#{$n} {
+        .m#{$infix}--#{$n}, .mx#{$infix}--#{$n}, .mr#{$infix}--#{$n} {
           margin-right: #{$size};
         }
 
-        .m#{$infix}-#{$n}, .my#{$infix}-#{$n}, .mb#{$infix}-#{$n} {
+        .m#{$infix}--#{$n}, .my#{$infix}--#{$n}, .mb#{$infix}--#{$n} {
           margin-bottom: #{$size};
         }
 
-        .m#{$infix}-#{$n}, .mx#{$infix}-#{$n}, .ml#{$infix}-#{$n} {
+        .m#{$infix}--#{$n}, .mx#{$infix}--#{$n}, .ml#{$infix}--#{$n} {
           margin-left: #{$size};
         }
 
@@ -100,16 +100,11 @@ $breakpoints: map-keys(variables.$breakpoints);
 
     // Horizontal margin `auto`.
 
-    .mr#{$infix}-auto {
+    .mx#{$infix}-auto, .mr#{$infix}-auto {
       margin-right: auto;
     }
 
-    .ml#{$infix}-auto {
-      margin-left: auto;
-    }
-
-    .mx#{$infix}-auto {
-      margin-right: auto;
+    .mx#{$infix}-auto, .ml#{$infix}-auto {
       margin-left: auto;
     }
 
