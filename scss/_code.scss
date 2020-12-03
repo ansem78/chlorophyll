@@ -1,0 +1,13 @@
+@use './variables';
+
+pre, .pre {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overflow: scroll;
+}
+
+kbd, .kbd {
+  color: variables.$kbd-color;
+  background: variables.$kbd-bg;
+  padding: variables.$kbd-padding-y variables.$kbd-padding-x;
+}

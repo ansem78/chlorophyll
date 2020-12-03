@@ -42,6 +42,28 @@ $headings-margin-bottom: .5rem !default;
 
 $paragraph-margin-bottom: 1rem !default;
 
+// Code.
+//
+// Style `kbd` element.
+
+$kbd-padding-y: .2rem !default;
+
+$kbd-padding-x: .4rem !default;
+
+$kbd-color: #fff !default;
+
+$kbd-bg: #444 !default;
+
+// Z-index.
+//
+// Set z-index levels, as well as z-index for helper position classes.
+
+
+
+$z-index-sticky: 99999 !default;
+
+$z-index-fixed: 999999 !default;
+
 // Spacing.
 //
 // Controls paddings and margins.
@@ -110,7 +132,17 @@ $border-radius-rounded: 5px !default;
 //
 // Controls rotation transformations.
 
-$rotation-angle: 45deg !default; // MUST be in degrees due to other units limitations.
+$rotations: (
+  0: 0,
+  45: 45deg,
+  90: 90deg,
+  135: 135deg,
+  180: 180deg,
+  225: 225deg,
+  270: 270deg,
+  315: 315deg,
+  360: 360deg
+) !default;
 
 $enable-ccw-rotation: false !default;
 

@@ -1,7 +1,10 @@
 @forward './mixins/accessibility';
 @forward './mixins/background';
+@forward './mixins/border-radius';
 @forward './mixins/breakpoints';
 @forward './mixins/embed';
 @forward './mixins/float';
 @forward './mixins/image';
+@forward './mixins/resize';
+@forward './mixins/spacing';
 @forward './mixins/transformations';

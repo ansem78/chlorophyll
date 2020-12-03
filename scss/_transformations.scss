@@ -1,5 +1,9 @@
 @use './variables';
+@use './helpers';
 @use './mixins';
+
+$cw-rotations: variables.$rotations;
+$ccw-rotations: if(variables.$enable-ccw-rotation, helpers.negativify-map($cw-rotations), null);
 
 // Undo all transformations.
 .transform-none {
@@ -9,32 +13,24 @@
 
 // Clockwise rotations.
 
-$angle: 0;
-@while $angle<=360 {
+@each $key, $angle in $cw-rotations {
 
-  $suffix: mixins.rotation-angle-suffix($angle);
-
-  .turn#{$suffix} {
+  .turn-#{$key} {
     @include mixins.rotate($angle);
   }
 
-  $angle: $angle + variables.$rotation-angle;
 }
 
 // Counter-clockwise rotations.
 
-@if variables.$enable-ccw-rotation {
+@if $ccw-rotation-angles {
 
-  $angle: variables.$rotation-angle;
-  @while $angle<=360 {
+  @each $key, $angle in $ccw-rotations {
 
-    $suffix: mixins.rotation-angle-suffix($angle * -1);
-
-    .turn#{$suffix} {
-      @include mixins.rotate($angle * -1);
+    .turn-#{$key} {
+      @include mixins.rotate($angle);
     }
 
-    $angle: $angle + variables.$rotation-angle;
   }
 
 }

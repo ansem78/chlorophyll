@@ -14,11 +14,11 @@
  */
 
 @use './variables';
-@use './utilities';
+@use './helpers';
 @use './mixins';
 
 $aspect-ratios: variables.$aspect-ratios;
-$reversed-aspect-ratios: if(variables.$enable-reversed-aspect-ratios, utilities.reverse-lists($aspect-ratios), null);
+$reversed-aspect-ratios: if(variables.$enable-reversed-aspect-ratios, helpers.reverse-lists($aspect-ratios), null);
 
 .embed {
   width: 100%;

@@ -1,0 +1,73 @@
+// Padding.
+@mixin padding($size) {
+  padding: #{$size};
+}
+
+// Padding top.
+@mixin padding-top($size) {
+  padding-top: #{$size};
+}
+
+// Padding right.
+@mixin padding-right($size) {
+  padding-right: #{$size};
+}
+
+// Padding bottom.
+@mixin padding-bottom($size) {
+  padding-bottom: #{$size};
+}
+
+// Padding left.
+@mixin padding-left($size) {
+  padding-left: #{$size};
+}
+
+// Horizontal padding.
+@mixin padding-horizontal($size) {
+  @include padding-right($size);
+  @include padding-left($size);
+}
+
+// Vertical padding.
+@mixin padding-vertical($size) {
+  @include padding-top($size);
+  @include padding-bottom($size);
+}
+
+// Margin.
+@mixin margin($size) {
+  margin: #{$size};
+}
+
+// Margin top.
+@mixin margin-top($size) {
+  margin-top: #{$size};
+}
+
+// Margin right.
+@mixin margin-right($size) {
+  margin-right: #{$size};
+}
+
+// Margin bottom.
+@mixin margin-bottom($size) {
+  margin-bottom: #{$size};
+}
+
+// Margin left.
+@mixin margin-left($size) {
+  margin-left: #{$size};
+}
+
+// Horizontal margin.
+@mixin margin-horizontal($size) {
+  @include margin-right($size);
+  @include margin-left($size);
+}
+
+// Vertical margin.
+@mixin margin-vertical($size) {
+  @include margin-top($size);
+  @include margin-bottom($size);
+}

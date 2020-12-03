@@ -1,7 +1,7 @@
-.border-box {
-  box-sizing: border-box;
-}
+@each $size in (border, content) {
 
-.content-box {
-  box-sizing: content-box;
+  .#{$size}-box {
+    box-sizing: unquote('#{$size}-box');
+  }
+
 }

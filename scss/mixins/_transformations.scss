@@ -1,10 +1,3 @@
-@use '../utilities';
-
-// Returns a string representing the rotation angle with a dash in front.
-@function rotation-angle-suffix($angle) {
-  @return '-#{utilities.strip-unit($angle)}';
-}
-
 // Set transformation origin to center.
 @mixin center-origin() {
   transform-origin: 50% 50%;

@@ -1,0 +1,27 @@
+/*
+
+  Resize everything.
+
+  Base:
+    resize = resize
+
+  Modifiers:
+    (none): both
+    x: horizontal
+    y: vertical
+
+*/
+
+@use './mixins';
+
+.resize {
+  @include mixins.resizable(both);
+}
+
+.resize-x {
+  @include mixins.resizable(horizontal);
+}
+
+.resize-y {
+  @include mixins.resizable(vertical);
+}

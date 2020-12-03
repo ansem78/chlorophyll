@@ -18,12 +18,12 @@
 */
 
 @use './variables';
-@use './utilities';
+@use './helpers';
 @use './mixins';
 
 $spacer: variables.$spacer;
 $spacers: variables.$spacers;
-$negative-spacers: if(variables.$enable-negative-margins, utilities.negativify-map($spacers), null);
+$negative-spacers: if(variables.$enable-negative-margins, helpers.negativify-map($spacers), null);
 $breakpoints: map-keys(variables.$breakpoints);
 
 @each $name in $breakpoints {
@@ -36,38 +36,62 @@ $breakpoints: map-keys(variables.$breakpoints);
 
       // Paddings.
 
-      .p#{$infix}-#{$n}, .py#{$infix}-#{$n}, .pt#{$infix}-#{$n} {
-        padding-top: #{$size};
+      .p#{$infix}-#{$n} {
+        @include mixins.padding($size);
       }
 
-      .p#{$infix}-#{$n}, .px#{$infix}-#{$n}, .pr#{$infix}-#{$n} {
-        padding-right: #{$size};
+      .pt#{$infix}-#{$n} {
+        @include mixins.padding-top($size);
       }
 
-      .p#{$infix}-#{$n}, .py#{$infix}-#{$n}, .pb#{$infix}-#{$n} {
-        padding-bottom: #{$size};
+      .pr#{$infix}-#{$n} {
+        @include mixins.padding-right($size);
       }
 
-      .p#{$infix}-#{$n}, .px#{$infix}-#{$n}, .pl#{$infix}-#{$n} {
-        padding-left: #{$size};
+      .pb#{$infix}-#{$n} {
+        @include mixins.padding-bottom($size);
+      }
+
+      .pl#{$infix}-#{$n} {
+        @include mixins.padding-left($size);
+      }
+
+      .px#{$infix}-#{$n} {
+        @include mixins.padding-horizontal($size);
+      }
+
+      .py#{$infix}-#{$n} {
+        @include mixins.padding-vertical($size);
       }
 
       // Margins.
 
-      .m#{$infix}-#{$n}, .my#{$infix}-#{$n}, .mt#{$infix}-#{$n} {
-        margin-top: #{$size};
+      .m#{$infix}-#{$n} {
+        @include mixins.margin($size);
       }
 
-      .m#{$infix}-#{$n}, .mx#{$infix}-#{$n}, .mr#{$infix}-#{$n} {
-        margin-right: #{$size};
+      .mt#{$infix}-#{$n} {
+        @include mixins.margin-top($size);
       }
 
-      .m#{$infix}-#{$n}, .my#{$infix}-#{$n}, .mb#{$infix}-#{$n} {
-        margin-bottom: #{$size};
+      .mr#{$infix}-#{$n} {
+        @include mixins.margin-right($size);
       }
 
-      .m#{$infix}-#{$n}, .mx#{$infix}-#{$n}, .ml#{$infix}-#{$n} {
-        margin-left: #{$size};
+      .mb#{$infix}-#{$n} {
+        @include mixins.margin-bottom($size);
+      }
+
+      .ml#{$infix}-#{$n} {
+        @include mixins.margin-left($size);
+      }
+
+      .mx#{$infix}-#{$n} {
+        @include mixins.margin-horizontal($size);
+      }
+
+      .my#{$infix}-#{$n} {
+        @include mixins.margin-vertical($size);
       }
 
     }
@@ -78,20 +102,32 @@ $breakpoints: map-keys(variables.$breakpoints);
 
       @each $n, $size in $negative-spacers {
 
-        .m#{$infix}--#{$n}, .my#{$infix}--#{$n}, .mt#{$infix}--#{$n} {
-          margin-top: #{$size};
+        .m#{$infix}-#{$n} {
+          @include mixins.margin($size);
         }
 
-        .m#{$infix}--#{$n}, .mx#{$infix}--#{$n}, .mr#{$infix}--#{$n} {
-          margin-right: #{$size};
+        .mt#{$infix}-#{$n} {
+          @include mixins.margin-top($size);
         }
 
-        .m#{$infix}--#{$n}, .my#{$infix}--#{$n}, .mb#{$infix}--#{$n} {
-          margin-bottom: #{$size};
+        .mr#{$infix}-#{$n} {
+          @include mixins.margin-right($size);
         }
 
-        .m#{$infix}--#{$n}, .mx#{$infix}--#{$n}, .ml#{$infix}--#{$n} {
-          margin-left: #{$size};
+        .mb#{$infix}-#{$n} {
+          @include mixins.margin-bottom($size);
+        }
+
+        .ml#{$infix}-#{$n} {
+          @include mixins.margin-left($size);
+        }
+
+        .mx#{$infix}-#{$n} {
+          @include mixins.margin-horizontal($size);
+        }
+
+        .my#{$infix}-#{$n} {
+          @include mixins.margin-vertical($size);
         }
 
       }
@@ -100,12 +136,16 @@ $breakpoints: map-keys(variables.$breakpoints);
 
     // Horizontal margin `auto`.
 
-    .mx#{$infix}-auto, .mr#{$infix}-auto {
-      margin-right: auto;
+    .mr#{$infix}-auto {
+      @include mixins.margin-right(auto);
     }
 
-    .mx#{$infix}-auto, .ml#{$infix}-auto {
-      margin-left: auto;
+    .ml#{$infix}-auto {
+      @include mixins.margin-left(auto);
+    }
+
+    .mx#{$infix}-auto {
+      @include mixins.margin-horizontal(auto);
     }
 
   }

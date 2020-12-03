@@ -1,0 +1,43 @@
+@use './variables';
+@use './mixins';
+
+@each $position in (static, relative, absolute, fixed, sticky) {
+
+  .#{$position} {
+    position: #{$position};
+  }
+
+}
+
+.fixed-t {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: variables.$z-index-fixed;
+}
+
+.fixed-b {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: variables.$z-index-fixed;
+}
+
+// Responsive sticky top.
+@each $breakpoint in map-keys(variables.$breakpoints) {
+
+  @include mixins.media-breakpoint-up($breakpoint) {
+
+    $infix: mixins.breakpoint-infix($breakpoint);
+
+    .sticky#{$infix}-t {
+      position: sticky;
+      top: 0;
+      z-index: variables.$z-index-sticky;
+    }
+
+  }
+
+}

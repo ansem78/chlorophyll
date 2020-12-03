@@ -1,0 +1,29 @@
+/*
+
+  OVERFLOW
+
+  Base:
+    of = overflow
+
+  Modifiers:
+    (none) = both
+    x = horizontal
+    y = vertical
+
+*/
+
+@each $overflow in (visible, hidden, scroll, auto) {
+
+  .of-#{$overflow} {
+    overflow: $overflow;
+  }
+
+  .of-x-#{$overflow} {
+    overflow-x: $overflow;
+  }
+
+  .of-y-#{$overflow} {
+    overflow-y: $overflow;
+  }
+
+}

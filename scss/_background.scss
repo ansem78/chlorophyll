@@ -18,50 +18,57 @@
 
 @use './mixins';
 
-.bg, .bg-t, .bg-tr, .bg-rt, .bg-tl, .bg-lt, .bg-r, .bg-l, .bg-br, .bg-rb, .bg-b, .bg-bl, .bg-lb, .bg-cover, .bg-contain {
-  @include mixins.bg-no-repeat();
-}
-
 .bg {
-  @include mixins.bg-position('50%', '50%');
+  @include mixins.bg-no-repeat();
+  @include mixins.bg-position(50%, 50%);
 }
 
 .bg-t {
-  @include mixins.bg-position('50%', 0);
+  @include mixins.bg-no-repeat();
+  @include mixins.bg-position(50%, 0);
 }
 
 .bg-tr, .bg-rt {
-  @include mixins.bg-position('100%', 0);
+  @include mixins.bg-no-repeat();
+  @include mixins.bg-position(100%, 0);
 }
 
 .bg-tl, .bg-lt {
+  @include mixins.bg-no-repeat();
   @include mixins.bg-position(0, 0);
 }
 
 .bg-r {
-  @include mixins.bg-position('100%', '50%');
+  @include mixins.bg-no-repeat();
+  @include mixins.bg-position(100%, 50%);
 }
 
 .bg-l {
-  @include mixins.bg-position(0, '50%');
+  @include mixins.bg-no-repeat();
+  @include mixins.bg-position(0, 50%);
 }
 
 .bg-br, .bg-rb {
-  @include mixins.bg-position('100%', '100%');
+  @include mixins.bg-no-repeat();
+  @include mixins.bg-position(100%, 100%);
 }
 
 .bg-b {
-  @include mixins.bg-position('50%', '100%');
+  @include mixins.bg-no-repeat();
+  @include mixins.bg-position(50%, 100%);
 }
 
 .bg-bl, .bg-lb {
-  @include mixins.bg-position(0, '100%');
+  @include mixins.bg-no-repeat();
+  @include mixins.bg-position(0, 100%);
 }
 
 .bg-cover {
+  @include mixins.bg-no-repeat();
   background-size: cover;
 }
 
 .bg-contain {
+  @include mixins.bg-no-repeat();
   background-size: contain;
 }

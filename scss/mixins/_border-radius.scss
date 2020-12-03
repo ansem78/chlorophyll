@@ -1,0 +1,48 @@
+// Border radius.
+@mixin border-radius($radius) {
+  border-radius: #{$radius};
+}
+
+// Border top right radius.
+@mixin border-top-right-radius($radius) {
+  border-top-right-radius: #{$radius};
+}
+
+// Border top left radius.
+@mixin border-top-left-radius($radius) {
+  border-top-left-radius: #{$radius};
+}
+
+// Border bottom right radius.
+@mixin border-bottom-right-radius($radius) {
+  border-bottom-right-radius: #{$radius};
+}
+
+// Border bottom left radius.
+@mixin border-bottom-left-radius($radius) {
+  border-bottom-left-radius: #{$radius};
+}
+
+// Border top radius (right and left).
+@mixin border-top-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-top-left-radius($radius);
+}
+
+// Border right radius (top and bottom).
+@mixin border-right-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-bottom-right-radius($radius);
+}
+
+// Border bottom radius (right and left).
+@mixin border-bottom-radius($radius) {
+  @include border-bottom-right-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
+
+// Border left radius (top and bottom).
+@mixin border-left-radius($radius) {
+  @include border-top-left-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
