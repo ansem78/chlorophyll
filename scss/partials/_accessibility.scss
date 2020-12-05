@@ -1,4 +1,4 @@
-@use './mixins';
+@use '../mixins';
 
 .sr-only, .sr-only-focusable:not(:focus) {
   @include mixins.visually-hidden();

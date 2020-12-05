@@ -1,22 +1,11 @@
+// Startup.
+@use './boot';
+
 // Reset.
 @use './reboot';
 
-// Debugging.
-@use './debug-children';
-@use './debug-grid';
+// Modules.
+@use './partials';
 
-// Components.
-@use './accessibility';
-@use './background';
-@use './border-radius';
-@use './box-sizing';
-@use './code';
-@use './embed';
-@use './float';
-@use './image';
-@use './overflow';
-@use './position';
-@use './resize';
-@use './spacing';
-@use './transformations';
-@use './visibility';
+// Debug.
+@use './debug';

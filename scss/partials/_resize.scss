@@ -12,7 +12,7 @@
 
 */
 
-@use './mixins';
+@use '../mixins';
 
 .resize {
   @include mixins.resizable(both);

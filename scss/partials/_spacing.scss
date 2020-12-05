@@ -17,14 +17,14 @@
 
 */
 
-@use './variables';
-@use './helpers';
-@use './mixins';
+@use '../config';
+@use '../helpers';
+@use '../mixins';
 
-$spacer: variables.$spacer;
-$spacers: variables.$spacers;
-$negative-spacers: if(variables.$enable-negative-margins, helpers.negativify-map($spacers), null);
-$breakpoints: map-keys(variables.$breakpoints);
+$spacer: config.$spacer;
+$spacers: config.$spacers;
+$negative-spacers: if(config.$enable-negative-margins, helpers.negativify-map($spacers), null);
+$breakpoints: map-keys(config.$breakpoints);
 
 @each $name in $breakpoints {
 

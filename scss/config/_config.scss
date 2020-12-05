@@ -94,9 +94,6 @@ $breakpoints: (
   xl: 1200px // Extra large.
 ) !default;
 
-// QUI: ordinare i breakpoint dal più piccolo al più grande.
-// QUI: assicurarsi che il breakpoint minimo abbia larghezza 0!
-
 // Embedding.
 //
 // Aspect ratios for fluid media embedding.
@@ -111,7 +108,7 @@ $aspect-ratios: (
   (21, 9)
 ) !default;
 
-$enable-reversed-aspect-ratios: true !default;
+$enable-reverse-aspect-ratios: true !default;
 
 // Border radius.
 //

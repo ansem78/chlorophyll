@@ -14,10 +14,10 @@
 
 */
 
-@use './variables';
-@use './mixins';
+@use '../config';
+@use '../mixins';
 
-@each $n, $radius in variables.$border-radiuses {
+@each $n, $radius in config.$border-radiuses {
 
   .br-#{$n} {
     @include mixins.border-radius($radius);
@@ -59,7 +59,7 @@
 
 // Box with predefined rounded corners.
 .rounded {
-  border-radius: #{variables.$border-radius-rounded};
+  border-radius: #{config.$border-radius-rounded};
 }
 
 // Circular box.

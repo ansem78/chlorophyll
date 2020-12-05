@@ -1,9 +1,9 @@
-@use './variables';
-@use './helpers';
-@use './mixins';
+@use '../config';
+@use '../helpers';
+@use '../mixins';
 
-$cw-rotations: variables.$rotations;
-$ccw-rotations: if(variables.$enable-ccw-rotation, helpers.negativify-map($cw-rotations), null);
+$cw-rotations: config.$rotations;
+$ccw-rotations: if(config.$enable-ccw-rotation, helpers.negativify-map($cw-rotations), null);
 
 // Undo all transformations.
 .transform-none {
@@ -23,7 +23,7 @@ $ccw-rotations: if(variables.$enable-ccw-rotation, helpers.negativify-map($cw-ro
 
 // Counter-clockwise rotations.
 
-@if $ccw-rotation-angles {
+@if $ccw-rotations {
 
   @each $key, $angle in $ccw-rotations {
 

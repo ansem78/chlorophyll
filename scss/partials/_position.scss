@@ -1,5 +1,5 @@
-@use './variables';
-@use './mixins';
+@use '../config';
+@use '../mixins';
 
 @each $position in (static, relative, absolute, fixed, sticky) {
 
@@ -14,7 +14,7 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: variables.$z-index-fixed;
+  z-index: config.$z-index-fixed;
 }
 
 .fixed-b {
@@ -22,11 +22,11 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: variables.$z-index-fixed;
+  z-index: config.$z-index-fixed;
 }
 
 // Responsive sticky top.
-@each $breakpoint in map-keys(variables.$breakpoints) {
+@each $breakpoint in map-keys(config.$breakpoints) {
 
   @include mixins.media-breakpoint-up($breakpoint) {
 
@@ -35,7 +35,7 @@
     .sticky#{$infix}-t {
       position: sticky;
       top: 0;
-      z-index: variables.$z-index-sticky;
+      z-index: config.$z-index-sticky;
     }
 
   }

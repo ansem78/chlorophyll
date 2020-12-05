@@ -1,14 +1,6 @@
-// Remove the unit of a length.
-@function strip-unit($number) {
-  @if type-of($number)=='number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
-  }
-  @return $number;
-}
-
 // Ascending.
 // Used to evaluate Sass maps like breakpoints.
-@mixin _assert-ascending($map, $map-name) {
+@mixin assert-ascending($map, $map-name) {
   $prev-key: null;
   $prev-num: null;
   @each $key, $num in $map {
@@ -19,7 +11,7 @@
       @warn 'Potentially invalid value for #{$map-name}. This map must be in ascending order, but key `#{$key}` has value #{$num}. This unit makes it incomparable to #{$prev-num}, the value of the previous key `#{$prev-key}`.';
     }
     @else if $prev-num>=$num {
-      @warn 'Invalid value for #{$map-name}. This map must be in ascending order, but key `#{$key}` has value #{$num} which is not greater than #{$prev-num}, the value of the previous key `#{$prev-key}`.';
+      @warn 'Invalid value for #{$map-name}. This map must be in ascending order. The key `#{$key}` has value #{$num}, which is not greater than the value of the previous key `#{$prev-key}` (#{$prev-num}).';
     }
     $prev-key: $key;
     $prev-num: $num;
@@ -28,7 +20,7 @@
 
 // Starts at zero.
 // Used to ensure the min-width of the lowest breakpoint starts at 0.
-@mixin _assert-starts-at-zero($map, $map-name: '$breakpoints') {
+@mixin assert-starts-at-zero($map, $map-name) {
   @if length($map)>0 {
     $values: map-values($map);
     $first: nth($values, 1);
@@ -36,6 +28,14 @@
       @warn 'First breakpoint in #{$map-name} starts at #{$first}, but it must start at 0.';
     }
   }
+}
+
+// Remove the unit of a length.
+@function strip-unit($number) {
+  @if type-of($number)=='number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
 }
 
 // $weight must be a number between 0% and 100% (inclusive).
@@ -68,7 +68,7 @@
   $negative-map: ();
   @each $key, $value in $map {
     @if $key!=0 and $value!=0 {
-      $negative-map: map-merge($negative-map, ('-#{$key}': $value * -1));
+      $negative-map: map-merge($negative-map, ('-#{$key}': -$value));
     }
   }
   @return $negative-map;

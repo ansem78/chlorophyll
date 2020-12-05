@@ -13,12 +13,12 @@
  *
  */
 
-@use './variables';
-@use './helpers';
-@use './mixins';
+@use '../config';
+@use '../helpers';
+@use '../mixins';
 
-$aspect-ratios: variables.$aspect-ratios;
-$reversed-aspect-ratios: if(variables.$enable-reversed-aspect-ratios, helpers.reverse-lists($aspect-ratios), null);
+$aspect-ratios: config.$aspect-ratios;
+$reversed-aspect-ratios: if(config.$enable-reverse-aspect-ratios, helpers.reverse-lists($aspect-ratios), null);
 
 .embed {
   width: 100%;
