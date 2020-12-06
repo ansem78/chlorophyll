@@ -67,9 +67,8 @@ p {
 }
 
 abbr[title], abbr[data-original-title] {
-  text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
   border-bottom: 0;
   cursor: help;
   -webkit-text-decoration-skip-ink: none;
@@ -201,7 +200,6 @@ button {
 
 button:focus {
   outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
 }
 
 input, button, select, optgroup, textarea {

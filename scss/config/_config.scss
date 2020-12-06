@@ -146,6 +146,9 @@ $enable-ccw-rotation: false !default;
 // Debug.
 //
 // Map a different color for each HTML element.
+
+$debug-children-color: #ffd700 !default;
+
 $debug-html-colors: (
   body: #2980b9,
   article: #3498db,

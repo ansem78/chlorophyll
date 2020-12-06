@@ -1,4 +1,4 @@
-// Startup.
+// Startup checks.
 @use './boot';
 
 // Reset.
@@ -6,6 +6,3 @@
 
 // Modules.
 @use './partials';
-
-// Debug.
-@use './debug';

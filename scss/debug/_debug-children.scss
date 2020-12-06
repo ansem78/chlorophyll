@@ -4,8 +4,10 @@
   Just add the debug class to any element to see outlines on its children.
 */
 
+@use '../config';
+
 .debug * {
-  outline: 1px solid #ffd700 !important;
+  outline: 1px solid #{config.$debug-children-color} !important;
 }
 
 .debug-light * {
