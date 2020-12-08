@@ -1,0 +1,22 @@
+/*
+
+  TEXT ALIGN
+
+  Base:
+    ta = text-align
+
+  Modifiers:
+    l = left
+    c = center
+    r = right
+    j = justify
+
+*/
+
+@each $align in (left, center, right, justify) {
+
+  .ta-#{str-slice($align, 1, 1)} {
+    text-align: #{$align};
+  }
+
+}
