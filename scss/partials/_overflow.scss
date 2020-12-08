@@ -15,15 +15,15 @@
 @each $overflow in (visible, hidden, scroll, auto) {
 
   .of-#{$overflow} {
-    overflow: $overflow;
+    overflow: #{$overflow};
   }
 
   .of-x-#{$overflow} {
-    overflow-x: $overflow;
+    overflow-x: #{$overflow};
   }
 
   .of-y-#{$overflow} {
-    overflow-y: $overflow;
+    overflow-y: #{$overflow};
   }
 
 }

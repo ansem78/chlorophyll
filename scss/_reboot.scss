@@ -6,17 +6,15 @@
  * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
  */
 
-@use './config';
+@use "./config";
 
 :root {
-  font-size: #{config.$root-font-size};
-
+  font-size: config.$root-font-size;
   @if config.$enable-smooth-scroll {
     @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;
     }
   }
-
 }
 
 *, *::before, *::after {
@@ -31,10 +29,10 @@ html {
 }
 
 body {
-  font-size: #{config.$body-font-size};
+  font-size: config.$body-font-size;
   font-family: inspect(config.$font-family-sans-serif);
-  font-weight: #{config.$body-font-weight};
-  line-height: #{config.$body-line-height};
+  font-weight: config.$body-font-weight;
+  line-height: config.$body-line-height;
   color: #{config.$body-font-color};
   text-align: #{config.$body-text-align};
   background: #{config.$body-bg-color};
@@ -58,32 +56,32 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: #{config.$headings-margin-bottom};
+  margin-bottom: config.$headings-margin-bottom;
 }
 
 p {
   margin-top: 0;
-  margin-bottom: #{config.$paragraph-margin-bottom};
+  margin-bottom: config.$paragraph-margin-bottom;
 }
 
 abbr[title], abbr[data-original-title] {
-  text-decoration: underline dotted;
   -webkit-text-decoration: underline dotted;
-  border-bottom: 0;
-  cursor: help;
+  text-decoration: underline dotted;
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
+  border-bottom: none;
+  cursor: help;
 }
 
 address {
-  margin-bottom: #{config.$paragraph-margin-bottom};
   font-style: normal;
   line-height: inherit;
+  margin-bottom: config.$paragraph-margin-bottom;
 }
 
 ol, ul, dl {
   margin-top: 0;
-  margin-bottom: #{config.$paragraph-margin-bottom};
+  margin-bottom: config.$paragraph-margin-bottom;
 }
 
 ol ol, ul ul, ol ul, ul ol {
@@ -95,12 +93,12 @@ dt {
 }
 
 dd {
-  margin-bottom: #{config.$headings-margin-bottom};
+  margin-bottom: config.$headings-margin-bottom;
   margin-left: 0;
 }
 
 blockquote {
-  margin: 0 0 #{config.$paragraph-margin-bottom} 0;
+  margin: 0 0 config.$paragraph-margin-bottom;
 }
 
 b, strong {
@@ -112,10 +110,10 @@ small {
 }
 
 sub, sup {
-  position: relative;
   font-size: 75%;
   line-height: 0;
   vertical-align: baseline;
+  position: relative;
 }
 
 sub {
@@ -154,13 +152,13 @@ pre, code, kbd, samp {
 
 pre {
   margin-top: 0;
-  margin-bottom: #{config.$paragraph-margin-bottom};
+  margin-bottom: config.$paragraph-margin-bottom;
   overflow: auto;
   -ms-overflow-style: scrollbar;
 }
 
 figure {
-  margin: 0 0 #{config.$paragraph-margin-bottom} 0;
+  margin: 0 0 config.$paragraph-margin-bottom;
 }
 
 img {
@@ -169,8 +167,8 @@ img {
 }
 
 svg {
-  overflow: hidden;
   vertical-align: middle;
+  overflow: hidden;
 }
 
 table {
@@ -190,8 +188,8 @@ th {
 }
 
 label {
+  margin-bottom: config.$headings-margin-bottom;
   display: inline-block;
-  margin-bottom: #{config.$headings-margin-bottom};
 }
 
 button {
@@ -203,8 +201,8 @@ button:focus {
 }
 
 input, button, select, optgroup, textarea {
-  font-family: inherit;
   font-size: inherit;
+  font-family: inherit;
   line-height: inherit;
   margin: 0;
 }
@@ -217,7 +215,7 @@ button, select {
   text-transform: none;
 }
 
-[role="button"] {
+[role=button] {
   cursor: pointer;
 }
 
@@ -225,20 +223,20 @@ select {
   word-wrap: normal;
 }
 
-button, [type="button"], [type="reset"], [type="submit"] {
+button, [type=button], [type=reset], [type=submit] {
   -webkit-appearance: button;
 }
 
-button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
   cursor: pointer;
 }
 
-button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
   padding: 0;
   border-style: none;
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type=radio], input[type=checkbox] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -263,7 +261,7 @@ legend {
   width: 100%;
   max-width: 100%;
   padding: 0;
-  margin-bottom: #{config.$headings-margin-bottom};
+  margin-bottom: config.$headings-margin-bottom;
   display: block;
 }
 
@@ -271,16 +269,16 @@ progress {
   vertical-align: baseline;
 }
 
-[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type="search"] {
+[type=search] {
   outline-offset: -2px;
   -webkit-appearance: none;
 }
 
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 

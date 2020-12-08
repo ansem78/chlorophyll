@@ -1,14 +1,14 @@
-@use '../config';
-@use '../helpers';
-@use '../mixins';
+@use "../config";
+@use "../helpers";
+@use "../mixins";
 
 $cw-rotations: config.$rotations;
 $ccw-rotations: if(config.$enable-ccw-rotation, helpers.negativify-map($cw-rotations), null);
 
 // Undo all transformations.
 .transform-none {
-  transform: none;
   -webkit-transform: none;
+  transform: none;
 }
 
 // Clockwise rotations.
@@ -39,18 +39,18 @@ $ccw-rotations: if(config.$enable-ccw-rotation, helpers.negativify-map($cw-rotat
 
 .flip-x {
   @include mixins.center-origin();
-  transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .flip-y {
   @include mixins.center-origin();
-  transform: scaleY(-1);
   -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
 }
 
 .flip {
   @include mixins.center-origin();
-  transform: scaleX(-1) scaleY(-1);
   -webkit-transform: scaleX(-1) scaleY(-1);
+  transform: scaleX(-1) scaleY(-1);
 }

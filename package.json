@@ -5,7 +5,7 @@
   "scripts": {
     "css": "npm-run-all css-compile css-minify",
     "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css --stop-on-error scss/:dist/",
-    "css-lint": "stylelint \"dist/*[!.min].css\" --cache --cache-location=.cache/.stylelintcache --rd",
+    "css-lint": "stylelint \"**/*.{scss,css}\" --cache --cache-location=.cache/.stylelintcache --rd",
     "css-minify": "npm-run-all --parallel css-minify-*",
     "css-minify-main": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/chlorophyll.min.css dist/chlorophyll.css",
     "css-minify-debug": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/debug-layout.min.css dist/debug-layout.css && cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/debug-helpers.min.css dist/debug-helpers.css",
@@ -47,7 +47,7 @@
     "postcss-cli": "^8.3.0",
     "sass": "^1.29.0",
     "stylelint": "^13.8.0",
-    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-chlorophyll": "^1.0.13",
     "stylelint-scss": "^3.18.0"
   }
 }

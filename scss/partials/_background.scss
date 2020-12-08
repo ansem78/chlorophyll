@@ -16,7 +16,7 @@
 
 */
 
-@use '../mixins';
+@use "../mixins";
 
 .bg {
   @include mixins.bg-no-repeat();

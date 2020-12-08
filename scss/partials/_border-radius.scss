@@ -14,8 +14,8 @@
 
 */
 
-@use '../config';
-@use '../mixins';
+@use "../config";
+@use "../mixins";
 
 @each $n, $radius in config.$border-radiuses {
 
@@ -23,12 +23,12 @@
     @include mixins.border-radius($radius);
   }
 
-  .br-tr-#{$n}, .br-rt-#{$n} {
-    @include mixins.border-top-right-radius($radius);
-  }
-
   .br-tl-#{$n}, .br-lt-#{$n} {
     @include mixins.border-top-left-radius($radius);
+  }
+
+  .br-tr-#{$n}, .br-rt-#{$n} {
+    @include mixins.border-top-right-radius($radius);
   }
 
   .br-br-#{$n}, .br-rb-#{$n} {

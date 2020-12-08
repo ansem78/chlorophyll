@@ -1,5 +1,5 @@
-@use './config';
-@use './helpers';
+@use "./config";
+@use "./helpers";
 
-@include helpers.assert-ascending(config.$breakpoints, '$breakpoints');
-@include helpers.assert-starts-at-zero(config.$breakpoints, '$breakpoints');
+@include helpers.assert-ascending(config.$breakpoints, "$breakpoints");
+@include helpers.assert-starts-at-zero(config.$breakpoints, "$breakpoints");

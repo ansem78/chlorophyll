@@ -12,7 +12,7 @@
 
 */
 
-@use '../mixins';
+@use "../mixins";
 
 .fl-none {
   @include mixins.float-none();
@@ -29,4 +29,3 @@
 .clear {
   @include mixins.clearfix();
 }
-

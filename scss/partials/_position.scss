@@ -1,5 +1,5 @@
-@use '../config';
-@use '../mixins';
+@use "../config";
+@use "../mixins";
 
 @each $position in (static, relative, absolute, fixed, sticky) {
 
