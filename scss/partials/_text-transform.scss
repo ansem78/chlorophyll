@@ -1,0 +1,40 @@
+/*
+
+  TEXT TRANSFORM
+
+  Base:
+    tt = text-transform
+
+  Modifiers:
+    none = none
+    l = lowercase
+    u = uppercase
+    c = capitalize
+    w = full-width
+    k = full-size-kana
+
+*/
+
+.tt-none {
+  text-transform: none;
+}
+
+.tt-l {
+  text-transform: lowercase;
+}
+
+.tt-u {
+  text-transform: uppercase;
+}
+
+.tt-c {
+  text-transform: capitalize;
+}
+
+.tt-w {
+  text-transform: full-width;
+}
+
+.tt-k {
+  text-transform: full-size-kana;
+}

@@ -42,43 +42,6 @@ $headings-margin-bottom: .5rem !default;
 
 $paragraph-margin-bottom: 1rem !default;
 
-// Code.
-//
-// Style `kbd` element.
-
-$kbd-padding-y: .2rem !default;
-
-$kbd-padding-x: .4rem !default;
-
-$kbd-color: #fff !default;
-
-$kbd-bg: #444 !default;
-
-// Z-index.
-//
-// Set z-index levels, as well as z-index for helper position classes.
-
-$z-index-step: 100 !default;
-
-$z-indexes: (
-  -1: -1,
-  0: 0,
-  1: $z-index-step,
-  2: $z-index-step * 2,
-  3: $z-index-step * 3,
-  4: $z-index-step * 4,
-  5: $z-index-step * 5,
-  6: $z-index-step * 6,
-  7: $z-index-step * 7,
-  8: $z-index-step * 8,
-  9: $z-index-step * 9,
-  10: $z-index-step * 10
-) !default;
-
-$z-index-sticky: 99999 !default;
-
-$z-index-fixed: 999999 !default;
-
 // Spacing.
 //
 // Controls paddings and margins.
@@ -108,6 +71,31 @@ $breakpoints: (
   lg: 992px, // Large.
   xl: 1200px // Extra large.
 ) !default;
+
+// Z-index.
+//
+// Set z-index levels, as well as z-index for helper position classes.
+
+$z-index-step: 100 !default;
+
+$z-indexes: (
+  -1: -1,
+  0: 0,
+  1: $z-index-step,
+  2: $z-index-step * 2,
+  3: $z-index-step * 3,
+  4: $z-index-step * 4,
+  5: $z-index-step * 5,
+  6: $z-index-step * 6,
+  7: $z-index-step * 7,
+  8: $z-index-step * 8,
+  9: $z-index-step * 9,
+  10: $z-index-step * 10
+) !default;
+
+$z-index-sticky: 99999 !default;
+
+$z-index-fixed: 999999 !default;
 
 // Embedding.
 //
@@ -144,16 +132,18 @@ $border-radius-rounded: 5px !default;
 //
 // Controls rotation transformations.
 
+$rotation-angle: 45deg !default;
+
 $rotations: (
   0: 0,
-  45: 45deg,
-  90: 90deg,
-  135: 135deg,
-  180: 180deg,
-  225: 225deg,
-  270: 270deg,
-  315: 315deg,
-  360: 360deg
+  45: $rotation-angle,
+  90: $rotation-angle * 2,
+  135: $rotation-angle * 3,
+  180: $rotation-angle * 4,
+  225: $rotation-angle * 5,
+  270: $rotation-angle * 6,
+  315: $rotation-angle * 7,
+  360: $rotation-angle * 8
 ) !default;
 
 $enable-ccw-rotation: false !default;

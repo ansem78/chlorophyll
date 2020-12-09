@@ -1,0 +1,6 @@
+// Remove input number spinner.
+input[type=number].no-spin, input[type=number].no-spin::-webkit-inner-spin-button, input[type=number].no-spin::-webkit-outer-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}

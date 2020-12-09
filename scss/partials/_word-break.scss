@@ -1,0 +1,20 @@
+/*
+
+  WORD BREAK
+
+  Base:
+    wb = word-break
+
+*/
+
+.wb-normal {
+  word-break: normal;
+}
+
+.wb-wrap {
+  word-break: break-all;
+}
+
+.wb-nowrap {
+  word-break: keep-all;
+}

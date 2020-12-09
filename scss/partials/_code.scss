@@ -1,13 +1,5 @@
-@use "../config";
-
 pre, .pre {
   overflow-x: auto;
   overflow-y: hidden;
   overflow: scroll;
-}
-
-kbd, .kbd {
-  color: #{config.$kbd-color};
-  background: #{config.$kbd-bg};
-  padding: config.$kbd-padding-y config.$kbd-padding-x;
 }

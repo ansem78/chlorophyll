@@ -1,0 +1,20 @@
+/*
+
+  OUTLINE
+
+  Base:
+    ol = outline
+
+*/
+
+.ol-none {
+  outline: 0;
+}
+
+.ol {
+  outline: 1px solid;
+}
+
+.ol-invisible {
+  outline: 1px solid transparent;
+}

@@ -1,0 +1,17 @@
+/*
+
+  VERTICAL ALIGN
+
+  Base:
+    va = vertical-align
+
+*/
+
+@each $align in (baseline, top, middle, bottom, text-top, text-bottom) {
+
+  .va-#{$align} {
+    vertical-align: #{$align};
+  }
+
+
+}
