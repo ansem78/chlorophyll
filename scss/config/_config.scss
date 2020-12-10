@@ -60,6 +60,18 @@ $spacers: (
 
 $enable-negative-margins: true !default;
 
+// Sizing.
+//
+// Effects predefined widths and heights.
+
+$sizings: (
+  0: 0,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+) !default;
+
 // Breakpoints.
 //
 // Breakpoints minimum widths for responsive media queries.
@@ -69,7 +81,23 @@ $breakpoints: (
   sm: 576px, // Small.
   md: 768px, // Medium.
   lg: 992px, // Large.
-  xl: 1200px // Extra large.
+  xl: 1200px, // Extra large.
+  xxl: 1400px // 2 Extra large.
+) !default;
+
+// Icons.
+//
+// Icons predefined sizes.
+
+$icon: 1rem !default;
+
+$icon-sizes: (
+  1: $icon,
+  2: $icon * 1.5,
+  3: $icon * 2,
+  4: $icon * 3,
+  5: $icon * 4,
+  6: $icon * 6
 ) !default;
 
 // Z-index.
