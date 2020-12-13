@@ -4,14 +4,14 @@
   $prev-key: null;
   $prev-num: null;
   @each $key, $num in $map {
-    @if $prev-num==null or unit($num)=="%" or unit($prev-num)=="%" {
+    @if $prev-num==null or unit($num)=='%' or unit($prev-num)=='%' {
       // Do nothing.
     }
     @else if not comparable($prev-num, $num) {
-      @warn "Potentially invalid value for `#{$map-name}`. This map must be in ascending order, but key `#{$key}` has value #{$num}. This unit makes it incomparable to #{$prev-num}, the value of the previous key `#{$prev-key}`.";
+      @warn 'Potentially invalid value for `#{$map-name}`. This map must be in ascending order, but key `#{$key}` has value #{$num}. This unit makes it incomparable against the value of the previous key `#{$prev-key}` (#{$prev-num}).';
     }
     @else if $prev-num>=$num {
-      @warn "Invalid value for `#{$map-name}`. This map must be in ascending order. The key `#{$key}` has value #{$num}, which isn't greater than the value of the previous key `#{$prev-key}` (#{$prev-num}).";
+      @warn 'Invalid value for `#{$map-name}`. This map must be in ascending order. The key `#{$key}` has value #{$num}, which isn\'t greater than the value of the previous key `#{$prev-key}` (#{$prev-num}).';
     }
     $prev-key: $key;
     $prev-num: $num;
@@ -25,14 +25,14 @@
     $values: map-values($map);
     $first: nth($values, 1);
     @if $first!=0 {
-      @warn "First breakpoint in `#{$map-name}` starts at #{$first}, but it must start at 0.";
+      @warn 'First breakpoint in `#{$map-name}` starts at #{$first}, but it must start at 0.';
     }
   }
 }
 
 // Remove the unit of a length.
 @function strip-unit($number) {
-  @if type-of($number)=="number" and not unitless($number) {
+  @if type-of($number)=='number' and not unitless($number) {
     @return $number / ($number * 0 + 1);
   }
   @return $number;
@@ -40,17 +40,17 @@
 
 // Convert a string to kebab case or snake case.
 @function _convert-case($str, $separator) {
-  $other-sep: if($separator=="-", "_", "-");
-  $return: "";
+  $other-sep: if($separator=='-', '_', '-');
+  $return: '';
   $length: str-length($str);
   $i: 1;
   @while $i<=$length {
     $c: str-slice($str, $i, $i);
-    @if $c==$other-sep or $c==" " {
+    @if $c==$other-sep or $c==' ' {
       $c: $separator;
     }
     @else if $c!=$separator and $c==to-upper-case($c) {
-      $c: "#{$separator}#{$c}";
+      $c: '#{$separator}#{$c}';
     }
     $return: str-insert($return, $c, str-length($return) + 1);
     $i: $i + 1;
@@ -60,12 +60,12 @@
 
 // Convert a string to camel case.
 @function camel-case($str) {
-  $return: "";
+  $return: '';
   $length: str-length($str);
   $i: 1;
   @while $i<=$length {
     $c: str-slice($str, $i, $i);
-    @if $c=="-" or $c=="_" or $c==" " {
+    @if $c=='-' or $c=='_' or $c==' ' {
       $i: $i + 1;
       $c: to-upper-case(str-slice($str, $i, $i));
     }
@@ -80,17 +80,17 @@
   $str: camel-case($str);
   $first: to-upper-case(str-slice($str, 1, 1));
   $str: str-slice($str, 2);
-  @return "#{$first}#{$str}";
+  @return '#{$first}#{$str}';
 }
 
 // Convert a string to kebab case.
 @function kebab-case($str) {
-  @return _convert-case($str, "-");
+  @return _convert-case($str, '-');
 }
 
 // Convert a string to snake case.
 @function snake-case($str) {
-  @return _convert-case($str, "_");
+  @return _convert-case($str, '_');
 }
 
 // $weight must be a number between 0% and 100% (inclusive).
@@ -123,7 +123,7 @@
   $negative-map: ();
   @each $key, $value in $map {
     @if $key!=0 and $value!=0 {
-      $negative-map: map-merge($negative-map, ("-#{$key}": -$value));
+      $negative-map: map-merge($negative-map, ('-#{$key}': -$value));
     }
   }
   @return $negative-map;

@@ -10,8 +10,8 @@
  *
  */
 
-@use "../config";
-@use "../mixins";
+@use '../config';
+@use '../mixins';
 
 .icon {
   @include mixins.icon-base();

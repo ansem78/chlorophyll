@@ -7,7 +7,7 @@
 
 */
 
-@use "../config";
+@use '../config';
 
 @each $key, $spacing in config.$letter-spacings {
 

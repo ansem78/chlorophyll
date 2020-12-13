@@ -7,21 +7,21 @@
 
 */
 
-@use "../config";
-@use "../mixins";
+@use '../config';
+@use '../mixins';
 
 $displays: (
   none: none,
-  inline-block: "inline-block",
+  inline-block: 'inline-block',
   block: block,
   flex: flex,
-  inline-flex: "inline-flex",
+  inline-flex: 'inline-flex',
   table: table,
-  table-row-group: "table-row-group",
-  table-row: "table-row",
-  table-col-group: "table-column-group",
-  table-col: "table-column",
-  table-cell: "table-cell"
+  table-row-group: 'table-row-group',
+  table-row: 'table-row',
+  table-col-group: 'table-column-group',
+  table-col: 'table-column',
+  table-cell: 'table-cell'
 );
 
 $breakpoints: map-keys(config.$breakpoints);
@@ -42,6 +42,18 @@ $breakpoints: map-keys(config.$breakpoints);
 
     .d#{$infix}-table-full {
       @include mixins.display-table-full();
+    }
+
+  }
+
+}
+
+@each $key, $display in $displays {
+
+  @media print {
+
+    .d-print-#{$key} {
+      @include mixins.display($display);
     }
 
   }

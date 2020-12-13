@@ -7,8 +7,8 @@
 
 */
 
-@use "../config";
-@use "../mixins";
+@use '../config';
+@use '../mixins';
 
 @each $key, $opacity in config.$opacities {
 

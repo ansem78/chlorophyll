@@ -13,7 +13,7 @@
 
 */
 
-@use "../config";
+@use '../config';
 
 @each $key, $size in config.$sizings {
 

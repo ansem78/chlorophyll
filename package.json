@@ -47,7 +47,7 @@
     "postcss-cli": "^8.3.0",
     "sass": "^1.29.0",
     "stylelint": "^13.8.0",
-    "stylelint-config-chlorophyll": "^1.0.13",
+    "stylelint-config-chlorophyll": "^1.0.15",
     "stylelint-scss": "^3.18.0"
   }
 }

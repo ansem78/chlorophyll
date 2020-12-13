@@ -1,6 +1,6 @@
-@use "../config";
-@use "../helpers";
-@use "../mixins";
+@use '../config';
+@use '../helpers';
+@use '../mixins';
 
 $cw-rotations: config.$rotations;
 $ccw-rotations: if(config.$enable-ccw-rotation, helpers.negativify-map($cw-rotations), null);

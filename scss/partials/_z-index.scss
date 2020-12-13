@@ -14,7 +14,7 @@
 
 */
 
-@use "../config";
+@use '../config';
 
 @each $key, $z-index in config.$z-indexes {
 

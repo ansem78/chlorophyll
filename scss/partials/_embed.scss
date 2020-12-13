@@ -13,9 +13,9 @@
  *
  */
 
-@use "../config";
-@use "../helpers";
-@use "../mixins";
+@use '../config';
+@use '../helpers';
+@use '../mixins';
 
 $aspect-ratios: config.$aspect-ratios;
 $reversed-aspect-ratios: if(config.$enable-reverse-aspect-ratios, helpers.reverse-lists($aspect-ratios), null);

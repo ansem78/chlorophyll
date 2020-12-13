@@ -17,9 +17,9 @@
 
 */
 
-@use "../config";
-@use "../helpers";
-@use "../mixins";
+@use '../config';
+@use '../helpers';
+@use '../mixins';
 
 $spacers: config.$spacers;
 $negative-spacers: if(config.$enable-negative-margins, helpers.negativify-map($spacers), null);

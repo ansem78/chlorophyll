@@ -7,7 +7,7 @@
 
 */
 
-@use "../helpers";
+@use '../helpers';
 
 @each $event in (auto, none, inherit, initial, unset) {
 

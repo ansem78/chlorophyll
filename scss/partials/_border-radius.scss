@@ -14,8 +14,8 @@
 
 */
 
-@use "../config";
-@use "../mixins";
+@use '../config';
+@use '../mixins';
 
 @each $n, $radius in config.$border-radiuses {
 
