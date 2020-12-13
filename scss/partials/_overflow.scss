@@ -12,7 +12,7 @@
 
 */
 
-@each $overflow in (visible, hidden, scroll, auto) {
+@each $overflow in ('visible', 'hidden', 'scroll', 'auto') {
 
   .of-#{$overflow} {
     overflow: #{$overflow};

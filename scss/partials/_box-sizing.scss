@@ -1,4 +1,4 @@
-@each $size in (border, content) {
+@each $size in ('border', 'content') {
 
   .#{$size}-box {
     box-sizing: unquote('#{$size}-box');

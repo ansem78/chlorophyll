@@ -7,7 +7,7 @@
 
 */
 
-@each $value in (normal, wrap, nowrap, pre, pre-line, pre-wrap) {
+@each $value in ('normal', 'wrap', 'nowrap', 'pre', 'pre-line', 'pre-wrap') {
 
   .ws-#{$value} {
     white-space: #{$value};

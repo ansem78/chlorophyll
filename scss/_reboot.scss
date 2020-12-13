@@ -30,7 +30,7 @@ html {
 
 body {
   font-size: config.$body-font-size;
-  font-family: inspect(config.$font-family-sans-serif);
+  font-family: unquote(config.$font-family-sans-serif);
   font-weight: config.$body-font-weight;
   line-height: config.$body-line-height;
   color: #{config.$body-font-color};
@@ -147,7 +147,7 @@ a:not([href]):not([class]):hover {
 
 pre, code, kbd, samp {
   font-size: 1em;
-  font-family: inspect(config.$font-family-monospace);
+  font-family: unquote(config.$font-family-monospace);
 }
 
 pre {

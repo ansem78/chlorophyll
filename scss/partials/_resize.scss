@@ -15,13 +15,13 @@
 @use '../mixins';
 
 .resize {
-  @include mixins.resizable(both);
+  @include mixins.resizable('both');
 }
 
 .resize-x {
-  @include mixins.resizable(horizontal);
+  @include mixins.resizable('horizontal');
 }
 
 .resize-y {
-  @include mixins.resizable(vertical);
+  @include mixins.resizable('vertical');
 }

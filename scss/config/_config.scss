@@ -9,10 +9,10 @@ $enable-smooth-scroll: true !default;
 $root-font-size: null !default;
 
 // Font family sans-serif.
-$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"' !default;
 
 // Font family monospace.
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-monospace: 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace' !default;
 
 // Body.
 //
@@ -88,8 +88,8 @@ $letter-spacings: (
 
 $opacities: (
   0: 0,
-  025: .025,
-  05: .05,
+  '025': .025,
+  '05': .05,
   1: .1,
   2: .2,
   3: .3,

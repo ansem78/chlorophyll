@@ -7,7 +7,7 @@
 
 */
 
-@each $align in (baseline, top, middle, bottom, text-top, text-bottom) {
+@each $align in ('baseline', 'top', 'middle', 'bottom', 'text-top', 'text-bottom') {
 
   .va-#{$align} {
     vertical-align: #{$align};

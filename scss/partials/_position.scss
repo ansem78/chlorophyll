@@ -1,7 +1,7 @@
 @use '../config';
 @use '../mixins';
 
-@each $position in (static, relative, absolute, fixed, sticky) {
+@each $position in ('static', 'relative', 'absolute', 'fixed', 'sticky') {
 
   .#{$position} {
     position: #{$position};

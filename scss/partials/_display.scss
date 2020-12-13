@@ -11,12 +11,12 @@
 @use '../mixins';
 
 $displays: (
-  none: none,
+  none: 'none',
   inline-block: 'inline-block',
-  block: block,
-  flex: flex,
+  block: 'block',
+  flex: 'flex',
   inline-flex: 'inline-flex',
-  table: table,
+  table: 'table',
   table-row-group: 'table-row-group',
   table-row: 'table-row',
   table-col-group: 'table-column-group',

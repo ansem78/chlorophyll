@@ -9,7 +9,7 @@
 
 @use '../helpers';
 
-@each $event in (auto, none, inherit, initial, unset) {
+@each $event in ('auto', 'none', 'inherit', 'initial', 'unset') {
 
   .pe-#{$event} {
     pointer-events: #{$event};
@@ -18,7 +18,7 @@
 }
 
 // SVG only events.
-@each $event in (visiblePainted, visibleFill, visibleStroke, visible, painted, fill, stroke, all) {
+@each $event in ('visiblePainted', 'visibleFill', 'visibleStroke', 'visible', 'painted', 'fill', 'stroke', 'all') {
 
   $key: helpers.kebab-case($event);
 
