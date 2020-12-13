@@ -3,6 +3,7 @@
 @use "./border-radius";
 @use "./box-sizing";
 @use "./code";
+@use "./display";
 @use "./embed";
 @use "./float";
 @use "./font-style";
@@ -10,7 +11,10 @@
 @use "./icon";
 @use "./image";
 @use "./input";
+@use "./letter-spacing";
+@use "./link";
 @use "./list";
+@use "./opacity";
 @use "./outline";
 @use "./overflow";
 @use "./pointer-events";

@@ -7,6 +7,10 @@
     h = height
     v = viewport
 
+  Modifiers:
+    min = minimum
+    max = maximum
+
 */
 
 @use "../config";
@@ -31,11 +35,11 @@
   height: auto;
 }
 
-.max-w-100 {
+.w-max-100 {
   max-width: 100%;
 }
 
-.max-h-100 {
+.h-max-100 {
   max-height: 100%;
 }
 
@@ -47,10 +51,10 @@
   height: 100vh;
 }
 
-.min-vw-100 {
+.vw-min-100 {
   min-width: 100vw;
 }
 
-.min-vh-100 {
+.vh-min-100 {
   min-height: 100vh;
 }

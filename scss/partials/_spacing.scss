@@ -21,7 +21,6 @@
 @use "../helpers";
 @use "../mixins";
 
-$spacer: config.$spacer;
 $spacers: config.$spacers;
 $negative-spacers: if(config.$enable-negative-margins, helpers.negativify-map($spacers), null);
 $breakpoints: map-keys(config.$breakpoints);

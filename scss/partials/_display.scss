@@ -1,0 +1,49 @@
+/*
+
+  DISPLAY
+
+  Base:
+    d = display
+
+*/
+
+@use "../config";
+@use "../mixins";
+
+$displays: (
+  none: none,
+  inline-block: "inline-block",
+  block: block,
+  flex: flex,
+  inline-flex: "inline-flex",
+  table: table,
+  table-row-group: "table-row-group",
+  table-row: "table-row",
+  table-col-group: "table-column-group",
+  table-col: "table-column",
+  table-cell: "table-cell"
+);
+
+$breakpoints: map-keys(config.$breakpoints);
+
+@each $name in $breakpoints {
+
+  @include mixins.media-breakpoint-up($name) {
+
+    $infix: mixins.breakpoint-infix($name);
+
+    @each $key, $display in $displays {
+
+      .d#{$infix}-#{$key} {
+        @include mixins.display($display);
+      }
+
+    }
+
+    .d#{$infix}-table-full {
+      @include mixins.display-table-full();
+    }
+
+  }
+
+}

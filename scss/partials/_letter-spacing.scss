@@ -1,0 +1,18 @@
+/*
+
+  LETTER SPACING
+
+  Base:
+    ls = letter-spacing
+
+*/
+
+@use "../config";
+
+@each $key, $spacing in config.$letter-spacings {
+
+  .ls-#{$key} {
+    letter-spacing: $spacing;
+  }
+
+}

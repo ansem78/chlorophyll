@@ -38,6 +38,61 @@
   @return $number;
 }
 
+// Convert a string to kebab case or snake case.
+@function _convert-case($str, $separator) {
+  $other-sep: if($separator=="-", "_", "-");
+  $return: "";
+  $length: str-length($str);
+  $i: 1;
+  @while $i<=$length {
+    $c: str-slice($str, $i, $i);
+    @if $c==$other-sep or $c==" " {
+      $c: $separator;
+    }
+    @else if $c!=$separator and $c==to-upper-case($c) {
+      $c: "#{$separator}#{$c}";
+    }
+    $return: str-insert($return, $c, str-length($return) + 1);
+    $i: $i + 1;
+  }
+  @return to-lower-case($return);
+}
+
+// Convert a string to camel case.
+@function camel-case($str) {
+  $return: "";
+  $length: str-length($str);
+  $i: 1;
+  @while $i<=$length {
+    $c: str-slice($str, $i, $i);
+    @if $c=="-" or $c=="_" or $c==" " {
+      $i: $i + 1;
+      $c: to-upper-case(str-slice($str, $i, $i));
+    }
+    $return: str-insert($return, $c, str-length($return) + 1);
+    $i: $i + 1;
+  }
+  @return $return;
+}
+
+// Convert a string to Pascal case.
+@function pascal-case($str) {
+  $str: camel-case($str);
+  $first: to-upper-case(str-slice($str, 1, 1));
+  $str: str-slice($str, 2);
+  @return "#{$first}#{$str}";
+}
+
+// Convert a string to kebab case.
+@function kebab-case($str) {
+  @return _convert-case($str, "-");
+}
+
+// Convert a string to snake case.
+@function snake-case($str) {
+  @return _convert-case($str, "_");
+}
+
 // $weight must be a number between 0% and 100% (inclusive).
 // A larger weight indicates that more of $color1 should be used.
 // A smaller weight indicates that more of $color2 should be used.
@@ -60,7 +115,7 @@
 
 // Shade the color if the weight is positive, else tint it.
 @function color-shift($color, $weight: 50%) {
-  @return if($weight>0, color-shade($color, $weight), color-tint($color, -$weight));
+  @return if($weight>0, color-shade($color, $weight), color-tint($color, $weight * -1));
 }
 
 // Turn any value in the given map to negative.

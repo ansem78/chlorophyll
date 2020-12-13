@@ -1,0 +1,17 @@
+@use "../mixins";
+
+.link {
+
+  &, &:link, &:visited, &:hover {
+    @include mixins.link-transition();
+  }
+
+  &:focus {
+    outline: 1px dotted currentColor;
+  }
+
+  &:active {
+    @include mixins.link-transition();
+  }
+
+}

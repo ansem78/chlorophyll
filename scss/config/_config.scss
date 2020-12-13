@@ -72,6 +72,36 @@ $sizings: (
   100: 100%
 ) !default;
 
+// Letter spacing.
+//
+// Default letter spacings.
+
+$letter-spacings: (
+  1: .02rem,
+  2: .04rem,
+  3: .06rem
+) !default;
+
+// Opacity.
+//
+// Default opacity levels.
+
+$opacities: (
+  0: 0,
+  025: .025,
+  05: .05,
+  1: .1,
+  2: .2,
+  3: .3,
+  4: .4,
+  5: .5,
+  6: .6,
+  7: .7,
+  8: .8,
+  9: .9,
+  10: 1
+) !default;
+
 // Breakpoints.
 //
 // Breakpoints minimum widths for responsive media queries.

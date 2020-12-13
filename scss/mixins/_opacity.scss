@@ -1,0 +1,4 @@
+// Set opacity.
+@mixin opacity($opacity) {
+  opacity: $opacity;
+}
