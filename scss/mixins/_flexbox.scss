@@ -1,0 +1,152 @@
+// Flex layout.
+
+@mixin fx-col() {
+  flex-direction: column;
+}
+
+@mixin fx-col-reverse() {
+  flex-direction: column-reverse;
+}
+
+@mixin fx-row() {
+  flex-direction: row;
+}
+
+@mixin fx-row-reverse() {
+  flex-direction: row-reverse;
+}
+
+// Flex layout wrap.
+
+@mixin fx-wrap() {
+  flex-wrap: wrap;
+}
+
+@mixin fx-wrap-reverse() {
+  flex-wrap: wrap-reverse;
+}
+
+@mixin fx-nowrap() {
+  flex-wrap: nowrap;
+}
+
+// Main axis layout alignment.
+
+@mixin fx-main-none() {
+  justify-content: none;
+}
+
+@mixin fx-main-start() {
+  justify-content: flex-start;
+}
+
+@mixin fx-main-center() {
+  justify-content: center;
+}
+
+@mixin fx-main-end() {
+  justify-content: flex-end;
+}
+
+@mixin fx-main-between() {
+  justify-content: space-between;
+}
+
+@mixin fx-main-around()  {
+  justify-content: space-around;
+}
+
+@mixin fx-main-evenly()  {
+  justify-content: space-evenly;
+}
+
+// Cross axis layout alignment.
+
+@mixin fx-cross-none() {
+  align-items: none;
+}
+
+@mixin fx-cross-start() {
+  align-items: flex-start;
+}
+
+@mixin fx-cross-center() {
+  align-items: center;
+}
+
+@mixin fx-cross-end() {
+  align-items: flex-end;
+}
+
+@mixin fx-cross-baseline() {
+  align-items: baseline;
+}
+
+@mixin fx-cross-stretch() {
+  align-items: stretch;
+}
+
+// Flexbox.
+
+@mixin fx-none() {
+  flex: none;
+}
+
+// 1. Fix for Chrome 44 bug. https://code.google.com/p/chromium/issues/detail?id=506893
+@mixin fx-auto() {
+  min-width: 0; // 1
+  min-height: 0; // 1
+  flex: 1 1 auto;
+}
+
+// Flexbox self alignment.
+
+@mixin fx-self-none() {
+  align-self: none;
+}
+
+@mixin fx-self-start() {
+  align-self: flex-start;
+}
+
+@mixin fx-self-center() {
+  align-self: center;
+}
+
+@mixin fx-self-end() {
+  align-self: flex-end;
+}
+
+@mixin fx-self-baseline() {
+  align-self: baseline;
+}
+
+@mixin fx-self-stretch() {
+  align-self: stretch;
+}
+
+// Flexbox content alignment.
+
+@mixin fx-content-start() {
+  align-content: flex-start;
+}
+
+@mixin fx-content-end() {
+  align-content: flex-end;
+}
+
+@mixin fx-content-center() {
+  align-content: center;
+}
+
+@mixin fx-flex-content-between() {
+  align-content: space-between;
+}
+
+@mixin fx-content-around() {
+  align-content: space-around;
+}
+
+@mixin fx-content-stretch() {
+  align-content: stretch;
+}

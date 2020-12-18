@@ -14,6 +14,12 @@ $font-family-sans-serif: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helveti
 // Font family monospace.
 $font-family-monospace: 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace' !default;
 
+// Box sizing.
+//
+// Global box sizing behavior. `content-box` or `border-box`.
+
+$box-sizing: 'border-box';
+
 // Body.
 //
 // Settings for the `body` element.
@@ -108,11 +114,10 @@ $opacities: (
 
 $breakpoints: (
   xs: 0, // Extra small (default).
-  sm: 576px, // Small.
-  md: 768px, // Medium.
-  lg: 992px, // Large.
-  xl: 1200px, // Extra large.
-  xxl: 1400px // 2 Extra large.
+  sm: 600px, // Small.
+  md: 960px, // Medium.
+  lg: 1280px, // Large.
+  xl: 1920px // Extra large.
 ) !default;
 
 // Icons.
