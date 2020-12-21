@@ -1,0 +1,23 @@
+@use '../../config';
+
+@if config.$enable-animate {
+
+  @keyframes bounce-out-end {
+
+    20% {
+      opacity: 1;
+      transform: translate3d(-20px, 0, 0) scaleX(.9);
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(2000px, 0, 0) scaleX(2);
+    }
+
+  }
+
+  .a-bounce-out-end {
+    animation-name: bounce-out-end;
+  }
+
+}

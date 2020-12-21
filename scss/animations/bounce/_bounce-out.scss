@@ -1,0 +1,28 @@
+@use '../../config';
+
+@if config.$enable-animate {
+
+  @keyframes bounce-out {
+
+    20% {
+      transform: scale3d(.9, .9, .9);
+    }
+
+    50%, 55% {
+      opacity: 1;
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    to {
+      opacity: 0;
+      transform: scale3d(.3, .3, .3);
+    }
+
+  }
+
+  .a-bounce-out {
+    animation-name: bounce-out;
+    animation-duration: .75s;
+  }
+
+}

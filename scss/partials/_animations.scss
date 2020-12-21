@@ -17,7 +17,7 @@
 
 @use '../config';
 @use '../mixins';
-@use './animations/index';
+@use '../animations';
 
 @if config.$enable-animate {
 
