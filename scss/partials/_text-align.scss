@@ -6,16 +6,23 @@
     ta = text-align
 
   Modifiers:
-    l = left
+    s = start (left: ltr, right: rtl)
     c = center
-    r = right
+    e = end (right: ltr, left: rtl)
     j = justify
 
 */
 
-@each $align in ('left', 'center', 'right', 'justify') {
+$alignments: (
+  s: 'left',
+  c: 'center',
+  e: 'right',
+  j: 'justify'
+);
 
-  .ta-#{str-slice($align, 1, 1)} {
+@each $key, $align in $alignments {
+
+  .ta-#{$key} {
     text-align: #{$align};
   }
 

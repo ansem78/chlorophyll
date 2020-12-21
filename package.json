@@ -10,7 +10,7 @@
     "css-minify-main": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/chlorophyll.min.css dist/chlorophyll.css",
     "css-minify-debug": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/debug-layout.min.css dist/debug-layout.css && cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/debug-helpers.min.css dist/debug-helpers.css",
     "css-minify-rtl": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/chlorophyll.rtl.min.css dist/chlorophyll.rtl.css",
-    "css-rtl": "rtlcss --config \".rtlcssrc\" dist/chlorophyll.css",
+    "css-rtl": "rtlcss --config .rtlcssrc dist/chlorophyll.css",
     "setup": "yarn install || exit 0",
     "test": "echo Error: no test specified. && exit 0"
   },

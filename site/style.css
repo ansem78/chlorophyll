@@ -1,4 +1,29 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
 .box {
   text-align: center;
   background: #0f0;
+}
+
+.flex-container {
+  background: #ff0;
+  /*height: 75%;*/
+}
+
+.flexbox {
+  color: #fff;
+  text-align: center;
+  background: #069;
+  outline: 1px solid #f00;
+}
+
+.fix {
+  background: #f00;
+  width: 50px;
 }

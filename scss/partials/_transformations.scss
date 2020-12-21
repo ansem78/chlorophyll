@@ -2,30 +2,20 @@
 @use '../helpers';
 @use '../mixins';
 
-$cw-rotations: config.$rotations;
-$ccw-rotations: if(config.$enable-ccw-rotation, helpers.negativify-map($cw-rotations), null);
-
 // Undo all transformations.
 .transform-none {
   -webkit-transform: none;
   transform: none;
 }
 
-// Clockwise rotations.
+@if config.$enable-transformations {
 
-@each $key, $angle in $cw-rotations {
+  $rotations: config.$rotations;
+  $counter-rotations: if(config.$enable-counter-rotation, helpers.negativify-map($rotations), null);
 
-  .turn-#{$key} {
-    @include mixins.rotate($angle);
-  }
+  // Rotations.
 
-}
-
-// Counter-clockwise rotations.
-
-@if $ccw-rotations {
-
-  @each $key, $angle in $ccw-rotations {
+  @each $key, $angle in $rotations {
 
     .turn-#{$key} {
       @include mixins.rotate($angle);
@@ -33,24 +23,38 @@ $ccw-rotations: if(config.$enable-ccw-rotation, helpers.negativify-map($cw-rotat
 
   }
 
-}
+  // Counter rotations.
 
-// Flip.
+  @if $counter-rotations {
 
-.flip-x {
-  @include mixins.center-origin();
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
+    @each $key, $angle in $counter-rotations {
 
-.flip-y {
-  @include mixins.center-origin();
-  -webkit-transform: scaleY(-1);
-  transform: scaleY(-1);
-}
+      .turn-#{$key} {
+        @include mixins.rotate($angle);
+      }
 
-.flip {
-  @include mixins.center-origin();
-  -webkit-transform: scaleX(-1) scaleY(-1);
-  transform: scaleX(-1) scaleY(-1);
+    }
+
+  }
+
+  // Flip.
+
+  .flip-x {
+    @include mixins.center-origin();
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+
+  .flip-y {
+    @include mixins.center-origin();
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+  }
+
+  .flip {
+    @include mixins.center-origin();
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+  }
+
 }

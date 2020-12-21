@@ -17,45 +17,49 @@
 @use '../helpers';
 @use '../mixins';
 
-$aspect-ratios: config.$aspect-ratios;
-$reversed-aspect-ratios: if(config.$enable-reverse-aspect-ratios, helpers.reverse-lists($aspect-ratios), null);
+@if config.$enable-aspect-ratio {
 
-.embed {
-  width: 100%;
-  height: 0;
-  position: relative;
+  $aspect-ratios: config.$aspect-ratios;
+  $reversed-aspect-ratios: if(config.$enable-reverse-aspect-ratio, helpers.reverse-lists($aspect-ratios), null);
 
-  > * {
+  .embed {
     width: 100%;
-    height: 100%;
-    padding: 0;
-    border: none;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
+    height: 0;
+    position: relative;
+
+    > * {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: none;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
   }
 
-}
-
-@each $ratio in $aspect-ratios {
-
-  $suffix: mixins.aspect-ratio-suffix($ratio);
-
-  .embed#{$suffix} {
-    @include mixins.embed-aspect-ratio($ratio);
-  }
-
-}
-
-@if $reversed-aspect-ratios {
-
-  @each $ratio in $reversed-aspect-ratios {
+  @each $ratio in $aspect-ratios {
 
     $suffix: mixins.aspect-ratio-suffix($ratio);
 
     .embed#{$suffix} {
       @include mixins.embed-aspect-ratio($ratio);
+    }
+
+  }
+
+  @if $reversed-aspect-ratios {
+
+    @each $ratio in $reversed-aspect-ratios {
+
+      $suffix: mixins.aspect-ratio-suffix($ratio);
+
+      .embed#{$suffix} {
+        @include mixins.embed-aspect-ratio($ratio);
+      }
+
     }
 
   }

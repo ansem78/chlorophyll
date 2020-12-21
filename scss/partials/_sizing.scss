@@ -15,14 +15,18 @@
 
 @use '../config';
 
-@each $key, $size in config.$sizings {
+@if config.$enable-sizing {
 
-  .w-#{$key} {
-    width: $size;
-  }
+  @each $key, $size in config.$sizings {
 
-  .h-#{$key} {
-    height: $size;
+    .w-#{$key} {
+      width: $size;
+    }
+
+    .h-#{$key} {
+      height: $size;
+    }
+
   }
 
 }

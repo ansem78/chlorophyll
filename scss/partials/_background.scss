@@ -8,9 +8,9 @@
   Modifiers:
     (none): center
     t = top
-    r = right
+    e = end (right: ltr, left: rtl)
     b = bottom
-    l = left
+    s = start (left: ltr, right: rtl)
     cover: cover
     contain: contain
 
@@ -28,27 +28,27 @@
   @include mixins.bg-position(50%, 0);
 }
 
-.bg-tr, .bg-rt {
+.bg-te, .bg-et {
   @include mixins.bg-no-repeat();
   @include mixins.bg-position(100%, 0);
 }
 
-.bg-tl, .bg-lt {
+.bg-ts, .bg-st {
   @include mixins.bg-no-repeat();
   @include mixins.bg-position(0, 0);
 }
 
-.bg-r {
+.bg-e {
   @include mixins.bg-no-repeat();
   @include mixins.bg-position(100%, 50%);
 }
 
-.bg-l {
+.bg-s {
   @include mixins.bg-no-repeat();
   @include mixins.bg-position(0, 50%);
 }
 
-.bg-br, .bg-rb {
+.bg-be, .bg-eb {
   @include mixins.bg-no-repeat();
   @include mixins.bg-position(100%, 100%);
 }
@@ -58,7 +58,7 @@
   @include mixins.bg-position(50%, 100%);
 }
 
-.bg-bl, .bg-lb {
+.bg-bs, .bg-sb {
   @include mixins.bg-no-repeat();
   @include mixins.bg-position(0, 100%);
 }

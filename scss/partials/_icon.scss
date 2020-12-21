@@ -13,23 +13,27 @@
 @use '../config';
 @use '../mixins';
 
-.icon {
-  @include mixins.icon-base();
-}
+@if config.$enable-icons {
 
-$icon-sizes: config.$icon-sizes;
-$breakpoints: map-keys(config.$breakpoints);
+  .icon {
+    @include mixins.icon-base();
+  }
 
-@each $name in $breakpoints {
+  $icon-sizes: config.$icon-sizes;
+  $breakpoints: map-keys(config.$breakpoints);
 
-  @include mixins.media-breakpoint-up($name) {
+  @each $name in $breakpoints {
 
-    $infix: mixins.breakpoint-infix($name);
+    @include mixins.media-breakpoint-up($name) {
 
-    @each $key, $size in $icon-sizes {
+      $infix: mixins.breakpoint-infix($name);
 
-      .icon#{$infix}-#{$key} {
-        @include mixins.icon-size($size);
+      @each $key, $size in $icon-sizes {
+
+        .icon#{$infix}-#{$key} {
+          @include mixins.icon-size($size);
+        }
+
       }
 
     }

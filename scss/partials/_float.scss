@@ -7,8 +7,8 @@
 
   Modifiers:
     n = none
-    l = left
-    r = right
+    s = start (left: ltr, right: rtl)
+    e = end (right: ltr, left: rtl)
 
 */
 
@@ -18,12 +18,12 @@
   @include mixins.float-none();
 }
 
-.fl-l {
-  @include mixins.float-left();
+.fl-s {
+  @include mixins.float-start();
 }
 
-.fl-r {
-  @include mixins.float-right();
+.fl-e {
+  @include mixins.float-end();
 }
 
 .clear {

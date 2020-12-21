@@ -8,51 +8,55 @@
   Modifiers:
     (none) = all
     t = top
-    r = right
+    e = end (right: ltr, left: rtl)
     b = bottom
-    l = left
+    s = start (left: ltr, right: rtl)
 
 */
 
 @use '../config';
 @use '../mixins';
 
-@each $n, $radius in config.$border-radiuses {
+@if config.$enable-border-radius {
 
-  .br-#{$n} {
-    @include mixins.border-radius($radius);
-  }
+  @each $n, $radius in config.$border-radiuses {
 
-  .br-tl-#{$n}, .br-lt-#{$n} {
-    @include mixins.border-top-left-radius($radius);
-  }
+    .br-#{$n} {
+      @include mixins.border-radius($radius);
+    }
 
-  .br-tr-#{$n}, .br-rt-#{$n} {
-    @include mixins.border-top-right-radius($radius);
-  }
+    .br-ts-#{$n}, .br-st-#{$n} {
+      @include mixins.border-top-start-radius($radius);
+    }
 
-  .br-br-#{$n}, .br-rb-#{$n} {
-    @include mixins.border-bottom-right-radius($radius);
-  }
+    .br-te-#{$n}, .br-et-#{$n} {
+      @include mixins.border-top-end-radius($radius);
+    }
 
-  .br-bl-#{$n}, .br-lb-#{$n} {
-    @include mixins.border-bottom-left-radius($radius);
-  }
+    .br-be-#{$n}, .br-eb-#{$n} {
+      @include mixins.border-bottom-end-radius($radius);
+    }
 
-  .br-t-#{$n} {
-    @include mixins.border-top-radius($radius);
-  }
+    .br-bs-#{$n}, .br-sb-#{$n} {
+      @include mixins.border-bottom-start-radius($radius);
+    }
 
-  .br-r-#{$n} {
-    @include mixins.border-right-radius($radius);
-  }
+    .br-t-#{$n} {
+      @include mixins.border-top-radius($radius);
+    }
 
-  .br-b-#{$n} {
-    @include mixins.border-bottom-radius($radius);
-  }
+    .br-e-#{$n} {
+      @include mixins.border-end-radius($radius);
+    }
 
-  .br-l-#{$n} {
-    @include mixins.border-left-radius($radius);
+    .br-b-#{$n} {
+      @include mixins.border-bottom-radius($radius);
+    }
+
+    .br-s-#{$n} {
+      @include mixins.border-start-radius($radius);
+    }
+
   }
 
 }

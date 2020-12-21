@@ -53,6 +53,8 @@ $paragraph-margin-bottom: 1rem !default;
 // Controls paddings and margins.
 // You can add entries you need in the $spacers map, as well as setting different value calculation for each entry.
 
+$enable-negative-margins: true !default;
+
 $spacer: .25rem !default;
 
 $spacers: (
@@ -64,11 +66,19 @@ $spacers: (
   5: $spacer * 5
 ) !default;
 
-$enable-negative-margins: true !default;
+// Grid.
+//
+// Grid properties.
+
+$grid-gutter: $spacer * 4 !default;
+
+$grid-max-span: 4 !default;
 
 // Sizing.
 //
 // Effects predefined widths and heights.
+
+$enable-sizing: true !default;
 
 $sizings: (
   0: 0,
@@ -91,6 +101,8 @@ $letter-spacings: (
 // Opacity.
 //
 // Default opacity levels.
+
+$enable-opacity: true !default;
 
 $opacities: (
   0: 0,
@@ -123,6 +135,8 @@ $breakpoints: (
 // Icons.
 //
 // Icons predefined sizes.
+
+$enable-icons: true !default;
 
 $icon: 1rem !default;
 
@@ -164,6 +178,10 @@ $z-index-fixed: 999999 !default;
 //
 // Aspect ratios for fluid media embedding.
 
+$enable-aspect-ratio: true !default;
+
+$enable-reverse-aspect-ratio: true !default;
+
 $aspect-ratios: (
   (1, 1),
   (4, 3),
@@ -174,11 +192,11 @@ $aspect-ratios: (
   (21, 9)
 ) !default;
 
-$enable-reverse-aspect-ratios: true !default;
-
 // Border radius.
 //
 // Controls available border-radiuses and border-radius for rounded boxes.
+
+$enable-border-radius: true !default;
 
 $border-radiuses: (
   0: 0,
@@ -195,6 +213,10 @@ $border-radius-rounded: 5px !default;
 //
 // Controls rotation transformations.
 
+$enable-transformations: true !default;
+
+$enable-counter-rotation: false !default;
+
 $rotation-angle: 45deg !default;
 
 $rotations: (
@@ -208,8 +230,6 @@ $rotations: (
   315: $rotation-angle * 7,
   360: $rotation-angle * 8
 ) !default;
-
-$enable-ccw-rotation: false !default;
 
 // Debug.
 //

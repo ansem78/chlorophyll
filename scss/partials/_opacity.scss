@@ -10,10 +10,14 @@
 @use '../config';
 @use '../mixins';
 
-@each $key, $opacity in config.$opacities {
+@if config.$enable-opacity {
 
-  .op-#{$key} {
-    @include mixins.opacity($opacity);
+  @each $key, $opacity in config.$opacities {
+
+    .op-#{$key} {
+      @include mixins.opacity($opacity);
+    }
+
   }
 
 }

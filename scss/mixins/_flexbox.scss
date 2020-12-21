@@ -1,18 +1,22 @@
 // Flex layout.
 
 @mixin fx-col() {
+  display: flex;
   flex-direction: column;
 }
 
 @mixin fx-col-reverse() {
+  display: flex;
   flex-direction: column-reverse;
 }
 
 @mixin fx-row() {
+  display: flex;
   flex-direction: row;
 }
 
 @mixin fx-row-reverse() {
+  display: flex;
   flex-direction: row-reverse;
 }
 
@@ -93,10 +97,17 @@
 }
 
 // 1. Fix for Chrome 44 bug. https://code.google.com/p/chromium/issues/detail?id=506893
-@mixin fx-auto() {
+@mixin fx-flex-auto() {
   min-width: 0; // 1
   min-height: 0; // 1
-  flex: 1 1 auto;
+  flex-basis: auto;
+}
+
+// 1. Fix for Chrome 44 bug. https://code.google.com/p/chromium/issues/detail?id=506893
+@mixin fx-flex($size) {
+  min-width: 0; // 1
+  min-height: 0; // 1
+  flex: $size $size 0;
 }
 
 // Flexbox self alignment.

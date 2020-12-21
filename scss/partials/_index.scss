@@ -1,3 +1,5 @@
+@use '../config';
+
 @use './accessibility';
 @use './background';
 @use './border-radius';
@@ -8,6 +10,7 @@
 @use './float';
 @use './font-style';
 @use './font-weight';
+@use './grid';
 @use './icon';
 @use './image';
 @use './input';

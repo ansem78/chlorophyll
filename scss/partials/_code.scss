@@ -1,5 +1,16 @@
 pre, .pre {
+  /*rtl:begin:ignore*/
+  direction: ltr;
+  text-align: left;
+  /*rtl:end:ignore*/
   overflow-x: auto;
   overflow-y: hidden;
   overflow: scroll;
+}
+
+code, .code {
+  /*rtl:begin:ignore*/
+  direction: ltr;
+  text-align: left;
+  /*rtl:end:ignore*/
 }

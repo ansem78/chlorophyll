@@ -8,8 +8,8 @@
   padding-top: $size;
 }
 
-// Padding right.
-@mixin padding-right($size) {
+// Padding end.
+@mixin padding-end($size) {
   padding-right: $size;
 }
 
@@ -18,15 +18,15 @@
   padding-bottom: $size;
 }
 
-// Padding left.
-@mixin padding-left($size) {
+// Padding start.
+@mixin padding-start($size) {
   padding-left: $size;
 }
 
 // Horizontal padding.
 @mixin padding-horizontal($size) {
-  @include padding-right($size);
-  @include padding-left($size);
+  @include padding-end($size);
+  @include padding-start($size);
 }
 
 // Vertical padding.
@@ -45,8 +45,8 @@
   margin-top: $size;
 }
 
-// Margin right.
-@mixin margin-right($size) {
+// Margin end.
+@mixin margin-end($size) {
   margin-right: $size;
 }
 
@@ -55,15 +55,15 @@
   margin-bottom: $size;
 }
 
-// Margin left.
-@mixin margin-left($size) {
+// Margin start.
+@mixin margin-start($size) {
   margin-left: $size;
 }
 
 // Horizontal margin.
 @mixin margin-horizontal($size) {
-  @include margin-right($size);
-  @include margin-left($size);
+  @include margin-end($size);
+  @include margin-start($size);
 }
 
 // Vertical margin.

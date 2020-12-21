@@ -3,13 +3,13 @@
   float: none !important;
 }
 
-// Float left.
-@mixin float-left() {
+// Float start.
+@mixin float-start() {
   float: left !important;
 }
 
-// Float right.
-@mixin float-right() {
+// Float end.
+@mixin float-end() {
   float: right !important;
 }
 

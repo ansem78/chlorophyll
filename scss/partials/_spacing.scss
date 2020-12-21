@@ -9,9 +9,9 @@
   Modifiers:
     (none) = all
     t = top
-    r = right
+    e = end (right: ltr, left: rtl)
     b = bottom
-    l = left
+    s = start (left: ltr, right: rtl)
     x = horizontal (right and left)
     y = vertical (top and bottom)
 
@@ -43,16 +43,16 @@ $breakpoints: map-keys(config.$breakpoints);
         @include mixins.padding-top($size);
       }
 
-      .pr#{$infix}-#{$n} {
-        @include mixins.padding-right($size);
+      .pe#{$infix}-#{$n} {
+        @include mixins.padding-end($size);
       }
 
       .pb#{$infix}-#{$n} {
         @include mixins.padding-bottom($size);
       }
 
-      .pl#{$infix}-#{$n} {
-        @include mixins.padding-left($size);
+      .ps#{$infix}-#{$n} {
+        @include mixins.padding-start($size);
       }
 
       .px#{$infix}-#{$n} {
@@ -73,16 +73,16 @@ $breakpoints: map-keys(config.$breakpoints);
         @include mixins.margin-top($size);
       }
 
-      .mr#{$infix}-#{$n} {
-        @include mixins.margin-right($size);
+      .me#{$infix}-#{$n} {
+        @include mixins.margin-end($size);
       }
 
       .mb#{$infix}-#{$n} {
         @include mixins.margin-bottom($size);
       }
 
-      .ml#{$infix}-#{$n} {
-        @include mixins.margin-left($size);
+      .ms#{$infix}-#{$n} {
+        @include mixins.margin-start($size);
       }
 
       .mx#{$infix}-#{$n} {
@@ -109,16 +109,16 @@ $breakpoints: map-keys(config.$breakpoints);
           @include mixins.margin-top($size);
         }
 
-        .mr#{$infix}-#{$n} {
-          @include mixins.margin-right($size);
+        .me#{$infix}-#{$n} {
+          @include mixins.margin-end($size);
         }
 
         .mb#{$infix}-#{$n} {
           @include mixins.margin-bottom($size);
         }
 
-        .ml#{$infix}-#{$n} {
-          @include mixins.margin-left($size);
+        .ms#{$infix}-#{$n} {
+          @include mixins.margin-start($size);
         }
 
         .mx#{$infix}-#{$n} {
@@ -135,12 +135,12 @@ $breakpoints: map-keys(config.$breakpoints);
 
     // Horizontal margin `auto`.
 
-    .mr#{$infix}-auto {
-      @include mixins.margin-right(auto);
+    .me#{$infix}-auto {
+      @include mixins.margin-end(auto);
     }
 
-    .ml#{$infix}-auto {
-      @include mixins.margin-left(auto);
+    .ms#{$infix}-auto {
+      @include mixins.margin-start(auto);
     }
 
     .mx#{$infix}-auto {
