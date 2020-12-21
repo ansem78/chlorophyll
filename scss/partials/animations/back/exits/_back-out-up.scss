@@ -1,0 +1,28 @@
+@use '../../../../config';
+
+@if config.$enable-animate {
+
+  @keyframes back-out-up {
+
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    20% {
+      opacity: .7;
+      transform: translateY(0) scale(.7);
+    }
+
+    100% {
+      opacity: .7;
+      transform: translateY(-700px) scale(.7);
+    }
+
+  }
+
+  .a-back-out-up {
+    animation-name: back-out-up;
+  }
+
+}

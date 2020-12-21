@@ -70,9 +70,49 @@ $spacers: (
 //
 // Grid properties.
 
+$grid-columns: (
+  1: 8.33%,
+  2: 16.66%,
+  3: 25%,
+  4: 33.33%,
+  5: 41.66%,
+  6: 50%,
+  7: 58.33%,
+  8: 66.66%,
+  9: 75%,
+  10: 83.33%,
+  11: 91.66%,
+  12: 100%
+) !default;
+
 $grid-gutter: $spacer * 4 !default;
 
-$grid-max-span: 4 !default;
+// Animations.
+//
+// Default animations parameters.
+
+$enable-animate: true !default;
+
+$animate-durations: (
+  slower: 3s,
+  slow: 2s,
+  fast: 800ms,
+  faster: 500ms
+) !default;
+
+$animate-repeats: (
+  1: 1,
+  2: 2,
+  3: 3
+) !default;
+
+$animate-delays: (
+  1: 1s,
+  2: 2s,
+  3: 3s,
+  4: 4s,
+  5: 5s
+) !default;
 
 // Sizing.
 //

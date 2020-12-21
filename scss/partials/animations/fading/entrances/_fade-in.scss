@@ -1,0 +1,21 @@
+@use '../../../../config';
+
+@if config.$enable-animate {
+
+  @keyframes fade-in {
+
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+
+  }
+
+  .a-fade-in {
+    animation-name: fade-in;
+  }
+
+}

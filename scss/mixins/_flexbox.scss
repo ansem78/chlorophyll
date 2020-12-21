@@ -100,14 +100,14 @@
 @mixin fx-flex-auto() {
   min-width: 0; // 1
   min-height: 0; // 1
-  flex-basis: auto;
+  flex: 1 0 auto;
 }
 
 // 1. Fix for Chrome 44 bug. https://code.google.com/p/chromium/issues/detail?id=506893
-@mixin fx-flex($size) {
+@mixin fx-flex($size, $gutter) {
   min-width: 0; // 1
   min-height: 0; // 1
-  flex: $size $size 0;
+  flex: 1 0 calc(#{$size} - #{$gutter});
 }
 
 // Flexbox self alignment.

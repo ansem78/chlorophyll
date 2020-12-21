@@ -1,0 +1,85 @@
+/*
+
+  ANIMATIONS
+
+  Set the element you want to animate with `a-init` and extend it with the desired animation effect class. You can extend it furthermore with classes to control animation
+  delay, status, duration, direction, fill mode and repeat count.
+
+  Base:
+    a = animate
+
+  Modifiers:
+    repeat = animation repeat count
+    time = animation duration
+    delay = animation delay
+
+*/
+
+@use '../config';
+@use '../mixins';
+@use './animations/index';
+
+@if config.$enable-animate {
+
+  .a-init {
+    @include mixins.animate-duration(1s);
+    @include mixins.animate-repeat(1);
+    @include mixins.animate-delay(0s);
+    @include mixins.animate-normal();
+    @include mixins.animate-mode-both();
+    @include mixins.animate-play();
+  }
+
+  @each $key, $count in config.$animate-repeats {
+
+    .a-repeat-#{$key} {
+      @include mixins.animate-repeat($count);
+    }
+
+  }
+
+  .a-infinite {
+    @include mixins.animate-repeat();
+  }
+
+  @each $key, $time in config.$animate-durations {
+
+    .a-time-#{$key} {
+      @include mixins.animate-duration($time);
+    }
+
+  }
+
+  @each $key, $delay in config.$animate-delays {
+
+    .a-delay-#{$key} {
+      @include mixins.animate-delay($delay);
+    }
+
+  }
+
+  .a-normal {
+    @include mixins.animate-normal();
+  }
+
+  .a-reverse {
+    @include mixins.animate-reverse();
+  }
+
+  .a-alternate {
+    @include mixins.animate-alternate();
+  }
+
+  .a-alternate-reverse {
+    @include mixins.animate-alternate-reverse();
+  }
+
+  .a-play {
+    @include mixins.animate-play();
+  }
+
+  .a-pause {
+    @include mixins.animate-pause();
+  }
+
+}

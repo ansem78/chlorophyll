@@ -88,20 +88,11 @@ $breakpoints: map-keys(config.$breakpoints);
       @include mixins.fx-flex-auto();
     }
 
-    .fx#{$infix}-flex {
-      margin: #{config.$grid-gutter / 2};
-      @include mixins.fx-flex(1);
-    }
+    @each $key, $size in config.$grid-columns {
 
-    @if config.$grid-max-span>1 {
-
-      @for $size from 2 to config.$grid-max-span {
-
-        .fx#{$infix}-flex-#{$size} {
-          margin: #{config.$grid-gutter / 2};
-          @include mixins.fx-flex($size);
-        }
-
+      .fx#{$infix}-flex-#{$key} {
+        margin: #{config.$grid-gutter / 2};
+        @include mixins.fx-flex($size, config.$grid-gutter);
       }
 
     }
