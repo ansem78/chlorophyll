@@ -14,9 +14,16 @@
   --paragraph-margin-bottom: #{config.$paragraph-margin-bottom};
   --letter-spacing: #{config.$letter-spacing};
   --spacer: #{config.$spacer};
+  @if config.$enable-border-radius {
+    --border-radius: #{config.$border-radius};
+  }
+  --border-radius-rounded: #{config.$border-radius-rounded};
   --z-index-step: #{config.$z-index-step};
   --z-index-sticky: #{config.$z-index-sticky};
   --z-index-fixed: #{config.$z-index-fixed};
+  @if config.$enable-transform {
+    --rotation-angle: #{config.$rotation-angle};
+  }
   @if config.$enable-animate {
     --animate-duration: #{config.$animate-duration};
     --animate-delay: #{config.$animate-delay};

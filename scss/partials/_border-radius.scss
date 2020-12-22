@@ -19,42 +19,46 @@
 
 @if config.$enable-border-radius {
 
-  @each $n, $radius in config.$border-radiuses {
+  @for $n from 0 through 5 {
 
     .br-#{$n} {
-      @include mixins.border-radius($radius);
+      border-radius: calc(var(--border-radius) * #{$n});
     }
 
     .br-ts-#{$n}, .br-st-#{$n} {
-      @include mixins.border-top-start-radius($radius);
+      border-top-left-radius: calc(var(--border-radius) * #{$n});
     }
 
     .br-te-#{$n}, .br-et-#{$n} {
-      @include mixins.border-top-end-radius($radius);
+      border-top-right-radius: calc(var(--border-radius) * #{$n});
     }
 
     .br-be-#{$n}, .br-eb-#{$n} {
-      @include mixins.border-bottom-end-radius($radius);
+      border-bottom-right-radius: calc(var(--border-radius) * #{$n});
     }
 
     .br-bs-#{$n}, .br-sb-#{$n} {
-      @include mixins.border-bottom-start-radius($radius);
+      border-bottom-left-radius: calc(var(--border-radius) * #{$n});
     }
 
     .br-t-#{$n} {
-      @include mixins.border-top-radius($radius);
+      border-top-left-radius: calc(var(--border-radius) * #{$n});
+      border-top-right-radius: calc(var(--border-radius) * #{$n});
     }
 
     .br-e-#{$n} {
-      @include mixins.border-end-radius($radius);
+      border-top-right-radius: calc(var(--border-radius) * #{$n});
+      border-bottom-right-radius: calc(var(--border-radius) * #{$n});
     }
 
     .br-b-#{$n} {
-      @include mixins.border-bottom-radius($radius);
+      border-bottom-right-radius: calc(var(--border-radius) * #{$n});
+      border-bottom-left-radius: calc(var(--border-radius) * #{$n});
     }
 
     .br-s-#{$n} {
-      @include mixins.border-start-radius($radius);
+      border-top-left-radius: calc(var(--border-radius) * #{$n});
+      border-bottom-left-radius: calc(var(--border-radius) * #{$n});
     }
 
   }
@@ -63,7 +67,7 @@
 
 // Box with predefined rounded corners.
 .rounded {
-  border-radius: #{config.$border-radius-rounded};
+  border-radius: var(--border-radius-rounded);
 }
 
 // Circular box.

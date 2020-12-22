@@ -57,7 +57,7 @@
     animation-iteration-count: infinite;
   }
 
-  @for $n from 2 to 5 {
+  @for $n from 1 through 5 {
 
     .a-repeat-#{$n} {
       animation-iteration-count: calc(var(--animate-repeat) * #{$n});
@@ -73,7 +73,7 @@
 
   }
 
-  @for $n from 2 to 5 {
+  @for $n from 1 through 5 {
 
     .a-delay-#{$n} {
       animation-delay: calc(var(--animate-delay) * #{$n});

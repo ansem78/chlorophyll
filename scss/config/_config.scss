@@ -211,14 +211,7 @@ $aspect-ratios: (
 
 $enable-border-radius: true !default;
 
-$border-radiuses: (
-  0: 0,
-  1: 1px,
-  2: 2px,
-  3: 3px,
-  4: 4px,
-  5: 5px
-) !default;
+$border-radius: 1px !default;
 
 $border-radius-rounded: 5px !default;
 
@@ -226,23 +219,11 @@ $border-radius-rounded: 5px !default;
 //
 // Controls rotation transformations.
 
-$enable-transformations: true !default;
+$enable-transform: true !default;
 
-$enable-counter-rotation: false !default;
+$enable-reverse-rotation: false !default;
 
 $rotation-angle: 45deg !default;
-
-$rotations: (
-  0: 0,
-  45: $rotation-angle,
-  90: $rotation-angle * 2,
-  135: $rotation-angle * 3,
-  180: $rotation-angle * 4,
-  225: $rotation-angle * 5,
-  270: $rotation-angle * 6,
-  315: $rotation-angle * 7,
-  360: $rotation-angle * 8
-) !default;
 
 // Debug.
 //

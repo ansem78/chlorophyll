@@ -28,7 +28,7 @@ $breakpoints: map-keys(config.$breakpoints);
 
     $infix: mixins.breakpoint-infix($name);
 
-    @for $n from 1 to 5 {
+    @for $n from 0 through 5 {
 
       // Paddings.
 
@@ -100,7 +100,7 @@ $breakpoints: map-keys(config.$breakpoints);
 
     @if config.$enable-negative-margins {
 
-      @for $n from 1 to 5 {
+      @for $n from 1 through 5 {
 
         .m#{$infix}--#{$n} {
           margin: calc(var(--spacer) * -#{$n});

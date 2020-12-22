@@ -1,6 +1,5 @@
 @use '../config';
 @use '../helpers';
-@use '../mixins';
 
 // Undo all transformations.
 .transform-none {
@@ -8,30 +7,39 @@
   transform: none;
 }
 
-@if config.$enable-transformations {
+@if config.$enable-transform {
 
-  $rotations: config.$rotations;
-  $counter-rotations: if(config.$enable-counter-rotation, helpers.negativify-map($rotations), null);
+  $step: helpers.strip-unit(config.$rotation-angle);
 
   // Rotations.
 
-  @each $key, $angle in $rotations {
+  $n: 0;
+  @while $n<=360 {
 
-    .turn-#{$key} {
-      @include mixins.rotate($angle);
+    .rotate-#{$n} {
+      transform-origin: 50%;
+      -webkit-transform: rotate(calc(var(--rotation-angle) * #{$n}));
+      transform: rotate(calc(var(--rotation-angle) * #{$n}));
     }
+
+    $n: $n + $step;
 
   }
 
-  // Counter rotations.
+  // Reverse rotations.
 
-  @if $counter-rotations {
+  @if config.$enable-reverse-rotation {
 
-    @each $key, $angle in $counter-rotations {
+    $n: $step;
+    @while $n<=360 {
 
-      .turn-#{$key} {
-        @include mixins.rotate($angle);
+      .rotate--#{$n} {
+        transform-origin: 50%;
+        -webkit-transform: rotate(calc(var(--rotation-angle) * -#{$n}));
+        transform: rotate(calc(var(--rotation-angle) * -#{$n}));
       }
+
+      $n: $n + $step;
 
     }
 
@@ -40,19 +48,19 @@
   // Flip.
 
   .flip-x {
-    @include mixins.center-origin();
+    transform-origin: 50%;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
   }
 
   .flip-y {
-    @include mixins.center-origin();
+    transform-origin: 50%;
     -webkit-transform: scaleY(-1);
     transform: scaleY(-1);
   }
 
   .flip {
-    @include mixins.center-origin();
+    transform-origin: 50%;
     -webkit-transform: scaleX(-1) scaleY(-1);
     transform: scaleX(-1) scaleY(-1);
   }
