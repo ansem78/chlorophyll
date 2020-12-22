@@ -10,76 +10,89 @@
 
   Modifiers:
     repeat = animation repeat count
-    time = animation duration
+    duration = animation duration
     delay = animation delay
 
 */
 
 @use '../config';
-@use '../mixins';
 @use '../animations';
 
 @if config.$enable-animate {
 
   .a-init {
-    @include mixins.animate-duration(1s);
-    @include mixins.animate-repeat(1);
-    @include mixins.animate-delay(0s);
-    @include mixins.animate-normal();
-    @include mixins.animate-mode-both();
-    @include mixins.animate-play();
-  }
-
-  @each $key, $count in config.$animate-repeats {
-
-    .a-repeat-#{$key} {
-      @include mixins.animate-repeat($count);
-    }
-
-  }
-
-  .a-infinite {
-    @include mixins.animate-repeat();
-  }
-
-  @each $key, $time in config.$animate-durations {
-
-    .a-time-#{$key} {
-      @include mixins.animate-duration($time);
-    }
-
-  }
-
-  @each $key, $delay in config.$animate-delays {
-
-    .a-delay-#{$key} {
-      @include mixins.animate-delay($delay);
-    }
-
+    animation-duration: var(--animate-duration);
+    animation-delay: var(--animate-delay);
+    animation-iteration-count: var(--animate-repeat);
+    animation-fill-mode: both;
+    animation-direction: normal;
+    animation-play-state: running;
   }
 
   .a-normal {
-    @include mixins.animate-normal();
+    animation-direction: normal;
   }
 
   .a-reverse {
-    @include mixins.animate-reverse();
+    animation-direction: reverse;
   }
 
   .a-alternate {
-    @include mixins.animate-alternate();
+    animation-direction: alternate;
   }
 
   .a-alternate-reverse {
-    @include mixins.animate-alternate-reverse();
+    animation-direction: alternate-reverse;
   }
 
   .a-play {
-    @include mixins.animate-play();
+    animation-play-state: running;
   }
 
   .a-pause {
-    @include mixins.animate-pause();
+    animation-play-state: paused;
+  }
+
+  .a-infinite {
+    animation-iteration-count: infinite;
+  }
+
+  @for $n from 2 to 5 {
+
+    .a-repeat-#{$n} {
+      animation-iteration-count: calc(var(--animate-repeat) * #{$n});
+    }
+
+  }
+
+  @each $key, $n in config.$animate-durations {
+
+    .a-duration-#{$key} {
+      animation-duration: calc(var(--animate-duration) * #{$n});
+    }
+
+  }
+
+  @for $n from 2 to 5 {
+
+    .a-delay-#{$n} {
+      animation-delay: calc(var(--animate-delay) * #{$n});
+    }
+
+  }
+
+  @media print, (prefers-reduced-motion: reduce) {
+
+    .a-init {
+      animation-duration: 1ms !important;
+      transition-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+    }
+
+    .a-init[class*="out"] {
+      opacity: 0;
+    }
+
   }
 
 }

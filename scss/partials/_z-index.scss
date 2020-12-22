@@ -14,12 +14,10 @@
 
 */
 
-@use '../config';
+@for $n from -1 to 10 {
 
-@each $key, $z-index in config.$z-indexes {
-
-  .z-#{$key} {
-    z-index: $z-index;
+  .z-#{$n} {
+    z-index: calc(var(--z-index-step) * #{$n});
   }
 
 }

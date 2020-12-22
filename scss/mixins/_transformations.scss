@@ -1,6 +1,6 @@
 // Set transformation origin to center.
 @mixin center-origin() {
-  transform-origin: 50% 50%;
+  transform-origin: 50%;
 }
 
 // Rotate the element clockwise (if `$angle` is positive) or counter-clockwise (if `$angle` is negative).

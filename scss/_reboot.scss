@@ -1,4 +1,4 @@
-/*!
+/*
  * Bootstrap Reboot v4.5.2 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
@@ -18,7 +18,7 @@
 }
 
 *, *::before, *::after {
-  box-sizing: #{config.$box-sizing};
+  box-sizing: var(--box-sizing);
 }
 
 html {
@@ -56,12 +56,12 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: config.$headings-margin-bottom;
+  margin-bottom: var(--headings-margin-bottom);
 }
 
 p {
   margin-top: 0;
-  margin-bottom: config.$paragraph-margin-bottom;
+  margin-bottom: var(--paragraph-margin-bottom);
 }
 
 abbr[title], abbr[data-original-title] {
@@ -76,12 +76,12 @@ abbr[title], abbr[data-original-title] {
 address {
   font-style: normal;
   line-height: inherit;
-  margin-bottom: config.$paragraph-margin-bottom;
+  margin-bottom: var(--paragraph-margin-bottom);
 }
 
 ol, ul, dl {
   margin-top: 0;
-  margin-bottom: config.$paragraph-margin-bottom;
+  margin-bottom: var(--paragraph-margin-bottom);
 }
 
 ol ol, ul ul, ol ul, ul ol {
@@ -93,12 +93,12 @@ dt {
 }
 
 dd {
-  margin-bottom: config.$headings-margin-bottom;
+  margin-bottom: var(--headings-margin-bottom);
   margin-left: 0;
 }
 
 blockquote {
-  margin: 0 0 config.$paragraph-margin-bottom;
+  margin: 0 0 var(--paragraph-margin-bottom);
 }
 
 b, strong {
@@ -152,13 +152,13 @@ pre, code, kbd, samp {
 
 pre {
   margin-top: 0;
-  margin-bottom: config.$paragraph-margin-bottom;
+  margin-bottom: var(--paragraph-margin-bottom);
   overflow: auto;
   -ms-overflow-style: scrollbar;
 }
 
 figure {
-  margin: 0 0 config.$paragraph-margin-bottom;
+  margin: 0 0 var(--paragraph-margin-bottom);
 }
 
 img {
@@ -188,7 +188,7 @@ th {
 }
 
 label {
-  margin-bottom: config.$headings-margin-bottom;
+  margin-bottom: var(--headings-margin-bottom);
   display: inline-block;
 }
 
@@ -261,7 +261,7 @@ legend {
   width: 100%;
   max-width: 100%;
   padding: 0;
-  margin-bottom: config.$headings-margin-bottom;
+  margin-bottom: var(--headings-margin-bottom);
   display: block;
 }
 

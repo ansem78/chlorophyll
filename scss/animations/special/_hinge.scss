@@ -1,0 +1,35 @@
+@use '../../config';
+
+@if config.$enable-animate {
+
+  @keyframes hinge {
+
+    0% {
+      animation-timing-function: ease-in-out;
+    }
+
+    20%, 60% {
+      transform: rotate3d(0, 0, 1, 80deg);
+      animation-timing-function: ease-in-out;
+    }
+
+    40%, 80% {
+      opacity: 1;
+      transform: rotate3d(0, 0, 1, 60deg);
+      animation-timing-function: ease-in-out;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(0, 700px, 0);
+    }
+
+  }
+
+  .a-hinge {
+    transform-origin: 0 0;
+    animation-name: hinge;
+    animation-duration: 2s;
+  }
+
+}

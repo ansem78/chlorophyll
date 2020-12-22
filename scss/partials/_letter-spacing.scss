@@ -7,12 +7,10 @@
 
 */
 
-@use '../config';
+@for $n from 1 to 5 {
 
-@each $key, $spacing in config.$letter-spacings {
-
-  .ls-#{$key} {
-    letter-spacing: $spacing;
+  .ls-#{$n} {
+    letter-spacing: calc(var(--letter-spacing) * #{$n});
   }
 
 }

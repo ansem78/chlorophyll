@@ -18,11 +18,8 @@
 */
 
 @use '../config';
-@use '../helpers';
 @use '../mixins';
 
-$spacers: config.$spacers;
-$negative-spacers: if(config.$enable-negative-margins, helpers.negativify-map($spacers), null);
 $breakpoints: map-keys(config.$breakpoints);
 
 @each $name in $breakpoints {
@@ -31,102 +28,108 @@ $breakpoints: map-keys(config.$breakpoints);
 
     $infix: mixins.breakpoint-infix($name);
 
-    @each $n, $size in $spacers {
+    @for $n from 1 to 5 {
 
       // Paddings.
 
       .p#{$infix}-#{$n} {
-        @include mixins.padding($size);
+        padding: calc(var(--spacer) * #{$n});
       }
 
       .pt#{$infix}-#{$n} {
-        @include mixins.padding-top($size);
+        padding-top: calc(var(--spacer) * #{$n});
       }
 
       .pe#{$infix}-#{$n} {
-        @include mixins.padding-end($size);
+        padding-right: calc(var(--spacer) * #{$n});
       }
 
       .pb#{$infix}-#{$n} {
-        @include mixins.padding-bottom($size);
+        padding-bottom: calc(var(--spacer) * #{$n});
       }
 
       .ps#{$infix}-#{$n} {
-        @include mixins.padding-start($size);
+        padding-left: calc(var(--spacer) * #{$n});
       }
 
       .px#{$infix}-#{$n} {
-        @include mixins.padding-horizontal($size);
+        padding-right: calc(var(--spacer) * #{$n});
+        padding-left: calc(var(--spacer) * #{$n});
       }
 
       .py#{$infix}-#{$n} {
-        @include mixins.padding-vertical($size);
+        padding-top: calc(var(--spacer) * #{$n});
+        padding-bottom: calc(var(--spacer) * #{$n});
       }
 
       // Margins.
 
       .m#{$infix}-#{$n} {
-        @include mixins.margin($size);
+        margin: calc(var(--spacer) * #{$n});
       }
 
       .mt#{$infix}-#{$n} {
-        @include mixins.margin-top($size);
+        margin-top: calc(var(--spacer) * #{$n});
       }
 
       .me#{$infix}-#{$n} {
-        @include mixins.margin-end($size);
+        margin-right: calc(var(--spacer) * #{$n});
       }
 
       .mb#{$infix}-#{$n} {
-        @include mixins.margin-bottom($size);
+        margin-bottom: calc(var(--spacer) * #{$n});
       }
 
       .ms#{$infix}-#{$n} {
-        @include mixins.margin-start($size);
+        margin-left: calc(var(--spacer) * #{$n});
       }
 
       .mx#{$infix}-#{$n} {
-        @include mixins.margin-horizontal($size);
+        margin-right: calc(var(--spacer) * #{$n});
+        margin-left: calc(var(--spacer) * #{$n});
       }
 
       .my#{$infix}-#{$n} {
-        @include mixins.margin-vertical($size);
+        margin-top: calc(var(--spacer) * #{$n});
+        margin-bottom: calc(var(--spacer) * #{$n});
       }
 
     }
 
     // Negative margins.
 
-    @if $negative-spacers {
+    @if config.$enable-negative-margins {
 
-      @each $n, $size in $negative-spacers {
+      @for $n from 1 to 5 {
 
-        .m#{$infix}-#{$n} {
-          @include mixins.margin($size);
+        .m#{$infix}--#{$n} {
+          margin: calc(var(--spacer) * -#{$n});
         }
 
-        .mt#{$infix}-#{$n} {
-          @include mixins.margin-top($size);
+        .mt#{$infix}--#{$n} {
+          margin-top: calc(var(--spacer) * -#{$n});
         }
 
-        .me#{$infix}-#{$n} {
-          @include mixins.margin-end($size);
+        .me#{$infix}--#{$n} {
+          margin-right: calc(var(--spacer) * -#{$n});
         }
 
-        .mb#{$infix}-#{$n} {
-          @include mixins.margin-bottom($size);
+        .mb#{$infix}--#{$n} {
+          margin-bottom: calc(var(--spacer) * -#{$n});
         }
 
-        .ms#{$infix}-#{$n} {
-          @include mixins.margin-start($size);
+        .ms#{$infix}--#{$n} {
+          margin-left: calc(var(--spacer) * -#{$n});
         }
 
-        .mx#{$infix}-#{$n} {
-          @include mixins.margin-horizontal($size);
+        .mx#{$infix}--#{$n} {
+          margin-right: calc(var(--spacer) * -#{$n});
+          margin-left: calc(var(--spacer) * -#{$n});
         }
 
-        .my#{$infix}-#{$n} {
-          @include mixins.margin-vertical($size);
+        .my#{$infix}--#{$n} {
+          margin-top: calc(var(--spacer) * -#{$n});
+          margin-bottom: calc(var(--spacer) * -#{$n});
         }
 
       }
@@ -136,15 +139,16 @@ $breakpoints: map-keys(config.$breakpoints);
     // Horizontal margin `auto`.
 
     .me#{$infix}-auto {
-      @include mixins.margin-end(auto);
+      margin-right: auto;
     }
 
     .ms#{$infix}-auto {
-      @include mixins.margin-start(auto);
+      margin-left: auto;
     }
 
     .mx#{$infix}-auto {
-      @include mixins.margin-horizontal(auto);
+      margin-right: auto;
+      margin-left: auto;
     }
 
   }

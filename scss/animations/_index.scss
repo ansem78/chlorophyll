@@ -1,8 +1,12 @@
+@forward './attention-seeker';
 @forward './back';
 @forward './bounce';
 @forward './fade';
 @forward './flip';
+@forward './rotate';
+@forward './slide';
+@forward './special';
 @forward './speed';
-
+@forward './zoom';
 
 // https://github.com/animate-css/animate.css/tree/main/source

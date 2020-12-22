@@ -14,7 +14,7 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: config.$z-index-fixed;
+  z-index: var(--z-index-fixed);
 }
 
 .fixed-b {
@@ -22,7 +22,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: config.$z-index-fixed;
+  z-index: var(--z-index-fixed);
 }
 
 // Responsive sticky top.
@@ -35,7 +35,7 @@
     .sticky#{$infix}-t {
       position: sticky;
       top: 0;
-      z-index: config.$z-index-sticky;
+      z-index: var(--z-index-sticky);
     }
 
   }

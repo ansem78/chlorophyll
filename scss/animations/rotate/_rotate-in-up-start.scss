@@ -1,0 +1,24 @@
+@use '../../config';
+
+@if config.$enable-animate {
+
+  @keyframes rotate-in-up-start {
+
+    from {
+      opacity: 0;
+      transform: rotate3d(0, 0, 1, 45deg);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+  }
+
+  .a-rotate-in-up-start {
+    transform-origin: 0 0;
+    animation-name: rotate-in-up-start;
+  }
+
+}

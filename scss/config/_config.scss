@@ -93,25 +93,17 @@ $grid-gutter: $spacer * 4 !default;
 
 $enable-animate: true !default;
 
+$animate-duration: 1s !default;
+
+$animate-delay: 1s !default;
+
+$animate-repeat: 1 !default;
+
 $animate-durations: (
-  slower: 3s,
-  slow: 2s,
-  fast: 800ms,
-  faster: 500ms
-) !default;
-
-$animate-repeats: (
-  1: 1,
-  2: 2,
-  3: 3
-) !default;
-
-$animate-delays: (
-  1: 1s,
-  2: 2s,
-  3: 3s,
-  4: 4s,
-  5: 5s
+  faster: .5,
+  fast: .8,
+  slow: 2,
+  slower: 3
 ) !default;
 
 // Sizing.
@@ -132,11 +124,7 @@ $sizings: (
 //
 // Default letter spacings.
 
-$letter-spacings: (
-  1: .02rem,
-  2: .04rem,
-  3: .06rem
-) !default;
+$letter-spacing: .02rem !default;
 
 // Opacity.
 //
@@ -194,21 +182,6 @@ $icon-sizes: (
 // Set z-index levels, as well as z-index for helper position classes.
 
 $z-index-step: 100 !default;
-
-$z-indexes: (
-  -1: -1,
-  0: 0,
-  1: $z-index-step,
-  2: $z-index-step * 2,
-  3: $z-index-step * 3,
-  4: $z-index-step * 4,
-  5: $z-index-step * 5,
-  6: $z-index-step * 6,
-  7: $z-index-step * 7,
-  8: $z-index-step * 8,
-  9: $z-index-step * 9,
-  10: $z-index-step * 10
-) !default;
 
 $z-index-sticky: 99999 !default;
 
