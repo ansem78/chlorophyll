@@ -1,0 +1,65 @@
+/*
+
+  Background
+
+  Base:
+    bg = background
+
+  Modifiers:
+    c = center
+    t = top
+    e = end (ltr: right, rtl: left)
+    b = bottom
+    s = start (ltr: left, rtl: right)
+    cover = cover
+    contain = contain
+
+*/
+
+.bg-c, .bg-t, .bg-te, .bg-et, .bg-ts, .bg-st, .bg-e, .bg-s, .bg-be, .bg-eb, .bg-b, .bg-bs, .bg-sb, .bg-cover, .bg-contain {
+  background-repeat: no-repeat;
+}
+
+.bg-c {
+  background-position: 50% 50%;
+}
+
+.bg-t {
+  background-position: 50% 0;
+}
+
+.bg-te, .bg-et {
+  background-position: 100% 0;
+}
+
+.bg-ts, .bg-st {
+  background-position: 0 0;
+}
+
+.bg-e {
+  background-position: 100% 50%;
+}
+
+.bg-s {
+  background-position: 0 50%;
+}
+
+.bg-be, .bg-eb {
+  background-position: 100% 100%;
+}
+
+.bg-b {
+  background-position: 50% 100%;
+}
+
+.bg-bs, .bg-sb {
+  background-position: 0 100%;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-contain {
+  background-size: contain;
+}
