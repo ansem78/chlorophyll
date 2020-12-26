@@ -1,16 +1,33 @@
 /*
 
-  VERTICAL ALIGN
+  Vertical align
 
   Base:
     va = vertical-align
 
+  Modifiers:
+    bl = baseline
+    t = top
+    m = middle
+    b = bottom
+    tt = text-top
+    tb = text-bottom
+
 */
 
-@each $align in ('baseline', 'top', 'middle', 'bottom', 'text-top', 'text-bottom') {
+$vertical-aligns: (
+  bl: 'baseline',
+  t: 'top',
+  m: 'middle',
+  b: 'bottom',
+  tt: 'text-top',
+  tb: 'text-bottom'
+);
 
-  .va-#{$align} {
-    vertical-align: #{$align};
+@each $key, $align in $vertical-aligns {
+
+  .va-#{$key} {
+    vertical-align: #{$align} !important;
   }
 
 }

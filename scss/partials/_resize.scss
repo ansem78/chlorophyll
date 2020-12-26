@@ -1,21 +1,22 @@
 /*
 
-  Resize everything.
+  Resize everything!
 
   Base:
     resize = resize
 
   Modifiers:
-    (none): both
-    x: horizontal
-    y: vertical
+    none = none
+    x = horizontal
+    y = vertical
+    (none) = both
 
 */
 
 @use '../mixins';
 
-.resize {
-  @include mixins.resizable('both');
+.resize-none {
+  @include mixins.resizable('none');
 }
 
 .resize-x {
@@ -24,4 +25,8 @@
 
 .resize-y {
   @include mixins.resizable('vertical');
+}
+
+.resize {
+  @include mixins.resizable('both');
 }

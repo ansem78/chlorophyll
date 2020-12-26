@@ -1,11 +1,6 @@
-// Set display.
-@mixin display($display) {
-  display: #{$display};
-}
-
 // Set display table with fixed layout and 100% width.
 @mixin display-table-full() {
   width: 100%;
-  display: table;
+  display: table !important;
   table-layout: fixed;
 }

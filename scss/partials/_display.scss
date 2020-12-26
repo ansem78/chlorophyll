@@ -7,7 +7,6 @@
 
 */
 
-@use '../config';
 @use '../mixins';
 
 $displays: (
@@ -23,39 +22,3 @@ $displays: (
   table-col: 'table-column',
   table-cell: 'table-cell'
 );
-
-$breakpoints: map-keys(config.$breakpoints);
-
-@each $name in $breakpoints {
-
-  @include mixins.media-breakpoint-up($name) {
-
-    $infix: mixins.breakpoint-infix($name);
-
-    @each $key, $display in $displays {
-
-      .d#{$infix}-#{$key} {
-        @include mixins.display($display);
-      }
-
-    }
-
-    .d#{$infix}-table-full {
-      @include mixins.display-table-full();
-    }
-
-  }
-
-}
-
-@each $key, $display in $displays {
-
-  @media print {
-
-    .d-print-#{$key} {
-      @include mixins.display($display);
-    }
-
-  }
-
-}
