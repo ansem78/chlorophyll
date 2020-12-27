@@ -1,0 +1,21 @@
+@use '../../../helpers';
+
+@if helpers.module-enabled('animate', 'fade') {
+
+  @keyframes fade-out {
+
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+
+  }
+
+  .a-fade-out {
+    animation-name: fade-out;
+  }
+
+}

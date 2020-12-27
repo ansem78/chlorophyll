@@ -1,0 +1,23 @@
+@use '../../../helpers';
+
+@if helpers.module-enabled('animate', 'rotate') {
+
+  @keyframes rotate-out-down-end {
+
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      transform: rotate3d(0, 0, 1, -45deg);
+    }
+
+  }
+
+  .a-rotate-out-down-end {
+    transform-origin: 100% 100%;
+    animation-name: rotate-out-down-end;
+  }
+
+}

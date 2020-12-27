@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use '../modules';
+@use '../config';
+
+$config: map.deep-merge(meta.module-variables('modules'), meta.module-variables('config'));
+
+// Check if a variable exists in the configuration and return it.
+// Otherwise, return null.
+@function get-config($var) {
+  @return map.get($config, $var);
+}
+
+// Check if a module is enabled.
+// Pass only the module name to check id either the module or at least one of its submodule is enabled.
+// Pass the submodule name to check if only the specific submodule is enabled.
+@function module-enabled($module, $submodule: null) {
+  $modules: get-config('modules');
+  $value: map.get($modules, $module);
+  // $submodule is passed, but $module is not a map (has no submodules): return false.
+  @if meta.type-of($value)!='map' and $submodule {
+    @return false;
+  }
+  // Module value is a map: there are submodules.
+  @if meta.type-of($value)=='map' {
+    // $submodule is passed: check if it is enabled.
+    @if $submodule {
+      @return if(map.get($value, $submodule), true, false);
+    }
+    // $submodule is not passed: check if at least one of submodule is enabled.
+    @else {
+      @each $v in $value {
+        @if $v {
+          @return true;
+        }
+      }
+      @return false;
+    }
+  }
+  // Value is flat (tipically a boolean): evaluate as boolean.
+  @return if($value, true, false);
+}
+

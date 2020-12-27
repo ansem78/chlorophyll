@@ -1,0 +1,29 @@
+@use '../../../helpers';
+
+@if helpers.module-enabled('animate', 'flip') {
+
+  @keyframes flip-out-x {
+
+    from {
+      transform: perspective(400px);
+    }
+
+    30% {
+      opacity: 1;
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    }
+
+    to {
+      opacity: 0;
+      transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    }
+
+  }
+
+  .a-flip-out-x {
+    animation-name: flip-out-x;
+    animation-duration: .75s;
+    backface-visibility: visible !important;
+  }
+
+}

@@ -8,9 +8,11 @@
   be found at http://pesticide.io
 */
 
-@use '../config';
+@use '../helpers';
 
-@each $element, $color in config.$debug-html-colors {
+$debug-html-colors: helpers.get-config('debug-html-colors');
+
+@each $element, $color in $debug-html-colors {
 
   #{$element} {
     outline: 1px solid #{$color} !important;

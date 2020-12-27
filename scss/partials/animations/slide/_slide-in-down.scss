@@ -1,0 +1,22 @@
+@use '../../../helpers';
+
+@if helpers.module-enabled('animate', 'slide') {
+
+  @keyframes slide-in-down {
+
+    from {
+      visibility: visible;
+      transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+
+  }
+
+  .a-slide-in-down {
+    animation-name: slide-in-down;
+  }
+
+}

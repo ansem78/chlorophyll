@@ -1,0 +1,16 @@
+// Icons.
+//
+// Settings for SVG and font icons.
+
+// Default (base) icon size.
+$icon-size: 1rem;
+
+// Icons predefined sizes.
+$icon-sizes: (
+  1: $icon-size * 1.5,
+  2: $icon-size * 2,
+  3: $icon-size * 3,
+  4: $icon-size * 4,
+  5: $icon-size * 5,
+  6: $icon-size * 6
+);

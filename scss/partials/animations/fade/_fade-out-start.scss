@@ -1,0 +1,22 @@
+@use '../../../helpers';
+
+@if helpers.module-enabled('animate', 'fade') {
+
+  @keyframes fade-out-start {
+
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+
+  }
+
+  .a-fade-out-start {
+    animation-name: fade-out-start;
+  }
+
+}
