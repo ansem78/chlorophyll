@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'slide') {
 
-  @keyframes slide-in-down {
+  @keyframes animate-slide-in-down {
 
     from {
       visibility: visible;
@@ -15,8 +15,8 @@
 
   }
 
-  .a-slide-in-down {
-    animation-name: slide-in-down;
+  .animate-slide-in-down {
+    animation-name: animate-slide-in-down;
   }
 
 }

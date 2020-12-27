@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'attention-seeker') {
 
-  @keyframes bounce {
+  @keyframes animate-bounce {
 
     from, 20%, 53%, to {
       transform: translate3d(0, 0, 0);
@@ -30,9 +30,9 @@
 
   }
 
-  .a-bounce {
+  .animate-bounce {
     transform-origin: 50% 100%;
-    animation-name: bounce;
+    animation-name: animate-bounce;
   }
 
 }

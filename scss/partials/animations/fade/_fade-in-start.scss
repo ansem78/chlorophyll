@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'fade') {
 
-  @keyframes fade-in-start {
+  @keyframes animate-fade-in-start {
 
     from {
       opacity: 0;
@@ -16,8 +16,8 @@
 
   }
 
-  .a-fade-in-start {
-    animation-name: fade-in-start;
+  .animate-fade-in-start {
+    animation-name: animate-fade-in-start;
   }
 
 }

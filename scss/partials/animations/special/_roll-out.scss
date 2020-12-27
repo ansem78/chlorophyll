@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'special') {
 
-  @keyframes roll-out {
+  @keyframes animate-roll-out {
 
     from {
       opacity: 1;
@@ -15,8 +15,8 @@
 
   }
 
-  .a-roll-out {
-    animation-name: roll-out;
+  .animate-roll-out {
+    animation-name: animate-roll-out;
   }
 
 }

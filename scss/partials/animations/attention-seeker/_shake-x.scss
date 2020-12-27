@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'attention-seeker') {
 
-  @keyframes shake-x {
+  @keyframes animate-shake-x {
 
     from, to {
       transform: translate3d(0, 0, 0);
@@ -18,8 +18,8 @@
 
   }
 
-  .a-shake-x {
-    animation-name: shake-x;
+  .animate-shake-x {
+    animation-name: animate-shake-x;
   }
 
 }

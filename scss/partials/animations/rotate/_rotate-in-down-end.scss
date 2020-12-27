@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'rotate') {
 
-  @keyframes rotate-in-down-end {
+  @keyframes animate-rotate-in-down-end {
 
     from {
       opacity: 0;
@@ -16,9 +16,9 @@
 
   }
 
-  .a-rotate-in-down-end {
+  .animate-rotate-in-down-end {
     transform-origin: 100% 100%;
-    animation-name: rotate-in-down-end;
+    animation-name: animate-rotate-in-down-end;
   }
 
 }

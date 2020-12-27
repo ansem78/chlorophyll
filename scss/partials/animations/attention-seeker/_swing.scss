@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'attention-seeker') {
 
-  @keyframes swing {
+  @keyframes animate-swing {
 
     20% {
       transform: rotate3d(0, 0, 1, 15deg);
@@ -26,9 +26,9 @@
 
   }
 
-  .a-swing {
+  .animate-swing {
     transform-origin: 0 50%;
-    animation-name: swing;
+    animation-name: animate-swing;
   }
 
 }

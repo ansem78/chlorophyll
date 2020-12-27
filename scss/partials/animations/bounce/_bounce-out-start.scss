@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'bounce') {
 
-  @keyframes bounce-out-start {
+  @keyframes animate-bounce-out-start {
 
     20% {
       opacity: 1;
@@ -16,8 +16,8 @@
 
   }
 
-  .a-bounce-out-start {
-    animation-name: bounce-out-start;
+  .animate-bounce-out-start {
+    animation-name: animate-bounce-out-start;
   }
 
 }

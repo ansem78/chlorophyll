@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'fade') {
 
-  @keyframes fade-in {
+  @keyframes animate-fade-in {
 
     from {
       opacity: 0;
@@ -14,8 +14,8 @@
 
   }
 
-  .a-fade-in {
-    animation-name: fade-in;
+  .animate-fade-in {
+    animation-name: animate-fade-in;
   }
 
 }

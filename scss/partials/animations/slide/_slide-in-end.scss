@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'slide') {
 
-  @keyframes slide-in-end {
+  @keyframes animate-slide-in-end {
 
     from {
       visibility: visible;
@@ -15,8 +15,8 @@
 
   }
 
-  .a-slide-in-end {
-    animation-name: slide-in-end;
+  .animate-slide-in-end {
+    animation-name: animate-slide-in-end;
   }
 
 }

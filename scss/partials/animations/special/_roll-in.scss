@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'special') {
 
-  @keyframes roll-in {
+  @keyframes animate-roll-in {
 
     from {
       opacity: 0;
@@ -16,8 +16,8 @@
 
   }
 
-  .a-roll-in {
-    animation-name: roll-in;
+  .animate-roll-in {
+    animation-name: animate-roll-in;
   }
 
 }

@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'special') {
 
-  @keyframes hinge {
+  @keyframes animate-hinge {
 
     0% {
       animation-timing-function: ease-in-out;
@@ -26,9 +26,9 @@
 
   }
 
-  .a-hinge {
+  .animate-hinge {
     transform-origin: 0 0;
-    animation-name: hinge;
+    animation-name: animate-hinge;
     animation-duration: 2s;
   }
 

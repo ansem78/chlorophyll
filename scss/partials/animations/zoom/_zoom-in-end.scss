@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'zoom') {
 
-  @keyframes zoom-in-end {
+  @keyframes animate-zoom-in-end {
 
     from {
       opacity: 0;
@@ -18,8 +18,8 @@
 
   }
 
-  .a-zoom-in-end {
-    animation-name: zoom-in-end;
+  .animate-zoom-in-end {
+    animation-name: animate-zoom-in-end;
   }
 
 }

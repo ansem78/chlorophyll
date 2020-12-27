@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'flip') {
 
-  @keyframes flip-out-x {
+  @keyframes animate-flip-out-x {
 
     from {
       transform: perspective(400px);
@@ -20,8 +20,8 @@
 
   }
 
-  .a-flip-out-x {
-    animation-name: flip-out-x;
+  .animate-flip-out-x {
+    animation-name: animate-flip-out-x;
     animation-duration: .75s;
     backface-visibility: visible !important;
   }

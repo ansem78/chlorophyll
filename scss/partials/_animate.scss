@@ -8,7 +8,7 @@
   $animate-duration: helpers.get-config('animate-duration');
   $durations: helpers.get-config('animate-durations');
 
-  .a-init {
+  .animate {
     animation-iteration-count: $animate-repeat;
     animation-delay: $animate-delay;
     animation-duration: $animate-duration;
@@ -17,37 +17,37 @@
     animation-play-state: running;
   }
 
-  .a-normal {
+  .animate-normal {
     animation-direction: normal;
   }
 
-  .a-reverse {
+  .animate-reverse {
     animation-direction: reverse;
   }
 
-  .a-alternate {
+  .animate-alternate {
     animation-direction: alternate;
   }
 
-  .a-alternate-reverse {
+  .animate-alternate-reverse {
     animation-direction: alternate-reverse;
   }
 
-  .a-play {
+  .animate-play {
     animation-play-state: running;
   }
 
-  .a-pause {
+  .animate-pause {
     animation-play-state: paused;
   }
 
-  .a-infinite {
+  .animate-infinite {
     animation-iteration-count: infinite;
   }
 
   @for $n from 1 through 5 {
 
-    .a-repeat-#{$n} {
+    .animate-repeat-#{$n} {
       animation-iteration-count: #{$animate-repeat * $n};
     }
 
@@ -55,7 +55,7 @@
 
   @for $n from 1 through 5 {
 
-    .a-delay-#{$n} {
+    .animate-delay-#{$n} {
       animation-delay: #{$animate-delay * $n};
     }
 
@@ -63,7 +63,7 @@
 
   @each $key, $duration in $durations {
 
-    .a-duration-#{$key} {
+    .animate-time-#{$key} {
       animation-duration: $duration;
     }
 
@@ -71,13 +71,13 @@
 
   @media print, (prefers-reduced-motion: reduce) {
 
-    .a-init {
+    .animate {
       animation-duration: 1ms !important;
       transition-duration: 1ms !important;
       animation-iteration-count: 1 !important;
     }
 
-    .a-init[class*=out] {
+    .animate[class*=out] {
       opacity: 0;
     }
 

@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'attention-seeker') {
 
-  @keyframes pulse {
+  @keyframes animate-pulse {
 
     from {
       transform: scale3d(1, 1, 1);
@@ -18,8 +18,8 @@
 
   }
 
-  .a-pulse {
-    animation-name: pulse;
+  .animate-pulse {
+    animation-name: animate-pulse;
     animation-timing-function: ease-in-out;
   }
 

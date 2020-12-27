@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'zoom') {
 
-  @keyframes zoom-in-down {
+  @keyframes animate-zoom-in-down {
 
     from {
       opacity: 0;
@@ -18,8 +18,8 @@
 
   }
 
-  .a-zoom-in-down {
-    animation-name: zoom-in-down;
+  .animate-zoom-in-down {
+    animation-name: animate-zoom-in-down;
   }
 
 }

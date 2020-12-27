@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'bounce') {
 
-  @keyframes bounce-in-down {
+  @keyframes animate-bounce-in-down {
 
     from, 60%, 75%, 90%, to {
       animation-timing-function: cubic-bezier(.215, .61, .355, 1);
@@ -32,8 +32,8 @@
 
   }
 
-  .a-bounce-in-down {
-    animation-name: bounce-dn-down;
+  .animate-bounce-in-down {
+    animation-name: animate-bounce-dn-down;
   }
 
 }

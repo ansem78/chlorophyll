@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'slide') {
 
-  @keyframes slide-out-up {
+  @keyframes animate-slide-out-up {
 
     from {
       transform: translate3d(0, 0, 0);
@@ -15,8 +15,8 @@
 
   }
 
-  .a-slide-out-up {
-    animation-name: slide-out-up;
+  .animate-slide-out-up {
+    animation-name: animate-slide-out-up;
   }
 
 }

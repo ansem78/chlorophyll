@@ -1,9 +1,9 @@
 @use 'sass:map';
 @use 'sass:meta';
-@use '../modules';
 @use '../config';
+@use '../custom-config';
 
-$config: map.deep-merge(meta.module-variables('modules'), meta.module-variables('config'));
+$config: map.deep-merge(meta.module-variables('config'), meta.module-variables('custom-config'));
 
 // Check if a variable exists in the configuration and return it.
 // Otherwise, return null.

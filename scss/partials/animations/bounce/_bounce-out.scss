@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'bounce') {
 
-  @keyframes bounce-out {
+  @keyframes animate-bounce-out {
 
     20% {
       transform: scale3d(.9, .9, .9);
@@ -20,8 +20,8 @@
 
   }
 
-  .a-bounce-out {
-    animation-name: bounce-out;
+  .animate-bounce-out {
+    animation-name: animate-bounce-out;
     animation-duration: .75s;
   }
 

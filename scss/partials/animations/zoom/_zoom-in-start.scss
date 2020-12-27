@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'zoom') {
 
-  @keyframes zoom-in-start {
+  @keyframes animate-zoom-in-start {
 
     from {
       opacity: 0;
@@ -18,8 +18,8 @@
 
   }
 
-  .a-zoom-in-start {
-    animation-name: zoom-in-start;
+  .animate-zoom-in-start {
+    animation-name: animate-zoom-in-start;
   }
 
 }

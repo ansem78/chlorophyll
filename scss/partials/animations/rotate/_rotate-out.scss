@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'rotate') {
 
-  @keyframes rotate-out {
+  @keyframes animate-rotate-out {
 
     from {
       opacity: 1;
@@ -15,9 +15,9 @@
 
   }
 
-  .a-rotate-out {
+  .animate-rotate-out {
     transform-origin: 50%;
-    animation-name: rotate-out;
+    animation-name: animate-rotate-out;
   }
 
 }

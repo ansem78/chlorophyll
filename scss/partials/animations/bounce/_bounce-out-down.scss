@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'bounce') {
 
-  @keyframes bounce-out-down {
+  @keyframes animate-bounce-out-down {
 
     20% {
       transform: translate3d(0, 10px, 0) scaleY(.985);
@@ -20,8 +20,8 @@
 
   }
 
-  .a-bounce-out-down {
-    animation-name: bounce-out-down;
+  .animate-bounce-out-down {
+    animation-name: animate-bounce-out-down;
   }
 
 }

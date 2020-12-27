@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'speed') {
 
-  @keyframes speed-in-start {
+  @keyframes animate-speed-in-start {
 
     from {
       opacity: 0;
@@ -24,8 +24,8 @@
 
   }
 
-  .a-speed-in-start {
-    animation-name: speed-in-start;
+  .animate-speed-in-start {
+    animation-name: animate-speed-in-start;
     animation-timing-function: ease-out;
   }
 

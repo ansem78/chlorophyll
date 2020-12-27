@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'attention-seeker') {
 
-  @keyframes wobble {
+  @keyframes animate-wobble {
 
     from {
       transform: translate3d(0, 0, 0);
@@ -34,8 +34,8 @@
 
   }
 
-  .a-wobble {
-    animation-name: wobble;
+  .animate-wobble {
+    animation-name: animate-wobble;
   }
 
 }

@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'fade') {
 
-  @keyframes fade-out-start-big {
+  @keyframes animate-fade-out-start-big {
 
     from {
       opacity: 1;
@@ -15,8 +15,8 @@
 
   }
 
-  .a-fade-out-start-big {
-    animation-name: fade-out-start-big;
+  .animate-fade-out-start-big {
+    animation-name: animate-fade-out-start-big;
   }
 
 }

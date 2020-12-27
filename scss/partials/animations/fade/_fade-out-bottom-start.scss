@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'fade') {
 
-  @keyframes fade-out-bottom-start {
+  @keyframes animate-fade-out-bottom-start {
 
     from {
       opacity: 1;
@@ -16,8 +16,8 @@
 
   }
 
-  .a-fade-out-bottom-start {
-    animation-name: fade-out-bottom-start;
+  .animate-fade-out-bottom-start {
+    animation-name: animate-fade-out-bottom-start;
   }
 
 }

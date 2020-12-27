@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'fade') {
 
-  @keyframes fade-in-end {
+  @keyframes animate-fade-in-end {
 
     from {
       opacity: 0;
@@ -16,8 +16,8 @@
 
   }
 
-  .a-fade-in-end {
-    animation-name: fade-in-end;
+  .animate-fade-in-end {
+    animation-name: animate-fade-in-end;
   }
 
 }

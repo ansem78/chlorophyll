@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'zoom') {
 
-  @keyframes zoom-out-down {
+  @keyframes animate-zoom-out-down {
 
     40% {
       opacity: 1;
@@ -18,9 +18,9 @@
 
   }
 
-  .a-zoom-out-down {
+  .animate-zoom-out-down {
     transform-origin: 50% 100%;
-    animation-name: zoom-out-down;
+    animation-name: animate-zoom-out-down;
   }
 
 }

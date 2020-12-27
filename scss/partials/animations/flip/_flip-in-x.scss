@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'flip') {
 
-  @keyframes flip-in-x {
+  @keyframes animate-flip-in-x {
 
     from {
       opacity: 0;
@@ -29,8 +29,8 @@
     }
   }
 
-  .a-flip-in-x {
-    animation-name: flip-in-x;
+  .animate-flip-in-x {
+    animation-name: animate-flip-in-x;
     backface-visibility: visible !important;
   }
 

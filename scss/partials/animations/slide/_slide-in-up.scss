@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'slide') {
 
-  @keyframes slide-in-up {
+  @keyframes animate-slide-in-up {
 
     from {
       visibility: visible;
@@ -15,8 +15,8 @@
 
   }
 
-  .a-slide-in-up {
-    animation-name: slide-in-up;
+  .animate-slide-in-up {
+    animation-name: animate-slide-in-up;
   }
 
 }

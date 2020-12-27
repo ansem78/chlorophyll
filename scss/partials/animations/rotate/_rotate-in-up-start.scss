@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'rotate') {
 
-  @keyframes rotate-in-up-start {
+  @keyframes animate-rotate-in-up-start {
 
     from {
       opacity: 0;
@@ -16,9 +16,9 @@
 
   }
 
-  .a-rotate-in-up-start {
+  .animate-rotate-in-up-start {
     transform-origin: 0 0;
-    animation-name: rotate-in-up-start;
+    animation-name: animate-rotate-in-up-start;
   }
 
 }

@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'back') {
 
-  @keyframes back-out-end {
+  @keyframes animate-back-out-end {
 
     0% {
       opacity: 1;
@@ -21,8 +21,8 @@
 
   }
 
-  .a-back-out-end {
-    animation-name: back-out-end;
+  .animate-back-out-end {
+    animation-name: animate-back-out-end;
   }
 
 }

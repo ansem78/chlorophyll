@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'fade') {
 
-  @keyframes fade-in-up-big {
+  @keyframes animate-fade-in-up-big {
 
     from {
       opacity: 0;
@@ -16,8 +16,8 @@
 
   }
 
-  .a-fade-in-up-big {
-    animation-name: fade-in-up-big;
+  .animate-fade-in-up-big {
+    animation-name: animate-fade-in-up-big;
   }
 
 }

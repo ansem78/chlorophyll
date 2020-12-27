@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'bounce') {
 
-  @keyframes bounce-in-end {
+  @keyframes animate-bounce-in-end {
 
     from, 60%, 75%, 90%, to {
       animation-timing-function: cubic-bezier(.215, .61, .355, 1);
@@ -32,8 +32,8 @@
 
   }
 
-  .a-bounce-in-end {
-    animation-name: bounce-in-end;
+  .animate-bounce-in-end {
+    animation-name: animate-bounce-in-end;
   }
 
 }

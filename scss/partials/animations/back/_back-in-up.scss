@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'back') {
 
-  @keyframes back-in-up {
+  @keyframes animate-back-in-up {
 
     0% {
       opacity: .7;
@@ -21,8 +21,8 @@
 
   }
 
-  .a-back-in-up {
-    animation-name: back-in-up;
+  .animate-back-in-up {
+    animation-name: animate-back-in-up;
   }
 
 }

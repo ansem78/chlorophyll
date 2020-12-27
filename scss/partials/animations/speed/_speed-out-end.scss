@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'speed') {
 
-  @keyframes speed-out-end {
+  @keyframes animate-speed-out-end {
 
     from {
       opacity: 1;
@@ -15,8 +15,8 @@
 
   }
 
-  .a-speed-out-end {
-    animation-name: speed-out-end;
+  .animate-speed-out-end {
+    animation-name: animate-speed-out-end;
     animation-timing-function: ease-in;
   }
 

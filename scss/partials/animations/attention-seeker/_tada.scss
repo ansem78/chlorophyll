@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'attention-seeker') {
 
-  @keyframes tada {
+  @keyframes animate-tada {
 
     from {
       transform: scale3d(1, 1, 1);
@@ -26,8 +26,8 @@
 
   }
 
-  .a-tada {
-    animation-name: tada;
+  .animate-tada {
+    animation-name: animate-tada;
   }
 
 }

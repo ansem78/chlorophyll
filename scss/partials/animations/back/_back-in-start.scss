@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'back') {
 
-  @keyframes back-in-start {
+  @keyframes animate-back-in-start {
 
     0% {
       opacity: .7;
@@ -21,8 +21,8 @@
 
   }
 
-  .a-back-in-start {
-    animation-name: back-in-start;
+  .animate-back-in-start {
+    animation-name: animate-back-in-start;
   }
 
 }

@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'attention-seeker') {
 
-  @keyframes rubber-band {
+  @keyframes animate-rubber-band {
 
     from {
       transform: scale3d(1, 1, 1);
@@ -34,8 +34,8 @@
 
   }
 
-  .a-rubber-band {
-    animation-name: rubber-band;
+  .animate-rubber-band {
+    animation-name: animate-rubber-band;
   }
 
 }

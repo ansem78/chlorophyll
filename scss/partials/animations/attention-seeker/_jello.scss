@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'attention-seeker') {
 
-  @keyframes jello {
+  @keyframes animate-jello {
 
     from, 11.1%, to {
       transform: translate3d(0, 0, 0);
@@ -38,9 +38,9 @@
 
   }
 
-  .a-jello {
+  .animate-jello {
     transform-origin: 50%;
-    animation-name: jello;
+    animation-name: animate-jello;
   }
 
 }

@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'zoom') {
 
-  @keyframes zoom-in {
+  @keyframes animate-zoom-in {
 
     from {
       opacity: 0;
@@ -15,8 +15,8 @@
 
   }
 
-  .a-zoom-in {
-    animation-name: zoom-in;
+  .animate-zoom-in {
+    animation-name: animate-zoom-in;
   }
 
 }

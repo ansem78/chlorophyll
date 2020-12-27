@@ -2,7 +2,7 @@
 
 @if helpers.module-enabled('animate', 'slide') {
 
-  @keyframes slide-out-start {
+  @keyframes animate-slide-out-start {
 
     from {
       transform: translate3d(0, 0, 0);
@@ -15,8 +15,8 @@
 
   }
 
-  .a-slide-out-start {
-    animation-name: slide-out-start;
+  .animate-slide-out-start {
+    animation-name: animate-slide-out-start;
   }
 
 }
