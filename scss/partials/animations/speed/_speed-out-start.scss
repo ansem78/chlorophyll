@@ -1,6 +1,6 @@
 @use '../../../helpers';
 
-@if helpers.module-enabled('animate', 'speed') {
+@if helpers.module-enabled('animate/speed') {
 
   @keyframes animate-speed-out-start {
 

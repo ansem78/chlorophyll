@@ -1,6 +1,6 @@
 @use '../../../helpers';
 
-@if helpers.module-enabled('animate', 'rotate') {
+@if helpers.module-enabled('animate/rotate') {
 
   @keyframes animate-rotate-out-down-start {
 

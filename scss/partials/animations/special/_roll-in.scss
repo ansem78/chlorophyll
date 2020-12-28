@@ -1,6 +1,6 @@
 @use '../../../helpers';
 
-@if helpers.module-enabled('animate', 'special') {
+@if helpers.module-enabled('animate/special') {
 
   @keyframes animate-roll-in {
 

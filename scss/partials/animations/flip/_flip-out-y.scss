@@ -1,6 +1,6 @@
 @use '../../../helpers';
 
-@if helpers.module-enabled('animate', 'flip') {
+@if helpers.module-enabled('animate/flip') {
 
   @keyframes animate-flip-out-y {
 

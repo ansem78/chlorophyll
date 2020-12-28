@@ -6,7 +6,7 @@
     fl: float
 
   Modifiers:
-    none = none
+    n = none
     s = start (ltr: left, rtl: right)
     e = end (ltr: right, rtl: left)
 
@@ -14,7 +14,7 @@
 
 @use '../mixins';
 
-.fl-none {
+.fl-n {
   @include mixins.float-none();
 }
 

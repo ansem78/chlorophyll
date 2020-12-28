@@ -1,6 +1,6 @@
 @use '../../../helpers';
 
-@if helpers.module-enabled('animate', 'zoom') {
+@if helpers.module-enabled('animate/zoom') {
 
   @keyframes animate-zoom-out {
 

@@ -6,7 +6,7 @@
     tt = text-transform
 
   Modifiers:
-    none = none
+    n = none
     l = lowercase
     u = uppercase
     c = capitalize
@@ -16,7 +16,7 @@
 */
 
 $text-transform: (
-  none: 'none',
+  n: 'none',
   l: 'lowercase',
   u: 'uppercase',
   c: 'capitalize',

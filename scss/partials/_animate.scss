@@ -53,7 +53,7 @@
 
   }
 
-  @for $n from 1 through 5 {
+  @for $n from 1 through 3 {
 
     .animate-delay-#{$n} {
       animation-delay: #{$animate-delay * $n};

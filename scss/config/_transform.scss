@@ -1,0 +1,9 @@
+// Transformation
+//
+// Settings for transformations.
+
+// Rotation angle. Must be in degrees.
+$rotation-angle: 45deg;
+
+// Generate classes for counter-clockwise rotations.
+$enable-reverse-rotation: true;

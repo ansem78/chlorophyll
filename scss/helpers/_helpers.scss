@@ -1,5 +1,7 @@
 @use 'sass:map';
+@use 'sass:math';
 @use 'sass:meta';
+@use 'sass:string';
 @use '../config';
 @use '../custom-config';
 
@@ -12,10 +14,17 @@ $config: map.deep-merge(meta.module-variables('config'), meta.module-variables('
 }
 
 // Check if a module is enabled.
-// Pass only the module name to check id either the module or at least one of its submodule is enabled.
-// Pass the submodule name to check if only the specific submodule is enabled.
-@function module-enabled($module, $submodule: null) {
+// You can either pass a top level module name as `module` or a submodule name as `module/submodule`.
+// If you only pass a module name, check if it's enable or if at least one of its submodules is enabled.
+// If you pass a submodule, check if it exists into the given module and if it's enabled.
+@function module-enabled($module) {
   $modules: get-config('modules');
+  $submodule: null;
+  $separator: string.index($module, '/');
+  @if $separator {
+    $submodule: string.slice($module, $separator + 1);
+    $module: string.slice($module, 1, $separator - 1);
+  }
   $value: map.get($modules, $module);
   // $submodule is passed, but $module is not a map (has no submodules): return false.
   @if meta.type-of($value)!='map' and $submodule {
@@ -41,3 +50,22 @@ $config: map.deep-merge(meta.module-variables('config'), meta.module-variables('
   @return if($value, true, false);
 }
 
+// Remove the unit from a length.
+@function strip-unit($length) {
+  @if meta.type-of($length)=='number' and not math.is-unitless($length) {
+    @return $length / ($length * 0 + 1);
+  }
+  @return $length;
+}
+
+// Get the unit from a length.
+// If the passed value is not a length, return null.
+// The built-in function math.unit() is intended for debug and its implementation is inconsistent.
+// https://sass-lang.com/documentation/modules/math#unit
+@function get-unit($length) {
+  @if meta.type-of($length)=='number' and not math.is-unitless($length) {
+    $unit: string.slice($length * 0 + '', 2);
+    @return if($unit!='', $unit, null);
+  }
+  @return null;
+}

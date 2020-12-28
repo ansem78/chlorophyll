@@ -1,6 +1,6 @@
 @use '../../../helpers';
 
-@if helpers.module-enabled('animate', 'back') {
+@if helpers.module-enabled('animate/back') {
 
   @keyframes animate-back-out-end {
 

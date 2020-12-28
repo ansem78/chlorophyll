@@ -6,7 +6,7 @@
     resize = resize
 
   Modifiers:
-    none = none
+    n = none
     x = horizontal
     y = vertical
     (none) = both
@@ -15,7 +15,7 @@
 
 @use '../mixins';
 
-.resize-none {
+.resize-n {
   @include mixins.resizable('none');
 }
 

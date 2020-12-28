@@ -1,0 +1,70 @@
+@use '../helpers';
+
+// Undo all transformations.
+.transform-n {
+  -webkit-transform: none;
+  transform: none;
+}
+
+// Flip.
+@if helpers.module-enabled('transform/flip') {
+
+  .flip-x {
+    transform-origin: 50%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+
+  .flip-y {
+    transform-origin: 50%;
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+  }
+
+  .flip {
+    transform-origin: 50%;
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+  }
+
+}
+
+// Rotation.
+@if helpers.module-enabled('transform/rotate') {
+
+  .rotate-0 {
+    transform-origin: 50%;
+    transform: rotate(0deg);
+  }
+
+  $angle: helpers.get-config('rotation-angle');
+
+  $n: $angle;
+  @while $n<=360deg {
+
+    .rotate-#{$n} {
+      transform-origin: 50%;
+      transform: rotate($n);
+    }
+
+    $n: $n + $angle;
+
+  }
+
+  @if helpers.get-config('enable-reverse-rotation') {
+
+    $n: $angle;
+    @while $n<=360deg {
+
+      .rotate--#{$n} {
+        transform-origin: 50%;
+        transform: rotate($n * -1);
+      }
+
+      $n: $n + $angle;
+
+    }
+
+  }
+
+}

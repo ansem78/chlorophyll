@@ -1,6 +1,6 @@
 @use '../../../helpers';
 
-@if helpers.module-enabled('animate', 'slide') {
+@if helpers.module-enabled('animate/slide') {
 
   @keyframes animate-slide-out-down {
 

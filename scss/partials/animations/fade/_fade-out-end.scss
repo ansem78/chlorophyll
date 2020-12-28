@@ -1,6 +1,6 @@
 @use '../../../helpers';
 
-@if helpers.module-enabled('animate', 'fade') {
+@if helpers.module-enabled('animate/fade') {
 
   @keyframes animate-fade-out-end {
 

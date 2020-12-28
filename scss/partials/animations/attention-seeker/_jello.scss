@@ -1,6 +1,6 @@
 @use '../../../helpers';
 
-@if helpers.module-enabled('animate', 'attention-seeker') {
+@if helpers.module-enabled('animate/attention-seeker') {
 
   @keyframes animate-jello {
 

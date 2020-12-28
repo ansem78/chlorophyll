@@ -1,6 +1,6 @@
 @use '../../../helpers';
 
-@if helpers.module-enabled('animate', 'bounce') {
+@if helpers.module-enabled('animate/bounce') {
 
   @keyframes animate-bounce-in-end {
 
