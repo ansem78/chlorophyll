@@ -1,3 +1,4 @@
+@use 'sass:list';
 @use 'sass:map';
 @use 'sass:math';
 @use 'sass:meta';
@@ -68,4 +69,18 @@ $config: map.deep-merge(meta.module-variables('config'), meta.module-variables('
     @return if($unit!='', $unit, null);
   }
   @return null;
+}
+
+// Given a list containing 2-values lists, revert each sublist values.
+// Ignore any sublist that has 2 equal values.
+@function reverse-lists($list) {
+  $reversed: ();
+  @each $value in $list {
+    $value1: list.nth($value, 1);
+    $value2: list.nth($value, 2);
+    @if $value1!=$value2 {
+      $reversed: list.append($reversed, ($value2, $value1));
+    }
+  }
+  @return $reversed;
 }

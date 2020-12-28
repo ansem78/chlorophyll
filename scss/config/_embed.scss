@@ -14,4 +14,4 @@ $aspect-ratios: (
 );
 
 // Generate classes for reversed aspect ratios (height, width) based on the `$aspect-ratios` map.
-$enable-reverse-aspect-ratio: true;
+$enable-reverse-aspect-ratios: true;
