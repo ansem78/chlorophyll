@@ -104,6 +104,28 @@ $z-index-sticky: 99999;
 // Z-index for fixed positioned elements.
 $z-index-fixed: 999999;
 
+// Spacing
+//
+// Effects padding and margin.
+
+$spacer: 1rem;
+
+$spacers: (
+  1: $spacer / 4,
+  2: $spacer / 2,
+  3: $spacer,
+  4: $spacer * 2,
+  5: $spacer * 3
+);
+
+// Grid
+//
+// Set grids properties.
+
+$grid-columns: 12;
+
+$grid-gutter: $spacer;
+
 // Icons
 //
 // Settings for SVG and font icons.
