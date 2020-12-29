@@ -1,0 +1,18 @@
+/*
+
+  Box sizing
+
+*/
+
+$sizes: (
+  b: 'border-box',
+  c: 'content-box'
+);
+
+@each $size in $sizes {
+
+  .#{$size}-box {
+    box-sizing: #{$size} !important;
+  }
+
+}

@@ -1,0 +1,36 @@
+// Flex layout column.
+
+@mixin flex-col() {
+  display: flex !important;
+  flex-direction: column;
+}
+
+// Flex layout column reverse.
+
+@mixin flex-col-reverse() {
+  display: flex !important;
+  flex-direction: column-reverse;
+}
+
+// Flex layout row.
+
+@mixin flex-row() {
+  display: flex !important;
+  flex-direction: row;
+}
+
+// Flex layout row reverse.
+
+@mixin flex-row-reverse() {
+  display: flex !important;
+  flex-direction: row-reverse;
+}
+
+// Flexbox auto.
+// 1. Fix for Chrome 44 bug. https://code.google.com/p/chromium/issues/detail?id=506893
+
+@mixin flex-auto() {
+  min-width: 0; // 1
+  min-height: 0; // 1
+  flex: 1 0 auto;
+}

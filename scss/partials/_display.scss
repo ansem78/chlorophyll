@@ -7,13 +7,14 @@
 
 */
 
+@use '../helpers';
 @use '../mixins';
 
 $displays: (
   n: 'none',
-  inline-block: 'inline-block',
   block: 'block',
   inline: 'inline',
+  inline-block: 'inline-block',
   flex: 'flex',
   inline-flex: 'inline-flex',
   table: 'table',
@@ -23,3 +24,39 @@ $displays: (
   table-col: 'table-column',
   table-cell: 'table-cell'
 );
+
+$breakpoints: map-keys(helpers.get-config('breakpoints'));
+
+@each $name in $breakpoints {
+
+  @include mixins.media-breakpoint-up($name) {
+
+    $infix: mixins.breakpoint-infix($name);
+
+    @each $key, $display in $displays {
+
+      .d#{$infix}-#{$key} {
+        display: #{$display} !important;
+      }
+
+    }
+
+    .d#{$infix}-table-full {
+      @include mixins.display-table-full();
+    }
+
+  }
+
+}
+
+@each $key, $display in $displays {
+
+  @media print {
+
+    .d-print-#{$key} {
+      display: #{$display} !important;
+    }
+
+  }
+
+}
