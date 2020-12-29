@@ -1,0 +1,9 @@
+@use '../helpers';
+
+@if helpers.get-config('enable-smooth-scroll') {
+  @media (prefers-reduced-motion: no-preference) {
+    :root {
+      scroll-behavior: smooth;
+    }
+  }
+}

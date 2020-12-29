@@ -15,7 +15,7 @@
 
 */
 
-$text-transform: (
+$text-transforms: (
   n: 'none',
   l: 'lowercase',
   u: 'uppercase',
@@ -24,7 +24,7 @@ $text-transform: (
   k: 'full-size-kana'
 );
 
-@each $key, $transform in $text-transform {
+@each $key, $transform in $text-transforms {
 
   .tt-#{$key} {
     text-transform: #{$transform};

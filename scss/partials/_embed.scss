@@ -19,25 +19,25 @@
 @if helpers.module-enabled('embed') {
 
   .embed {
-  width: 100%;
-  height: 0;
-  position: relative;
+    width: 100%;
+    height: 0;
+    position: relative;
 
     > * {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    border: none;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: none;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
   }
 
-  $aspect-ratios: helpers.get-config('aspect-ratios');
-  $reverse-aspect-ratios: if(helpers.get-config('enable-reverse-aspect-ratios'), helpers.reverse-lists($aspect-ratios), null);
+  $aspect-ratios: helpers.get-config('embed-aspect-ratios');
+  $reverse-aspect-ratios: if(helpers.get-config('enable-reverse-aspect-ratios'), helpers.reverse-sublists($aspect-ratios), null);
 
   @each $ratio in $aspect-ratios {
 

@@ -2,28 +2,25 @@
 
 // Undo all transformations.
 .transform-n {
-  -webkit-transform: none;
   transform: none;
 }
 
 // Flip.
 @if helpers.module-enabled('transform/flip') {
 
-  .flip-x {
+  .flip-x, .flip-y, .flip {
     transform-origin: 50%;
-    -webkit-transform: scaleX(-1);
+  }
+
+  .flip-x {
     transform: scaleX(-1);
   }
 
   .flip-y {
-    transform-origin: 50%;
-    -webkit-transform: scaleY(-1);
     transform: scaleY(-1);
   }
 
   .flip {
-    transform-origin: 50%;
-    -webkit-transform: scaleX(-1) scaleY(-1);
     transform: scaleX(-1) scaleY(-1);
   }
 
@@ -37,7 +34,7 @@
     transform: rotate(0deg);
   }
 
-  $angle: helpers.get-config('rotation-angle');
+  $angle: helpers.get-config('transform-rotate-angle');
 
   $n: $angle;
   @while $n<=360deg {

@@ -1,12 +1,11 @@
 @use 'sass:list';
 @use 'sass:map';
-@use 'sass:math';
 @use 'sass:meta';
 @use 'sass:string';
 @use '../config';
-@use '../custom-config';
+@use '../config-custom';
 
-$config: map.deep-merge(meta.module-variables('config'), meta.module-variables('custom-config'));
+$config: map.deep-merge(meta.module-variables('config'), meta.module-variables('config-custom'));
 
 // Check if a variable exists in the configuration and return it.
 // Otherwise, return null.
@@ -51,29 +50,9 @@ $config: map.deep-merge(meta.module-variables('config'), meta.module-variables('
   @return if($value, true, false);
 }
 
-// Remove the unit from a length.
-@function strip-unit($length) {
-  @if meta.type-of($length)=='number' and not math.is-unitless($length) {
-    @return $length / ($length * 0 + 1);
-  }
-  @return $length;
-}
-
-// Get the unit from a length.
-// If the passed value is not a length, return null.
-// The built-in function math.unit() is intended for debug and its implementation is inconsistent.
-// https://sass-lang.com/documentation/modules/math#unit
-@function get-unit($length) {
-  @if meta.type-of($length)=='number' and not math.is-unitless($length) {
-    $unit: string.slice($length * 0 + '', 2);
-    @return if($unit!='', $unit, null);
-  }
-  @return null;
-}
-
 // Given a list containing 2-values lists, revert each sublist values.
 // Ignore any sublist that has 2 equal values.
-@function reverse-lists($list) {
+@function reverse-sublists($list) {
   $reversed: ();
   @each $value in $list {
     $value1: list.nth($value, 1);

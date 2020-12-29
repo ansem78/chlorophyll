@@ -5,16 +5,12 @@
   Base:
     fs = font-style
 
-  Modifiers:
-    normal = normal
-    i = italic
-
 */
 
 .fs-normal {
   font-style: normal;
 }
 
-.fs-i {
+.fs-italic {
   font-style: italic;
 }
