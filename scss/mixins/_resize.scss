@@ -1,6 +1,7 @@
 // Make an element resizable or not.
 //
 // $direction can be one of: none, horizontal, vertical, both.
+
 @mixin resizable($direction) {
   overflow: auto; // Per CSS 3 UI, `resize` only applies when `overflow` is not `visible`.
   resize: #{$direction};

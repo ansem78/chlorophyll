@@ -1,0 +1,10 @@
+// Clear floats inside a parent.
+@mixin clearfix() {
+
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+
+}

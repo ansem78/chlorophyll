@@ -1,4 +1,5 @@
 // Apply transition to links.
+
 @mixin link-transition() {
   transition: color .15s ease-in;
 }

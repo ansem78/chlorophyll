@@ -1,5 +1,10 @@
-@forward './core';
+// Forward root.
+@forward './root';
+
+// Forward reset.
 @forward './reset';
+
+// Forward all other partials.
 @forward './accessibility';
 @forward './animate';
 @forward './background';

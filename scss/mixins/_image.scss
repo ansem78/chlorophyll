@@ -2,7 +2,8 @@
 //
 // 1. Set a maximum width relative to the parent.
 // 2. Force height to `auto`, otherwise images will be stretched when setting a width and height attribute on the `img` element.
+
 @mixin img-fluid() {
-  max-width: 100%;
-  height: auto;
+  max-width: 100%; // 1
+  height: auto; // 2
 }

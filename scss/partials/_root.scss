@@ -1,0 +1,22 @@
+@use '../helpers';
+
+// Document
+//
+// Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`.
+
+*, *::before, *::after {
+  box-sizing: #{helpers.get-config('box-sizing')};
+}
+
+// Root
+//
+// Ability to the value of the root font sizes, affecting the value of `rem`. null by default, thus nothing is generated.
+
+:root {
+  font-size: #{helpers.get-config('font-size-root')};
+  @if helpers.get-config('enable-smooth-scroll') {
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
+}

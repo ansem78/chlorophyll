@@ -15,15 +15,15 @@
 @use '../mixins';
 
 .fl-n {
-  @include mixins.float-none();
+  float: none !important;
 }
 
 .fl-s {
-  @include mixins.float-start();
+  float: left !important;
 }
 
 .fl-e {
-  @include mixins.float-end();
+  float: right !important;
 }
 
 .clear {

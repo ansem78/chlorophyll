@@ -1,6 +1,7 @@
 @use 'sass:list';
 
 // Returns a string representing the aspect ratio with a dash in front.
+
 @function aspect-ratio-suffix($ratio) {
   $width: list.nth($ratio, 1);
   $height: list.nth($ratio, 2);
@@ -8,6 +9,7 @@
 }
 
 // Set padding-bottom for the given aspect ratio.
+
 @mixin embed-aspect-ratio($ratio) {
   $width: list.nth($ratio, 1);
   $height: list.nth($ratio, 2);

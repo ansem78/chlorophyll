@@ -41,20 +41,30 @@ $enable-reverse-rotation: true;
 //
 // General settings.
 
-$font-family-sans-serif: '';
-$font-family-monospace: '';
+$font-size-root: null;
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $box-sizing: 'border-box';
 
 // Reset
 //
 // Set styles for the reset module.
 
-$base-font-size: 1rem;
-$base-font-weight: 400;
-$base-line-height: 1.5;
-$base-font-color: #222;
-$base-bg-color: #fff;
-$heading-margin-bottom: .5rem;
+$font-size-base: 1rem;
+$font-family-base: $font-family-sans-serif;
+$font-weight-base: 400;
+$line-height-base: 1.5;
+
+// Body
+//
+// Styles `body` element.
+
+$body-font-color: #212529;
+$body-text-align: null;
+$body-bg-color: #fff;
+
+
+$headings-margin-bottom: .5rem;
 $paragraph-margin-bottom: 1rem;
 
 // Breakpoints

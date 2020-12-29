@@ -6,6 +6,10 @@
 
 @use '../mixins';
 
-.sr-only, .sr-only-focusable:not(:focus) {
+.sr-only {
   @include mixins.visually-hidden();
+}
+
+.sr-only-focusable {
+  @include mixins.visually-hidden-focusable();
 }
