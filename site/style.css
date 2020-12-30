@@ -4,6 +4,19 @@ html {
 
 body {
   height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  background: #aaa;
+  height: 64px;
+  min-height: 64px;
+}
+
+.fx-container {
+  background: #ff0;
 }
 
 .avatar {
@@ -18,8 +31,8 @@ body {
 }
 
 .flex-container {
-  background: #ff0;
-  /*height: 75%;*/
+  background: #093;
+  height: 340px;
 }
 
 .flexbox {

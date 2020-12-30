@@ -10,7 +10,7 @@
 @use '../helpers';
 @use '../mixins';
 
-$displays: (
+$_displays: (
   n: 'none',
   block: 'block',
   inline: 'inline',
@@ -25,15 +25,15 @@ $displays: (
   table-cell: 'table-cell'
 );
 
-$breakpoints: map-keys(helpers.get-config('breakpoints'));
+$_breakpoints: map-keys(helpers.get-config('breakpoints'));
 
-@each $name in $breakpoints {
+@each $name in $_breakpoints {
 
   @include mixins.media-breakpoint-up($name) {
 
     $infix: mixins.breakpoint-infix($name);
 
-    @each $key, $display in $displays {
+    @each $key, $display in $_displays {
 
       .d#{$infix}-#{$key} {
         display: #{$display} !important;
@@ -49,7 +49,7 @@ $breakpoints: map-keys(helpers.get-config('breakpoints'));
 
 }
 
-@each $key, $display in $displays {
+@each $key, $display in $_displays {
 
   @media print {
 
