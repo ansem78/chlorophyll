@@ -5,13 +5,13 @@
 */
 
 .square {
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
 .circle {
-  border-radius: 50%;
+  border-radius: 50% !important;
 }
 
 .pill {
-  border-radius: 9999px;
+  border-radius: 9999px !important;
 }

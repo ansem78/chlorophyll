@@ -1,0 +1,15 @@
+// Position fixed top 100%.
+@mixin fixed-top() {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+// Position fixed bottom 100%.
+@mixin fixed-bottom() {
+  position: fixed !important;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

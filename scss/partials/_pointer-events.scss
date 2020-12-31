@@ -1,0 +1,34 @@
+/*
+
+  POINTER EVENTS
+
+  Base:
+    pe = pointer-events
+
+*/
+
+@use '../helpers';
+
+$_events: ('auto', 'none', 'inherit', 'initial', 'unset');
+
+@each $event in $_events {
+
+  .p-ev-#{$event} {
+    pointer-events: #{$event};
+  }
+
+}
+
+// SVG only events.
+
+$_svg-events: ('visiblePainted', 'visibleFill', 'visibleStroke', 'visible', 'painted', 'fill', 'stroke', 'all');
+
+@each $event in $_svg-events {
+
+  $key: helpers.kebab-case($event);
+
+  .p-ev-#{$key} {
+    pointer-events: #{$event};
+  }
+
+}

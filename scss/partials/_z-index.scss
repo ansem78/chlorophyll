@@ -1,0 +1,43 @@
+/*
+
+  Z-index
+
+  Base:
+    z = z-index
+
+  Modifiers:
+    n = $z-index-gap * n
+    max = largest accepted z-index value as integer
+    inherit = string value inherit
+    initial = string value initial
+    unset = string value unset
+
+*/
+
+@use '../helpers';
+
+$_z-index-gap: helpers.get-config('z-index-gap');
+
+@for $n from -1 through 10 {
+
+  .z-#{$n} {
+    z-index: #{$_z-index-gap * $n};
+  }
+
+}
+
+.z-max {
+  z-index: 2147483647; // Maximum z-index.
+}
+
+.z-inherit {
+  z-index: inherit;
+}
+
+.z-initial {
+  z-index: initial;
+}
+
+.z-unset {
+  z-index: unset;
+}

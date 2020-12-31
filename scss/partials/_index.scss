@@ -24,8 +24,11 @@
 @forward './opacity';
 @forward './outline';
 @forward './overflow';
+@forward './pointer-events';
+@forward './position';
 @forward './resize';
 @forward './sizing';
+@forward './spacing';
 @forward './text-align';
 @forward './text-decoration';
 @forward './text-transform';
@@ -34,3 +37,4 @@
 @forward './visibility';
 @forward './white-space';
 @forward './word-break';
+@forward './z-index';
