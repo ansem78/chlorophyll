@@ -1,0 +1,44 @@
+/*
+ * This is for responsive scalable icons based either on fonts or SVGs.
+ * Set `icon` on the element and extend it with the desired breakpoints and icon sizes.
+ *
+ * Examples:
+ *
+ * <span class="my-icon-class icon icon-4 icon-sm-2"></span>
+ *
+ * <svg class="icon icon-4 icon-sm-2">...</svg>
+ *
+ */
+
+@use '../helpers';
+@use '../mixins';
+
+@if helpers.module-enabled('icon') {
+
+  .icon {
+    @include mixins.icon-base();
+    @include mixins.icon-size(helpers.get-config('icon-size'));
+  }
+
+  $_icon-sizes: helpers.get-config('icon-sizes');
+  $_breakpoints: map-keys(helpers.get-config('breakpoints'));
+
+  @each $name in $_breakpoints {
+
+    @include mixins.media-breakpoint-up($name) {
+
+      $infix: mixins.breakpoint-infix($name);
+
+      @each $key, $size in $_icon-sizes {
+
+        .icon#{$infix}-#{$key} {
+          @include mixins.icon-size($size);
+        }
+
+      }
+
+    }
+
+  }
+
+}

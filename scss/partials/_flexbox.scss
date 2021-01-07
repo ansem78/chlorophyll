@@ -56,63 +56,63 @@ $_breakpoints: map-keys(helpers.get-config('breakpoints'));
 
     // Main axis alignment
 
-    .fx#{$infix}-ma-none {
+    .fx#{$infix}-m-none {
       justify-content: none;
     }
 
-    .fx#{$infix}-ma-start {
+    .fx#{$infix}-m-start {
       justify-content: flex-start;
     }
 
-    .fx#{$infix}-ma-center {
+    .fx#{$infix}-m-center {
       justify-content: center;
     }
 
-    .fx#{$infix}-ma-end {
+    .fx#{$infix}-m-end {
       justify-content: flex-end;
     }
 
-    .fx#{$infix}-ma-between {
+    .fx#{$infix}-m-between {
       justify-content: space-between;
     }
 
-    .fx#{$infix}-ma-around  {
+    .fx#{$infix}-m-around  {
       justify-content: space-around;
     }
 
-    .fx#{$infix}-ma-evenly  {
+    .fx#{$infix}-m-evenly  {
       justify-content: space-evenly;
     }
 
     // Cross axis alignment
 
-    .fx#{$infix}-ca-none {
+    .fx#{$infix}-c-none {
       align-items: none;
     }
 
-    .fx#{$infix}-ca-start {
+    .fx#{$infix}-c-start {
       align-items: flex-start;
     }
 
-    .fx#{$infix}-ca-center {
+    .fx#{$infix}-c-center {
       align-items: center;
     }
 
-    .fx#{$infix}-ca-end {
+    .fx#{$infix}-c-end {
       align-items: flex-end;
     }
 
-    .fx#{$infix}-ca-baseline {
+    .fx#{$infix}-c-baseline {
       align-items: baseline;
     }
 
-    .fx#{$infix}-ca-stretch {
+    .fx#{$infix}-c-stretch {
       align-items: stretch;
     }
 
     // Flexbox auto
 
-    .fx#{$infix}-flex-auto {
+    .fx#{$infix}-flex {
       @include mixins.flex-auto();
     }
 
@@ -123,14 +123,7 @@ $_breakpoints: map-keys(helpers.get-config('breakpoints'));
       // Flexbox cells
 
       .fx#{$infix}-flex-#{$n} {
-        position: relative;
         flex: 0 0 $width;
-      }
-
-      // Flexbox cells order
-
-      .fx#{$infix}-order-#{$n} {
-        order: $n;
       }
 
       // Flexbox cells offset
@@ -141,6 +134,12 @@ $_breakpoints: map-keys(helpers.get-config('breakpoints'));
 
       .fx#{$infix}-offset-s-#{$n} {
         margin-left: $width;
+      }
+
+      // Flexbox cells order
+
+      .fx#{$infix}-order-#{$n} {
+        order: $n;
       }
 
     }
