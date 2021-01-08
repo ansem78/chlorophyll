@@ -12,7 +12,7 @@
     "css-minify-rtl": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/chlorophyll.rtl.min.css dist/chlorophyll.rtl.css",
     "css-rtl": "rtlcss --config .rtlcssrc dist/chlorophyll.css",
     "setup": "yarn install || exit 0",
-    "test": "echo No test specified. && exit 0"
+    "test": "echo \"No test specified.\" && exit 0"
   },
   "author": "Alexandro Morato",
   "keywords": [

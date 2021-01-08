@@ -1,6 +1,7 @@
+@use 'sass:meta';
 @use 'sass:string';
 
-// Private helper function. Convert a string to kebab case or snake case.
+// Private. Convert a string to kebab case or snake case.
 
 @function _convert-case($str, $separator) {
   $other-sep: if($separator=='-', '_', '-');
@@ -21,6 +22,30 @@
   @return to-lower-case($return);
 }
 
+// Convert first character in string to lower case.
+
+@function lowerFirst($str) {
+  $type: meta.type-of($str);
+  @if $type!='string' {
+    @warn 'Function `#{$fn}` expects string. `#{$str}` is of type #{$type}.';
+  }
+  $first: string.to-lower-case(string.slice($str, 1, 1));
+  $str: string.slice($str, 2);
+  @return #{$first}#{$str};
+}
+
+// Convert first character in string to upper case.
+
+@function upperFirst($str) {
+  $type: meta.type-of($str);
+  @if $type!='string' {
+    @warn 'Function `upperFirst` expects string. `#{$str}` is of type #{$type}.';
+  }
+  $first: string.to-upper-case(string.slice($str, 1, 1));
+  $str: string.slice($str, 2);
+  @return #{$first}#{$str};
+}
+
 // Convert a string to camel case.
 // Characters following a space, an hypen or an underscore are upper cased.
 // Spaces, hypens and underscores are removed.
@@ -39,9 +64,7 @@
     $return: string.insert($return, $c, string.length($return) + 1);
     $i: $i + 1;
   }
-  $first: string.to-lower-case(string.slice($return, 1, 1));
-  $str: string.slice($return, 2);
-  @return '#{$first}#{$str}';
+  @return lowerFirst($return);
 }
 
 // Convert a string to Pascal case.
@@ -50,10 +73,7 @@
 // First character is upper cased.
 
 @function pascal-case($str) {
-  $str: camel-case($str);
-  $first: string.to-upper-case(string.slice($str, 1, 1));
-  $str: string.slice($str, 2);
-  @return '#{$first}#{$str}';
+  @return upperFirst(camel-case($str));
 }
 
 // Convert a string to kebab case.
