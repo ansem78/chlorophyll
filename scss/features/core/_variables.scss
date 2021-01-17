@@ -1,0 +1,46 @@
+$smooth-scroll: true;
+
+$box-sizing: 'content-box';
+
+$spacer-base: 1rem;
+
+$spacers: (
+  1: $spacer-base * .25,
+  2: $spacer-base * .5,
+  3: $spacer-base * 1,
+  4: $spacer-base * 2,
+  5: $spacer-base * 3
+);
+
+$enable-negative-margins: true;
+
+$grid-columns: 12;
+
+$grid-gutter: 1rem;
+
+$breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 960px,
+  lg: 1280px,
+  xl: 1920px
+);
+
+$z-index-base: 100;
+
+$z-indexes: (
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  6: 6,
+  7: 7,
+  8: 8,
+  9: 9,
+  10: 10
+);
+
+$z-index-sticky: 99999;
+
+$z-index-fixed: 999999;

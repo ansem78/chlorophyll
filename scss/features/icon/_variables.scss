@@ -1,0 +1,13 @@
+$enable-feature-icon: false;
+
+$icon-base: 1rem;
+
+$icon-sizes: (
+  1: $icon-base * 1,
+  2: $icon-base * 1.5,
+  3: $icon-base * 2,
+  4: $icon-base * 3,
+  5: $icon-base * 4,
+  6: $icon-base * 5,
+  7: $icon-base * 6
+);

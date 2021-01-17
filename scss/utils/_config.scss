@@ -1,0 +1,81 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:string';
+@use '../features/animate/variables' as animate;
+@use '../features/core/variables' as core;
+@use '../features/debug/variables' as debug;
+@use '../features/embed/variables' as embed;
+@use '../features/icon/variables' as icon;
+@use '../features/reset/variables' as reset;
+@use '../features/sizing/variables' as sizing;
+@use '../features/transform/variables' as transform;
+@use '../config';
+
+// Init configuration.
+
+@function _init() {
+  $config: ();
+  $features: (
+    'animate',
+    'core',
+    'debug',
+    'embed',
+    'icon',
+    'reset',
+    'sizing',
+    'transform',
+    'config'
+  );
+  @each $feature in $features {
+    $config: map.merge($config, meta.module-variables($feature));
+  }
+  @return $config;
+}
+
+$_chlorophyll: _init();
+
+// Return the configuration map.
+
+@function get() {
+  @return $_chlorophyll;
+}
+
+// Check if a variable exists in the configuration map and return it. Otherwise, return null.
+
+@function var($var) {
+  @return map.get(get(), $var);
+}
+
+// Check if a feature is enabled.
+// You can either pass a feature name or a `feature/module` path.
+// If you only pass a feature name, check if it's enable or if at least one of its modules is enabled.
+// If you pass a `feature/module` path, check if module exists into the given feature and if it's enabled.
+
+@function feature-enabled($feature) {
+  $module: null;
+  $sep: string.index($feature, '/');
+  @if $sep {
+    $module: string.slice($feature, $sep + 1);
+    $feature: string.slice($feature, 1, $sep - 1);
+  }
+  $value: var('enable-feature-#{$feature}');
+  // $module is present, but $feature is not a map (has no modules): return false.
+  @if meta.type-of($value)!='map' and $module {
+    @return false;
+  }
+  // $feature is a map (it has modules).
+  @if meta.type-of($value)=='map' {
+    // $module is present: check if it is enabled.
+    @if $module {
+      @return if(map.get($value, $module), true, false);
+    }
+    // $module is not present: check if at least one of the $feature modules is enabled.
+    @else {
+      $modules: map.values($value);
+      @return if(list.index($modules, true), true, false);
+    }
+  }
+  // Value is flat: evaluate as boolean.
+  @return if($value, true, false);
+}

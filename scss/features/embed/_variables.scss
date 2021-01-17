@@ -1,0 +1,13 @@
+$enable-feature-embed: false;
+
+$embed-aspect-ratios: (
+  (1, 1),
+  (4, 3),
+  (6, 4),
+  (7, 5),
+  (8, 5),
+  (16, 9),
+  (21, 9)
+);
+
+$enable-reverse-aspect-ratios: true;
