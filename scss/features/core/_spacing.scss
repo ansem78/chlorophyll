@@ -1,3 +1,6 @@
 @use '../../utils/config';
 
-@debug config.get();
+.class {
+  transform-origin: 50%;
+  transform: scale(-1);
+}
