@@ -1,0 +1,67 @@
+/*
+
+  Background
+
+  Base:
+    bg = background
+
+  Modifiers:
+    c = center
+    t = top
+    e = end (ltr: right, rtl: left)
+    b = bottom
+    s = start (ltr: left, rtl: right)
+    cover = cover
+    contain = contain
+
+*/
+
+@use '../../mixins/background';
+
+.bg-c {
+  @include background.position(50%, 50%);
+}
+
+.bg-t {
+  @include background.position(50%, 0);
+}
+
+.bg-te,
+.bg-et {
+  @include background.position(100%, 0);
+}
+
+.bg-ts,
+.bg-st {
+  @include background.position(0, 0);
+}
+
+.bg-e {
+  @include background.position(100%, 50%);
+}
+
+.bg-s {
+  @include background.position(0, 50%);
+}
+
+.bg-be,
+.bg-eb {
+  @include background.position(100%, 100%);
+}
+
+.bg-b {
+  @include background.position(50%, 100%);
+}
+
+.bg-bs,
+.bg-sb {
+  @include background.position(0, 100%);
+}
+
+.bg-cover {
+  @include background.cover();
+}
+
+.bg-contain {
+  @include background.contain();
+}

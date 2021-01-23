@@ -1,0 +1,33 @@
+/*
+
+  Text transform
+
+  Base:
+    tt = text-transform
+
+  Modifiers:
+    n = none
+    l = lowercase
+    u = uppercase
+    c = capitalize
+    w = full-width
+    k = full-size-kana
+
+*/
+
+$_text-transform: (
+  n: 'none',
+  l: 'lowercase',
+  u: 'uppercase',
+  c: 'capitalize',
+  w: 'full-width',
+  k: 'full-size-kana'
+);
+
+@each $key, $value in $_text-transform {
+
+  .tt-#{$key} {
+    text-transform: #{$value};
+  }
+
+}

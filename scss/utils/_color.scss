@@ -1,0 +1,33 @@
+@use 'sass:color';
+
+// Return opaque color.
+// color-opaque(#fff, rgba(0, 0, 0, .5)) => #808080
+
+@function opaque($background, $foreground) {
+  @return color.mix(rgba($foreground, 1), $background, color.alpha($foreground) * 100);
+}
+
+// Tint a color: mix a color with white.
+// $weight must be a number between 0% and 100% (inclusive).
+// A larger weight indicates that more of white should be used.
+// A smaller weight indicates that more of $color should be used.
+
+@function tint($color, $weight: 50%) {
+  @return color.mix(#fff, $color, $weight);
+}
+
+// Shade a color: mix a color with black.
+// $weight must be a number between 0% and 100% (inclusive).
+// A larger weight indicates that more of black should be used.
+// A smaller weight indicates that more of $color should be used.
+
+@function shade($color, $weight: 50%) {
+  @return color.mix(#000, $color, $weight);
+}
+
+// Shade the color if the weight is positive, else tint it.
+// $weight must be a number between 0% and 100% (inclusive).
+
+@function shift($color, $weight: 50%) {
+  @return if($weight>0, shade($color, $weight), tint($color, $weight * -1));
+}

@@ -1,0 +1,38 @@
+/*
+
+  Font weight
+
+  Base:
+    fw = font-weight
+
+  Modifiers:
+    1, lighter = 100
+    2 = 200
+    3 = 300
+    4, normal = 400
+    5 = 500
+    6 = 600
+    7, bold = 700
+    8 = 800
+    9, bolder = 900
+
+*/
+
+@use 'sass:map';
+
+$_font-weight: (
+  1: 'lighter',
+  4: 'normal',
+  7: 'bold',
+  9: 'bolder'
+);
+
+@for $value from 1 through 9 {
+
+  $key: if(map.has-key($_font-weight, $value), '.fw-#{$value}, .fw-#{map.get($_font-weight, $value)}', '.fw-#{$value}');
+
+  #{$key} {
+    font-weight: #{$value * 100};
+  }
+
+}

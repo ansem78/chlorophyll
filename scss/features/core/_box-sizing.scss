@@ -1,0 +1,18 @@
+/*
+
+  Box sizing
+
+*/
+
+$_box-sizing: (
+  b: 'border-box',
+  c: 'content-box'
+);
+
+@each $key, $value in $_box-sizing {
+
+  .#{$key}-box {
+    box-sizing: #{$value} !important;
+  }
+
+}

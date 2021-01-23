@@ -1,0 +1,19 @@
+/*
+
+  Responsive images
+
+*/
+
+@use '../../mixins/image';
+
+// Responsive images.
+
+.img-fluid {
+  @include image.fluid();
+}
+
+// Figures.
+
+.figure {
+  display: inline-block; // Ensures the caption's text aligns with the image.
+}

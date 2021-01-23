@@ -1,0 +1,16 @@
+/*
+
+  Font style
+
+  Base:
+    fs = font-style
+
+*/
+
+@each $value in ('normal', 'italic') {
+
+  .fs-#{$value} {
+    font-style: #{$value};
+  }
+
+}

@@ -1,0 +1,21 @@
+// Set background position with no-repeat.
+// $x and $y can be any value accepted by background-position property.
+
+@mixin position($x, $y) {
+  background-repeat: no-repeat;
+  background-position: #{$x} #{$y};
+}
+
+// Set background-size: cover with no-repeat.
+
+@mixin cover() {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// Set background-size: contain with no-repeat.
+
+@mixin contain() {
+  background-repeat: no-repeat;
+  background-size: contain;
+}

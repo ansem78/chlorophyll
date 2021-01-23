@@ -1,0 +1,28 @@
+// Flip an element horizontal.
+
+@mixin flip-x() {
+  transform-origin: 50%;
+  transform: scaleX(-1);
+}
+
+// Flip an element vertical.
+
+@mixin flip-y() {
+  transform-origin: 50%;
+  transform: scaleY(-1);
+}
+
+// Flip an element both horizontal and vertical.
+
+@mixin flip() {
+  transform-origin: 50%;
+  transform: scale(-1, -1);
+}
+
+// Rotate an element by a given angle.
+// Rotate clockwise if $angle is positive, counter-clockwise if $angle is negative.
+
+@mixin rotate($angle) {
+  transform-origin: 50%;
+  transform: rotate($angle);
+}

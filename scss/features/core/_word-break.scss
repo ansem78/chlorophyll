@@ -1,0 +1,22 @@
+/*
+
+  Word break
+
+  Base:
+    wb = word-break
+
+*/
+
+$_word-break: (
+  normal: 'normal',
+  wrap: 'break-all',
+  nowrap: 'keep-all'
+);
+
+@each $key, $value in $_word-break {
+
+  .wb-#{$key} {
+    word-break: #{$value};
+  }
+
+}

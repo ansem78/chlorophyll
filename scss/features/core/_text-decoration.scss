@@ -1,0 +1,20 @@
+/*
+
+  Text decoration
+
+*/
+
+$_text-decoration: (
+  no-line: 'none',
+  underline: 'underline',
+  strike: 'line-through',
+  overline: 'overline'
+);
+
+@each $key, $value in $_text-decoration {
+
+  .#{$key} {
+    text-decoration: #{$value};
+  }
+
+}

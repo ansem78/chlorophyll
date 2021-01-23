@@ -1,0 +1,37 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:math';
+
+// Ascending.
+// Used to evaluate if values in a map are in ascending order.
+
+@mixin ascending($map, $map-name) {
+  $prev-key: null;
+  $prev-num: null;
+  @each $key, $num in $map {
+    @if $prev-num==null or math.unit($num)=='%' or math.unit($prev-num)=='%' {
+      // Do nothing.
+    }
+    @else if not math.compatible($prev-num, $num) {
+      @warn 'Potentially invalid value for `#{$map-name}`. This map must be in ascending order, but key `#{$key}` has value #{$num}. This unit makes it incomparable against the value of the previous key `#{$prev-key}` (#{$prev-num}).';
+    }
+    @else if $prev-num>=$num {
+      @warn 'Invalid value for `#{$map-name}`. This map must be in ascending order. The key `#{$key}` has value #{$num}, which isn\'t greater than the value of the previous key `#{$prev-key}` (#{$prev-num}).';
+    }
+    $prev-key: $key;
+    $prev-num: $num;
+  }
+}
+
+// Starts at zero.
+// Used to ensure the lowest value in a map starts at 0.
+
+@mixin starts-at-zero($map, $map-name) {
+  @if list.length($map)>0 {
+    $values: map.values($map);
+    $first: list.nth($values, 1);
+    @if $first!=0 {
+      @warn 'First value in `#{$map-name}` starts at #{$first}, but it must start at 0.';
+    }
+  }
+}

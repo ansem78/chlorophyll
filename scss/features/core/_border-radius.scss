@@ -1,0 +1,17 @@
+/*
+
+  Border radius
+
+*/
+
+.square {
+  border-radius: 0 !important;
+}
+
+.circle {
+  border-radius: 50% !important;
+}
+
+.pill {
+  border-radius: 9999px !important;
+}

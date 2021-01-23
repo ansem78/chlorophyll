@@ -1,0 +1,15 @@
+/*
+
+  Accessibility
+
+*/
+
+@use '../../mixins/accessibility';
+
+.sr-only {
+  @include accessibility.visually-hidden();
+}
+
+.sr-only-focusable {
+  @include accessibility.visually-hidden-focusable();
+}

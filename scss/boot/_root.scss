@@ -1,0 +1,23 @@
+@use '../utils/config';
+
+// Value of the root font size, affecting the value of `rem`. null by default, thus nothing is generated.
+
+:root {
+  font-size: #{config.var('font-size-root')};
+}
+
+// Enable smooth scrolling.
+
+@if config.var('enable-smooth-scroll') {
+  @media (prefers-reduced-motion: no-preference) {
+    :root {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+// Default `box-sizing` behavior for all elements and generated pseudo-elements.
+
+*, *::before, *::after {
+  box-sizing: #{config.var('box-sizing')};
+}

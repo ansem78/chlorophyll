@@ -1,0 +1,20 @@
+// Transform: flip
+
+@use '../../utils/config';
+@use '../../mixins/transform';
+
+@if config.feature-enabled('transform/flip') {
+
+  .flip-x {
+    @include transform.flip-x();
+  }
+
+  .flip-y {
+    @include transform.flip-y();
+  }
+
+  .flip {
+    @include transform.flip();
+  }
+
+}

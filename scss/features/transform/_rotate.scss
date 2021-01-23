@@ -1,0 +1,26 @@
+// Transform: rotate
+
+@use '../../utils/config';
+@use '../../mixins/transform';
+
+@if config.feature-enabled('transform/rotate') {
+
+  .rotate-0 {
+    @include transform.rotate(0deg);
+  }
+
+  $angle: config.var('transform-rotate-angle');
+
+  $n: $angle;
+
+  @while $n<=360deg {
+
+    .rotate-#{$n} {
+      @include transform.rotate($n);
+    }
+
+    $n: $n + $angle;
+
+  }
+
+}

@@ -5,9 +5,9 @@
   "scripts": {
     "css": "npm-run-all css-compile css-autoprefix css-rtl css-minify",
     "css-autoprefix": "postcss dist/*.css --use autoprefixer -d dist/",
-    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css --stop-on-error scss/:dist/",
-    "css-compile-main": "sass --style expanded --source-map --embed-sources --no-error-css --stop-on-error scss/chlorophyll.scss dist/chlorophyll.css",
-    "css-compile-debug": "sass --style expanded --source-map --embed-sources --no-error-css --stop-on-error scss/debug.scss dist/debug.css && sass --style expanded --source-map --embed-sources --no-error-css --stop-on-error scss/debug-utils.scss dist/debug-utils.css",
+    "css-compile": "sass --style expanded --no-error-css --stop-on-error scss/:dist/",
+    "css-compile-main": "sass --style expanded --no-error-css --stop-on-error scss/chlorophyll.scss dist/chlorophyll.css",
+    "css-compile-debug": "sass --style expanded --no-error-css --stop-on-error scss/debug.scss dist/debug.css && sass --style expanded --no-error-css --stop-on-error scss/debug-utils.scss dist/debug-utils.css",
     "css-lint": "stylelint \"**/*.{scss,css}\" --cache --cache-location=.cache/.stylelintcache --rd",
     "css-minify": "npm-run-all --parallel css-minify-*",
     "css-minify-main": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/chlorophyll.min.css dist/chlorophyll.css",
@@ -46,14 +46,14 @@
     "scss/**/*.scss"
   ],
   "devDependencies": {
-    "autoprefixer": "^10.2.1",
+    "autoprefixer": "^10.2.3",
     "clean-css-cli": "^4.3.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "rtlcss": "^3.0.0",
-    "sass": "^1.32.4",
-    "stylelint": "^13.8.0",
+    "sass": "^1.32.5",
+    "stylelint": "^13.9.0",
     "stylelint-config-chlorophyll": "^1.0.15",
     "stylelint-scss": "^3.18.0"
   }

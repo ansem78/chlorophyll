@@ -1,0 +1,31 @@
+/*
+
+  Float
+
+  Base:
+    fl: float
+
+  Modifiers:
+    n = none
+    s = start (ltr: left, rtl: right)
+    e = end (ltr: right, rtl: left)
+
+*/
+
+@use '../../mixins/float';
+
+.fl-n {
+  float: none !important;
+}
+
+.fl-s {
+  float: left !important;
+}
+
+.fl-e {
+  float: right !important;
+}
+
+.clear {
+  @include float.clearfix();
+}

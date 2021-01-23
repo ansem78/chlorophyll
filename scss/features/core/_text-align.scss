@@ -1,0 +1,29 @@
+/*
+
+  Text align
+
+  Base:
+    ta = text-align
+
+  Modifiers:
+    s = start (ltr: left, rtl: right)
+    c = center
+    e = end (ltr: right, rtl: left)
+    j = justify
+
+*/
+
+$_text-align: (
+  s: 'left',
+  c: 'center',
+  e: 'right',
+  j: 'justify'
+);
+
+@each $key, $value in $_text-align {
+
+  .ta-#{$key} {
+    text-align: #{$value};
+  }
+
+}

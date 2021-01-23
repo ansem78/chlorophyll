@@ -1,0 +1,13 @@
+/*
+
+  Input
+
+*/
+
+// Remove spinner from input number.
+
+[type=number].no-spin,
+[type=number].no-spin::-webkit-inner-spin-button,
+[type=number].no-spin::-webkit-outer-spin-button {
+  appearance: none;
+}

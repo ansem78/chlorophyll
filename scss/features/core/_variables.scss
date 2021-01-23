@@ -1,13 +1,13 @@
-$smooth-scroll: true;
+$enable-smooth-scroll: true;
 
 $box-sizing: 'content-box';
 
 $spacer-base: 1rem;
 
 $spacers: (
-  1: $spacer-base * .25,
-  2: $spacer-base * .5,
-  3: $spacer-base * 1,
+  1: $spacer-base / 4,
+  2: $spacer-base / 2,
+  3: $spacer-base,
   4: $spacer-base * 2,
   5: $spacer-base * 3
 );

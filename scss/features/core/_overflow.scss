@@ -1,0 +1,29 @@
+/*
+
+  Overflow
+
+  Base:
+    of = overflow
+
+  Modifiers:
+    (none) = both
+    x = horizontal
+    y = vertical
+
+*/
+
+@each $value in ('visible', 'hidden', 'scroll', 'auto') {
+
+  .of-#{$value} {
+    overflow: #{$value} !important;
+  }
+
+  .of-x-#{$value} {
+    overflow-x: #{$value} !important;
+  }
+
+  .of-y-#{$value} {
+    overflow-y: #{$value} !important;
+  }
+
+}

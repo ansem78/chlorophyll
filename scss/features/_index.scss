@@ -1,7 +1,15 @@
-@use './animate';
+// Reset should be loaded first.
+
+@use './reset';
+
+// Load core.
+
 @use './core';
+
+// Load optional features.
+
+@use './animate';
 @use './embed';
 @use './icon';
-@use './reset';
 @use './sizing';
 @use './transform';

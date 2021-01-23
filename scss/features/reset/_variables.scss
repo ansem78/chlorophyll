@@ -2,9 +2,31 @@ $enable-feature-reset: false;
 
 $font-size-root: null;
 
-$font-family-sans-serif: (system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+$font-family-sans-serif: (
+  'system-ui',
+  '-apple-system',
+  '"Segoe UI"',
+  'Roboto',
+  '"Helvetica Neue"',
+  'Arial',
+  '"Noto Sans"',
+  '"Liberation Sans"',
+  'sans-serif',
+  '"Apple Color Emoji"',
+  '"Segoe UI Emoji"',
+  '"Segoe UI Symbol"',
+  '"Noto Color Emoji"'
+);
 
-$font-family-monospace: (SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+$font-family-monospace: (
+  'SFMono-Regular',
+  'Menlo',
+  'Monaco',
+  'Consolas',
+  '"Liberation Mono"',
+  '"Courier New"',
+  'monospace'
+);
 
 $font-size-base: 1rem;
 
@@ -23,3 +45,55 @@ $body-bg-color: #fff;
 $heading-margin-bottom: .5rem;
 
 $paragraph-margin-bottom: 1rem;
+
+$hr-color: 'inherit';
+
+$hr-margin-y: $paragraph-margin-bottom;
+
+$hr-height: 1px;
+
+$hr-opacity: .25;
+
+$address-margin-bottom: $paragraph-margin-bottom;
+
+$list-margin-bottom: $paragraph-margin-bottom;
+
+$dd-margin-bottom: $heading-margin-bottom;
+
+$blockquote-margin-bottom: $paragraph-margin-bottom;
+
+$mark-padding: .2em;
+
+$mark-bg: #fcf8e3;
+
+$link-color: #0d6efd;
+
+$link-decoration: 'underline';
+
+$link-hover-color: #0a58ca;
+
+$link-hover-decoration: null;
+
+$pre-margin-bottom: $paragraph-margin-bottom;
+
+$code-font-size: .875em;
+
+$code-color: #d63384;
+
+$kbd-color: #fff;
+
+$kbd-bg: #212529;
+
+$kbd-padding-y: $mark-padding;
+
+$kbd-padding-x: .4rem;
+
+$kbd-nested-font-weight: 700;
+
+$figure-margin-bottom: $paragraph-margin-bottom;
+
+$table-caption-color: #6c757d;
+
+$table-caption-padding-y: $heading-margin-bottom;
+
+$legend-margin-bottom: $heading-margin-bottom;

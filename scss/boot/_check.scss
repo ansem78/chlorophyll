@@ -1,0 +1,12 @@
+// Startup checks
+//
+// Check configuration errors on startup.
+
+@use '../utils/assert';
+@use '../utils/config';
+
+$_breakpoints: config.var('breakpoints');
+
+@include assert.ascending($_breakpoints, '$breakpoints');
+
+@include assert.starts-at-zero($_breakpoints, '$breakpoints');

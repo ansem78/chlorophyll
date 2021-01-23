@@ -1,0 +1,11 @@
+/*
+
+  List
+
+*/
+
+@use '../../mixins/list';
+
+.list {
+  @include list.unstyled();
+}
