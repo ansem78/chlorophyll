@@ -1,0 +1,25 @@
+// Indent text with no vertical spacing.
+
+@mixin indent() {
+  text-indent: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Requires inline-block or block for proper styling.
+
+@mixin text-truncate() {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// Optimize text and font icons readability.
+
+@mixin readability() {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga' 1;
+  font-feature-settings: 'liga' 1;
+}

@@ -1,0 +1,48 @@
+/*
+
+  Position
+
+*/
+
+@use 'sass:map';
+@use '../../utils/config';
+@use '../../mixins/breakpoints';
+@use '../../mixins/position';
+
+$_breakpoints: map.keys(config.var('breakpoints'));
+$_z-index-sticky: config.var('z-index-sticky');
+$_z-index-fixed: config.var('z-index-fixed');
+
+@each $value in ('static', 'relative', 'absolute', 'fixed', 'sticky') {
+
+  .#{$value} {
+    position: #{$value} !important;
+  }
+
+}
+
+.fixed-t {
+  @include position.fixed-top($_z-index-fixed);
+}
+
+.fixed-b {
+  @include position.fixed-bottom($_z-index-fixed);
+}
+
+// Responsive sticky top.
+
+@each $breakpoint in $_breakpoints {
+
+  @include breakpoints.media-up($breakpoint) {
+
+    $infix: breakpoints.infix($breakpoint);
+
+    .sticky#{$infix}-t {
+      position: sticky !important;
+      top: 0;
+      z-index: $_z-index-sticky;
+    }
+
+  }
+
+}

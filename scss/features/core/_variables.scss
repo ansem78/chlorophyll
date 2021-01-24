@@ -29,16 +29,16 @@ $breakpoints: (
 $z-index-base: 100;
 
 $z-indexes: (
-  1: 1,
-  2: 2,
-  3: 3,
-  4: 4,
-  5: 5,
-  6: 6,
-  7: 7,
-  8: 8,
-  9: 9,
-  10: 10
+  1: $z-index-base,
+  2: $z-index-base * 2,
+  3: $z-index-base * 3,
+  4: $z-index-base * 4,
+  5: $z-index-base * 5,
+  6: $z-index-base * 6,
+  7: $z-index-base * 7,
+  8: $z-index-base * 8,
+  9: $z-index-base * 9,
+  10: $z-index-base * 10
 );
 
 $z-index-sticky: 99999;

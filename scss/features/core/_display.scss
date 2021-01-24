@@ -1,0 +1,64 @@
+/*
+
+  DISPLAY
+
+  Base:
+    d = display
+
+*/
+
+@use 'sass:map';
+@use '../../utils/config';
+@use '../../mixins/breakpoints';
+@use '../../mixins/display';
+
+$_displays: (
+  n: 'none',
+  block: 'block',
+  inline: 'inline',
+  inline-block: 'inline-block',
+  flex: 'flex',
+  inline-flex: 'inline-flex',
+  table: 'table',
+  table-row-g: 'table-row-group',
+  table-row: 'table-row',
+  table-col-g: 'table-column-group',
+  table-col: 'table-column',
+  table-cell: 'table-cell'
+);
+
+$_breakpoints: map.keys(config.var('breakpoints'));
+
+@each $breakpoint in $_breakpoints {
+
+  @include breakpoints.media-up($breakpoint) {
+
+    $infix: breakpoints.infix($breakpoint);
+
+    @each $key, $value in $_displays {
+
+      .d#{$infix}-#{$key} {
+        display: #{$value} !important;
+      }
+
+    }
+
+    .d#{$infix}-table-full {
+      @include display.table-full();
+    }
+
+  }
+
+}
+
+@each $key, $value in $_displays {
+
+  @media print {
+
+    .d-print-#{$key} {
+      display: #{$value} !important;
+    }
+
+  }
+
+}

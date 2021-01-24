@@ -1,0 +1,30 @@
+/*
+
+  Pointer events
+
+  Base:
+    pe = pointer-events
+
+*/
+
+@use '../../utils/string';
+
+@each $value in ('auto', 'none', 'inherit', 'initial', 'unset') {
+
+  .p-ev-#{$value} {
+    pointer-events: #{$value};
+  }
+
+}
+
+// SVG only events.
+
+@each $value in ('visiblePainted', 'visibleFill', 'visibleStroke', 'visible', 'painted', 'fill', 'stroke', 'all') {
+
+  $key: string.kebab-case($value);
+
+  .p-ev-#{$key} {
+    pointer-events: #{$value};
+  }
+
+}

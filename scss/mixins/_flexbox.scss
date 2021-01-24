@@ -1,0 +1,58 @@
+// Flex layout column.
+
+@mixin col() {
+  width: 100%;
+  display: flex !important;
+  box-sizing: border-box !important;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+// Flex layout column reverse.
+
+@mixin col-reverse() {
+  width: 100%;
+  display: flex !important;
+  box-sizing: border-box !important;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+}
+
+// Flex layout row.
+
+@mixin row() {
+  width: 100%;
+  display: flex !important;
+  box-sizing: border-box !important;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+// Flex layout row reverse.
+
+@mixin row-reverse() {
+  width: 100%;
+  display: flex !important;
+  box-sizing: border-box !important;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+// Flexbox auto.
+// 1. Fix for Chrome 44 bug. https://code.google.com/p/chromium/issues/detail?id=506893
+
+@mixin auto() {
+  min-width: 0; // 1
+  min-height: 0; // 1
+  flex: 1 0 auto !important;
+}
+
+// Flex fill container.
+// Set a container tall as the remaining space with display: flex.
+
+@mixin container() {
+  @include auto();
+  display: flex !important;
+  flex-flow: column nowrap !important;
+  align-self: stretch !important;
+}

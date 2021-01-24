@@ -1,0 +1,7 @@
+// Set display table with fixed layout and 100% width.
+
+@mixin table-full() {
+  width: 100%;
+  display: table !important;
+  table-layout: fixed;
+}

@@ -1,0 +1,49 @@
+/*
+
+  Z-index
+
+  Base:
+    z = z-index
+
+  Modifiers:
+    n = $z-index-gap * n
+    max = largest accepted z-index value as integer
+    inherit = string value inherit
+    initial = string value initial
+    unset = string value unset
+
+*/
+
+@use '../../utils/config';
+
+.z--1 {
+  z-index: -1;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+@each $key, $value in config.var('z-indexes') {
+
+  .z-#{$key} {
+    z-index: $value;
+  }
+
+}
+
+.z-max {
+  z-index: 2147483647; // Maximum z-index.
+}
+
+.z-inherit {
+  z-index: inherit;
+}
+
+.z-initial {
+  z-index: initial;
+}
+
+.z-unset {
+  z-index: unset;
+}
