@@ -1,0 +1,22 @@
+@use '../../../../utils/config';
+
+@if config.feature-enabled('animate/zoom') {
+
+  @keyframes animate-zoom-in {
+
+    from {
+      opacity: 0;
+      transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+  }
+
+  .animate-zoom-in {
+    animation-name: animate-zoom-in;
+  }
+
+}

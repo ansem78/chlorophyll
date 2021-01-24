@@ -1,0 +1,28 @@
+@use '../../../../utils/config';
+
+@if config.feature-enabled('animate/back') {
+
+  @keyframes animate-back-in-up {
+
+    0% {
+      opacity: .7;
+      transform: translateY(1200px) scale(.7);
+    }
+
+    80% {
+      opacity: .7;
+      transform: translateY(0) scale(.7);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+  }
+
+  .animate-back-in-up {
+    animation-name: animate-back-in-up;
+  }
+
+}

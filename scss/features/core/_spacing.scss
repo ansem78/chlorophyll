@@ -1,0 +1,152 @@
+/*
+
+  PADDING, MARGIN
+
+  Base:
+    p = padding
+    m = margin
+
+  Modifiers:
+    (none) = all
+    t = top
+    e = end (right: ltr, left: rtl)
+    b = bottom
+    s = start (left: ltr, right: rtl)
+    x = horizontal (right and left)
+    y = vertical (top and bottom)
+
+*/
+
+@use 'sass:map';
+@use '../../utils/config';
+@use '../../mixins/breakpoints';
+@use '../../mixins/spacing';
+
+$_breakpoints: map.keys(config.var('breakpoints'));
+$_spacers: config.var('spacers');
+
+@each $breakpoint in $_breakpoints {
+
+  @include breakpoints.media-up($breakpoint) {
+
+    $infix: breakpoints.infix($breakpoint);
+
+    @each $key, $value in $_spacers {
+
+      // Padding.
+
+      .p#{$infix}-#{$key} {
+        padding: $value;
+      }
+
+      .pt#{$infix}-#{$key} {
+        padding-top: $value;
+      }
+
+      .pe#{$infix}-#{$key} {
+        padding-right: $value;
+      }
+
+      .pb#{$infix}-#{$key} {
+        padding-bottom: $value;
+      }
+
+      .ps#{$infix}-#{$key} {
+        padding-left: $value;
+      }
+
+      .px#{$infix}-#{$key} {
+        @include spacing.padding-x($value);
+      }
+
+      .py#{$infix}-#{$key} {
+        @include spacing.padding-y($value);
+      }
+
+      // Margin.
+
+      .m#{$infix}-#{$key} {
+        margin: $value;
+      }
+
+      .mt#{$infix}-#{$key} {
+        margin-top: $value;
+      }
+
+      .me#{$infix}-#{$key} {
+        margin-right: $value;
+      }
+
+      .mb#{$infix}-#{$key} {
+        margin-bottom: $value;
+      }
+
+      .ms#{$infix}-#{$key} {
+        margin-left: $value;
+      }
+
+      .mx#{$infix}-#{$key} {
+        @include spacing.margin-x($value);
+      }
+
+      .my#{$infix}-#{$key} {
+        @include spacing.margin-y($value);
+      }
+
+    }
+
+    // Negative margin.
+
+    @if config.var('enable-negative-margins') {
+
+      @each $key, $value in $_spacers {
+
+        .m#{$infix}--#{$key} {
+          margin: -$value;
+        }
+
+        .mt#{$infix}--#{$key} {
+          margin-top: -$value;
+        }
+
+        .me#{$infix}--#{$key} {
+          margin-right: -$value;
+        }
+
+        .mb#{$infix}--#{$key} {
+          margin-bottom: -$value;
+        }
+
+        .ms#{$infix}--#{$key} {
+          margin-left: -$value;
+        }
+
+        .mx#{$infix}--#{$key} {
+          @include spacing.margin-x(-$value);
+        }
+
+        .my#{$infix}--#{$key} {
+          @include spacing.margin-y(-$value);
+        }
+
+      }
+
+    }
+
+    // Margin `auto`.
+
+    .me#{$infix}-auto {
+      margin-right: auto;
+    }
+
+    .ms#{$infix}-auto {
+      margin-left: auto;
+    }
+
+    .mx#{$infix}-auto {
+      @include spacing.margin-x-auto();
+    }
+
+  }
+
+}

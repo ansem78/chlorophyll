@@ -1,0 +1,13 @@
+@use './attention-seeker';
+@use './back';
+@use './bounce';
+@use './fade';
+@use './flip';
+@use './rotate';
+@use './slide';
+@use './special';
+@use './speed';
+@use './zoom';
+
+// https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/
+// https://www.sitepoint.com/build-responsive-type-scale-bootstrap/

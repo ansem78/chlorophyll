@@ -1,0 +1,29 @@
+@use '../../../../utils/config';
+
+@if config.feature-enabled('animate/flip') {
+
+  @keyframes animate-flip-out-y {
+
+    from {
+      transform: perspective(400px);
+    }
+
+    30% {
+      opacity: 1;
+      transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    }
+
+    to {
+      opacity: 0;
+      transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    }
+
+  }
+
+  .animate-flip-out-y {
+    animation-name: animate-flip-out-y;
+    animation-duration: .75s;
+    backface-visibility: visible !important;
+  }
+
+}

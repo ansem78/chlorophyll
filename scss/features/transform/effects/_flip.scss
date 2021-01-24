@@ -1,7 +1,7 @@
 // Transform: flip
 
-@use '../../utils/config';
-@use '../../mixins/transform';
+@use '../../../utils/config';
+@use '../../../mixins/transform';
 
 @if config.feature-enabled('transform/flip') {
 

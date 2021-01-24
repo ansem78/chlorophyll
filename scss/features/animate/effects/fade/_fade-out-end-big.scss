@@ -1,0 +1,22 @@
+@use '../../../../utils/config';
+
+@if config.feature-enabled('animate/fade') {
+
+  @keyframes animate-fade-out-end-big {
+
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(2000px, 0, 0);
+    }
+
+  }
+
+  .animate-fade-out-end-big {
+    animation-name: animate-fade-out-end-big;
+  }
+
+}

@@ -1,0 +1,23 @@
+@use '../../../../utils/config';
+
+@if config.feature-enabled('animate/fade') {
+
+  @keyframes animate-fade-out-top-end {
+
+    from {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(100%, -100%, 0);
+    }
+
+  }
+
+  .animate-fade-out-top-end {
+    animation-name: animate-fade-out-top-end;
+  }
+
+}

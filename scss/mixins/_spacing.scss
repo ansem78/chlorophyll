@@ -1,0 +1,34 @@
+// Horizontal padding.
+
+@mixin padding-x($size) {
+  padding-right: $size;
+  padding-left: $size;
+}
+
+// Vertical padding.
+
+@mixin padding-y($size) {
+  padding-top: $size;
+  padding-bottom: $size;
+}
+
+// Horizontal margin.
+
+@mixin margin-x($size) {
+  margin-right: $size;
+  margin-left: $size;
+}
+
+// Vertical margin.
+
+@mixin margin-y($size) {
+  margin-top: $size;
+  margin-bottom: $size;
+}
+
+// Horizontal margin `auto`.
+
+@mixin margin-x-auto() {
+  margin-right: auto;
+  margin-left: auto;
+}

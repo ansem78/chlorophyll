@@ -1,0 +1,19 @@
+@use 'sass:list';
+
+// Returns a string representing the aspect ratio with a dash in front.
+// $ratio is a 2-elements list with media (<width>, <height>) unitless ratio. i.e. (16, 9).
+
+@function suffix($ratio) {
+  $width: list.nth($ratio, 1);
+  $height: list.nth($ratio, 2);
+  @return '-#{$width}x#{$height}';
+}
+
+// Set padding-bottom for the given aspect ratio.
+// $ratio is a 2-elements list with media (<width>, <height>) unitless ratio. i.e. (16, 9).
+
+@mixin aspect-ratio($ratio) {
+  $width: list.nth($ratio, 1);
+  $height: list.nth($ratio, 2);
+  padding-bottom: $height / $width * 100%;
+}

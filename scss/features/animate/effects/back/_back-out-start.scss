@@ -1,0 +1,28 @@
+@use '../../../../utils/config';
+
+@if config.feature-enabled('animate/back') {
+
+  @keyframes animate-back-out-start {
+
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    20% {
+      opacity: .7;
+      transform: translateX(0) scale(.7);
+    }
+
+    100% {
+      opacity: .7;
+      transform: translateX(-2000px) scale(.7);
+    }
+
+  }
+
+  .animate-back-out-start {
+    animation-name: animate-back-out-start;
+  }
+
+}

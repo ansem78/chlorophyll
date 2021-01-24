@@ -1,0 +1,22 @@
+@use '../../../../utils/config';
+
+@if config.feature-enabled('animate/fade') {
+
+  @keyframes animate-fade-out-start {
+
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+
+  }
+
+  .animate-fade-out-start {
+    animation-name: animate-fade-out-start;
+  }
+
+}

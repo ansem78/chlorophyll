@@ -1,0 +1,22 @@
+@use '../../../../utils/config';
+
+@if config.feature-enabled('animate/slide') {
+
+  @keyframes animate-slide-out-up {
+
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      visibility: hidden;
+      transform: translate3d(0, -100%, 0);
+    }
+
+  }
+
+  .animate-slide-out-up {
+    animation-name: animate-slide-out-up;
+  }
+
+}

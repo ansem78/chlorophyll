@@ -1,0 +1,23 @@
+@use '../../../../utils/config';
+
+@if config.feature-enabled('animate/rotate') {
+
+  @keyframes animate-rotate-out-up-start {
+
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      transform: rotate3d(0, 0, 1, -45deg);
+    }
+
+  }
+
+  .animate-rotate-out-up-start {
+    transform-origin: 0 0;
+    animation-name: animate-rotate-out-up-start;
+  }
+
+}

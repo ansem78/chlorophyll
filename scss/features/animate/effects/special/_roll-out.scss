@@ -1,0 +1,22 @@
+@use '../../../../utils/config';
+
+@if config.feature-enabled('animate/special') {
+
+  @keyframes animate-roll-out {
+
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    }
+
+  }
+
+  .animate-roll-out {
+    animation-name: animate-roll-out;
+  }
+
+}

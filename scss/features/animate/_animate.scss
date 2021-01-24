@@ -1,0 +1,80 @@
+/*
+ * This is for animate HTML elements.
+ * Set the element with `animate` and extend it with the desired modifier classes.
+ */
+
+@use '../../utils/config';
+@use './effects';
+
+@if config.feature-enabled('animate') {
+
+  $_duration-base: config.var('animate-duration-base');
+
+  .animate {
+    animation-iteration-count: 1;
+    animation-delay: 0;
+    animation-duration: $_duration-base;
+    animation-fill-mode: both;
+    animation-direction: normal;
+    animation-play-state: running;
+  }
+
+  .animate-reverse {
+    animation-direction: reverse;
+  }
+
+  .animate-alternate {
+    animation-direction: alternate;
+  }
+
+  .animate-alternate-reverse {
+    animation-direction: alternate-reverse;
+  }
+
+  .animate-pause {
+    animation-play-state: paused;
+  }
+
+  .animate-infinite {
+    animation-iteration-count: infinite;
+  }
+
+  @each $key, $value in config.var('animate-repeats') {
+
+    .animate-repeat-#{$key} {
+      animation-iteration-count: $value;
+    }
+
+  }
+
+  @each $key, $value in config.var('animate-delays') {
+
+    .animate-delay-#{$key} {
+      animation-delay: $value;
+    }
+
+  }
+
+  @each $key, $value in config.var('animate-durations') {
+
+    .animate-duration-#{$key} {
+      animation-duration: $value;
+    }
+
+  }
+
+  @media print, (prefers-reduced-motion: reduce) {
+
+    .animate {
+      animation-duration: 1ms !important;
+      transition-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+    }
+
+    .animate[class*=out] {
+      opacity: 0;
+    }
+
+  }
+
+}
