@@ -48,11 +48,12 @@
 }
 
 // Flex fill container.
-// Set a container tall as the remaining space with display: flex.
+// Set an element tall as the remaining space of its parent flex container.
 
 @mixin container() {
   @include auto();
   display: flex !important;
   flex-flow: column nowrap !important;
+  justify-content: stretch !important;
   align-self: stretch !important;
 }

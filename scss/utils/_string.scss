@@ -1,4 +1,57 @@
+@use 'sass:list';
 @use 'sass:string';
+
+// Remove each given character from the beginning of a string.
+
+@function trim-start($str, $trim: null) {
+  @if $trim {
+    $trim: split($trim);
+  }
+  @else {
+    $trim: (' ',);
+  }
+  $i: 1;
+  $chars: split($str);
+  @each $c in $chars {
+    @if not list.index($trim, $c) {
+      @return string.slice($str, $i);
+    }
+    $i: $i + 1;
+  }
+  @return $str;
+}
+
+// Split a string by the given substring. If no substring is given, split into each character.
+
+@function split($str, $substr: null) {
+  $return: ();
+  @if $substr {
+
+  }
+  @else {
+    $length: string.length($str);
+    $c: 1;
+    @while $c<$length {
+      $return: list.append($return, string.slice($str, $c, $c + 1));
+      $c: $c + 1;
+    }
+  }
+  @return $return;
+}
+
+// Replace `$search` with `$replace` in a string.
+// @author Hugo Giraudel
+
+@function replace($str, $search, $replace: null) {
+  @if not $replace {
+    $replace: '';
+  }
+  $i: string.index($str, $search);
+  @if $i {
+    @return '#{string.slice($str, 1, $i - 1)}#{$replace}#{replace(string.slice($str, $i + string.length($search)), $search, $replace)}';
+  }
+  @return $str;
+}
 
 // Private helper function. Convert a string to kebab case or snake case.
 
