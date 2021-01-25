@@ -1,9 +1,9 @@
 @use 'sass:list';
 @use 'sass:string';
 
-// Remove each given character from the beginning of a string.
+// Remove each given character from the left of a string.
 
-@function trim-start($str, $trim: null) {
+@function trim-left($str, $trim: null) {
   @if $trim {
     $trim: split($trim);
   }
