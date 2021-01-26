@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Lightweight CSS framework focused on structure.",
   "scripts": {
-    "css": "npm-run-all compile rtl prefix minify",
+    "css": "npm-run-all compile prefix rtl minify",
     "compile": "npm-run-all --parallel compile-*",
     "compile-main": "sass --style=expanded --no-source-map --no-error-css --stop-on-error scss/chlorophyll.scss dist/chlorophyll.css",
     "compile-debug": "sass --style=expanded --no-source-map --no-error-css --stop-on-error scss/debug.scss dist/debug.css && sass --style=expanded --no-source-map --no-error-css --stop-on-error scss/debug-utils.scss dist/debug-utils.css",
