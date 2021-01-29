@@ -1,12 +1,13 @@
 {
   "name": "chlorophyll",
   "version": "1.0.0",
-  "description": "Lightweight CSS framework focused on structure.",
+  "description": "Mobile-first CSS framework focused on structure and utilities.",
   "scripts": {
     "css": "npm-run-all compile prefix rtl minify",
     "compile": "sass --style=expanded --no-source-map --no-error-css --stop-on-error scss/:dist/",
     "compile-main": "sass --style=expanded --no-source-map --no-error-css --stop-on-error scss/chlorophyll.scss dist/chlorophyll.css",
     "compile-debug": "sass --style=expanded --no-source-map --no-error-css --stop-on-error scss/debug.scss dist/debug.css && sass --style=expanded --no-source-map --no-error-css --stop-on-error scss/debug-utils.scss dist/debug-utils.css",
+    "docs": "eleventy --serve --watch",
     "lint": "stylelint \"**/*.{scss,css}\" --cache --cache-location=.cache/.stylelintcache --rd",
     "minify": "npm-run-all --parallel minify-*",
     "minify-main": "cleancss -O1 --source-map --source-map-inline-sources --format breakWith=lf --output dist/chlorophyll.min.css dist/chlorophyll.css",
@@ -46,6 +47,7 @@
     "scss/**/*.scss"
   ],
   "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
     "autoprefixer": "^10.2.3",
     "clean-css-cli": "^4.3.0",
     "npm-run-all": "^4.1.5",

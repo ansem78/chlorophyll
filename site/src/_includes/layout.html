@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+  <title>{{global.name}} (ver. {{global.version}})</title>
+</head>
+<body>
+  <header>
+    <h1>{{global.name}}</h1>
+    <p><small>ver. {{global.version}}</small></p>
+
+    <h2>Framework</h2>
+    <ul>
+      <li><a href="/">Overview</a></li>
+      <li><a href="/install">Installation</a></li>
+      <li><a href="/configure">Configuration</a></li>
+      <li><a href="/cli">Building stylesheets (CLI)</a></li>
+    </ul>
+
+    <h2>Features</h2>
+    <dl>
+      {% for f in global.features %}
+        <dt><a href="/features/{{f.name | slug}}">{{f.name}}</a></dt>
+        {% for m in f.modules %}
+          <dd><a href="/features/{{f.name | slug}}/{{m | slug}}">{{m}}</a></dd>
+        {% endfor %}
+      {% endfor %}
+    </dl>
+
+    <h2>Utilities</h2>
+    <ul>
+      {% for u in global.utils %}
+        <li><a href="/utilities/{{u | slug}}">{{u}}</a></li>
+      {% endfor %}
+    </ul>
+
+  </header>
+  <main>
+    {{content | safe}}
+  </main>
+</body>
+</html>
