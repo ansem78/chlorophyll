@@ -1,0 +1,83 @@
+---
+layout: layout
+---
+<h3>Configuration</h3>
+
+<p>Any feature in {{global.name}} has its own configuration variables with their respective default values. These values should not be changed directly.</p>
+
+<p>You can use the <code>/scss/_config.scss</code> partial file to override one or more configuration variable. You only need to override variables you want to set to a different value. All variables you don't override, keep their default values.</p>
+
+<div class="tip">
+  <h4>Tip</h4>
+  <p>As you only need to override a limited set of variables, you can have multiple configurations for multiple website/apps in the <code>/scss/_config.scss</code> partial file. Simply, put in this file all configurations you need in comments and uncomment the configuration you need each time. Or you can save each configurations in a separate file and copy the one you need in <code>/scss/_config.scss</code> before you run the <code><a href="/cli/#css">css</a></code> script.</p>
+</div>
+
+<p>Below there is a complete list of all configuration variables, their default values and the feature they belongs. Click on a variable or on a feature to navigate to the related documentation page.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Feature</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for f in global.features.core %}
+      <tr>
+        <td>{{f.name}}</td>
+        <td>{{f.featureName}}</td>
+        <td>{{f.value}}</td>
+      </tr>
+    {% endfor %}
+    {% for f in global.features.debug %}
+      <tr>
+        <td>{{f.name}}</td>
+        <td>{{f.featureName}}</td>
+        <td>{{f.value}}</td>
+      </tr>
+    {% endfor %}
+    {% for f in global.features.animate %}
+    <tr>
+      <td>{{f.name}}</td>
+      <td>{{f.featureName}}</td>
+      <td>{{f.value}}</td>
+    </tr>
+    {% endfor %}
+    {% for f in global.features.embed %}
+      <tr>
+        <td>{{f.name}}</td>
+        <td>{{f.featureName}}</td>
+        <td>{{f.value}}</td>
+      </tr>
+    {% endfor %}
+    {% for f in global.features.icon %}
+      <tr>
+        <td>{{f.name}}</td>
+        <td>{{f.featureName}}</td>
+        <td>{{f.value}}</td>
+      </tr>
+    {% endfor %}
+    {% for f in global.features.reset %}
+      <tr>
+        <td>{{f.name}}</td>
+        <td>{{f.featureName}}</td>
+        <td>{{f.value}}</td>
+      </tr>
+    {% endfor %}
+    {% for f in global.features.sizing %}
+      <tr>
+        <td>{{f.name}}</td>
+        <td>{{f.featureName}}</td>
+        <td>{{f.value}}</td>
+      </tr>
+    {% endfor %}
+    {% for f in global.features.transform %}
+      <tr>
+        <td>{{f.name}}</td>
+        <td>{{f.featureName}}</td>
+        <td>{{f.value}}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

@@ -17,16 +17,6 @@
       <li><a href="/cli">Building stylesheets (CLI)</a></li>
     </ul>
 
-    <h2>Features</h2>
-    <dl>
-      {% for f in global.features %}
-        <dt><a href="/features/{{f.name | slug}}">{{f.name}}</a></dt>
-        {% for m in f.modules %}
-          <dd><a href="/features/{{f.name | slug}}/{{m | slug}}">{{m}}</a></dd>
-        {% endfor %}
-      {% endfor %}
-    </dl>
-
     <h2>Utilities</h2>
     <ul>
       {% for u in global.utils %}

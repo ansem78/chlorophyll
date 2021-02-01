@@ -1,7 +1,7 @@
 {
   "name": "chlorophyll",
   "version": "1.0.0",
-  "description": "Mobile-first CSS framework focused on structure and utilities.",
+  "description": "Mobile-first complete CSS utilities framework.",
   "scripts": {
     "css": "npm-run-all compile prefix rtl minify",
     "compile": "sass --style=expanded --no-source-map --no-error-css --stop-on-error scss/:dist/",

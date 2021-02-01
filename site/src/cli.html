@@ -1,0 +1,64 @@
+---
+layout: layout
+---
+<h3>Building stylesheets (CLI)</h3>
+
+<p>In {{global.name}}, you can run some NPM script to generate only specific files or to build the final files. All the generated files will be saved into the <code>/dist</code> folder. Open your terminal and type:</p>
+
+<pre>
+  <code>npm run &lt;SCRIPT-NAME&gt;</code>
+</pre>
+
+<p>where <code>&lt;SCRIPT-NAME&gt;</code> is one of the following.</p>
+
+<h4><a name="css"></a>css</h4>
+
+<p>This is the main script.Generates all stylesheets and source maps in a bounch. It is a shortcut for running <a href="#compile">compile</a>, <a href="#prefix">prefix</a>, <a href="#rtl">rtl</a> and <a href="#minify">minify</a> scripts sequentially.</p>
+
+<h4><a name="main"></a>compile-main</h4>
+
+<p>Generates the main stylesheet (<code>{{global.id}}.css</code>).</p>
+
+<h4><a name="compile-debug"></a>compile-debug</h4>
+
+<p>Generates the debug stylesheets (<code>debug.css</code>, <code>debug-utils.css</code>). These files are useful for debug during development and are not included in the final build.</p>
+
+<h4><a name="compile"></a>compile</h4>
+
+<p>Shortcut for running <a href="#compile-main">compile-main</a> and <a href="#compile-debug">compile-debug</a> scripts.</p>
+
+<h4><a name="docs"></a>docs</h4>
+
+<p>Runs this static documentation site.</p>
+
+<h4><a name="lint"></a>lint</h4>
+
+<p>Runs Stylelint to check <code>*.scss</code> files syntax. Useful for developers contributing to this package.</p>
+
+<h4><a name="minify-main"></a>minify-main</h4>
+
+<p>Generates the minified version of the main stylesheet (<code>{{global.id}}.min.css</code>) and its source map. It must be manually run after <a href="#compile">compile</a> or <a href="#compile-main">compile-main</a> script to take effect.</p>
+
+<h4><a name="minify-debug"></a>minify-debug</h4>
+
+<p>Generates the minified versions of the debug stylesheets (<code>debug.min.css</code>, <code>debug-utils.min.css</code>) and their source maps. It must be manually run after <a href="#compile">compile</a> or <a href="#compile-debug">compile-debug</a> script to take effect.</p>
+
+<h4><a name="minify-rtl"></a>minify-rtl</h4>
+
+<p>Generates the minified version of the <code>{{global.id}}-rtl.css</code> stylesheet (<code>{{global.id}}-rtl.min.css</code>) and its source map. It must be manually run after <a href="#compile">compile</a> or <a href="#compile-main">compile-main</a> followed by <a href="#rtl">rtl</a> script to take effect.</p>
+
+<h4><a name="minify"></a>minify</h4>
+
+<p>Shortcut for running <a href="#minify-main">minify-main</a>, <a href="#minify-debug">minify-debug</a> and <a href="#minify-rtl">minify-rtl</a> scripts in parallel. It must be manually run after <a href="#compile">compile</a>, <a href="#compile-main">compile-main</a>, <a href="#compile-debug">compile-debug</a> or <a href="#rtl">rtl</a> script to take effect.</p>
+
+<h4><a name="prefix"></a>prefix</h4>
+
+<p>Adds vendor-specific prefixes to some CSS properties for browsers support. It must be manually run after <a href="#compile">compile</a> or <a href="#compile-main">compile-main</a> script to take effect.</p>
+
+<h4><a name="rtl"></a>rtl</h4>
+
+<p>Generates the RTL version of the main stylesheet (<code>{{global.id}}-rtl.css</code>) for RTL languages. It must be manually run after <a href="#compile">compile</a> or <a href="#compile-main">compile-main</a> script to take effect. Note: debug stylesheets do not have RTL version.</p>
+
+<h4><a name="setup"></a>setup</h4>
+
+<p>Install all the dependencies needed using Yarn. If you don't have installed Yarn, you can manually run <code>npm install</code>.</p>
