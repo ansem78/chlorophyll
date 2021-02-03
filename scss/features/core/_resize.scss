@@ -15,7 +15,7 @@
 
 @use '../../mixins/resize';
 
-.resize-n {
+.resize-none {
   @include resize.resizable('none');
 }
 

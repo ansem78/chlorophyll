@@ -1,0 +1,80 @@
+/*
+
+  Cursor
+
+  Base:
+    cur = cursor
+
+*/
+
+// Common cursors.
+
+$_cursors: (
+  'alias',
+  'all-scroll',
+  'auto',
+  'cell',
+  'context-menu',
+  'col-resize',
+  'row-resize',
+  'copy',
+  'crosshair',
+  'default',
+  'e-resize',
+  'grab',
+  'grabbing',
+  'help',
+  'move',
+  'n-resize',
+  'no-drop',
+  'none',
+  'not-allowed',
+  'pointer',
+  'progress',
+  's-resize',
+  'wait',
+  'w-resize',
+  'zoom-in',
+  'zoom-out',
+  'inherit',
+  'initial'
+);
+
+@each $value in $_cursors {
+
+  .cur-#{$value} {
+    cursor: #{$value};
+  }
+
+}
+
+// Text cursors.
+
+.cur-text-h {
+  cursor: text;
+}
+
+.cur-text-v {
+  cursor: vertical-text;
+}
+
+// Special resize cursors.
+
+.cur-resize-x {
+  cursor: ew-resize;
+}
+
+.cur-resize-y {
+  cursor: ns-resize;
+}
+
+.cur-resize-ts, .cur-resize-be {
+  cursor: nwse-resize;
+}
+
+.cur-resize-te, .cur-resize-bs {
+  cursor: nesw-resize;
+}
+
+
+
