@@ -8,6 +8,7 @@
 @use '../features/embed/variables' as embed;
 @use '../features/icon/variables' as icon;
 @use '../features/reset/variables' as reset;
+@use '../features/shape/variables' as shape;
 @use '../features/sizing/variables' as sizing;
 @use '../features/transform/variables' as transform;
 @use '../config';
@@ -23,6 +24,7 @@
     'embed',
     'icon',
     'reset',
+    'shape',
     'sizing',
     'transform',
     'config'

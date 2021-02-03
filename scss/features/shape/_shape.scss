@@ -1,0 +1,56 @@
+// Shape
+
+@use '../../utils/config';
+
+@if config.feature-enabled('shape') {
+
+  .shape-arrow-t {
+    display: inline-block;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  }
+
+  .shape-arrow-e {
+    display: inline-block;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+  }
+
+  .shape-arrow-b {
+    display: inline-block;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+
+  .shape-arrow-s {
+    display: inline-block;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  }
+
+  .shape-corner-te {
+    display: inline-block;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+  }
+
+  .shape-corner-ts {
+    display: inline-block;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+
+  .shape-corner-be {
+    display: inline-block;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+
+  .shape-corner-bs {
+    display: inline-block;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+  }
+
+  .shape-tag {
+    width: auto;
+    padding: .25rem .5rem .25rem 1rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    display: inline-block;
+    clip-path: polygon(0 50%, .5rem 0, 100% 0, 100% 100%, .5rem 100%);
+  }
+
+}
