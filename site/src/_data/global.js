@@ -52,6 +52,7 @@ module.exports = {
     embed: loadFeatureVars('embed'),
     icon: loadFeatureVars('icon'),
     reset: loadFeatureVars('reset'),
+    shape: loadFeatureVars('shape'),
     sizing: loadFeatureVars('sizing'),
     transform: loadFeatureVars('transform')
   },
